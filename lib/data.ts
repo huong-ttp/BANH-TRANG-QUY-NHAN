@@ -2,10 +2,20 @@ import type { Product, User, Category } from "./types"
 
 export const categories: Category[] = [
   {
-    id: "cat1",
-    name: "Bánh Tráng",
-    image: "/categories/banhtrang.jpg",
-    slug: "banh-trang",
+  id: "1",
+  name: "Bánh Tráng Muối Nhuyễn",
+  price: 25000,
+  originalPrice: 30000,
+  image: "/products/muoinhuyen.jpg",
+  description: "Bánh tráng muối nhuyễn Tây Ninh",
+  category: "banh-trang",
+  stock: 100,
+  unit: "bịch",
+  discount: 15,
+
+  shopee: "https://shopee.vn/",
+  lazada: "https://www.lazada.vn/",
+  tiktok: "https://www.tiktok.com/"
   },
   {
     id: "cat2",

@@ -1,17 +1,18 @@
 export interface Product {
   id: string
   name: string
-  description: string
   price: number
   originalPrice: number
-  discount: number
   image: string
+  description: string
   category: string
-  trending?: boolean
-  bestseller?: boolean
-  new?: boolean
   stock: number
   unit: string
+  discount: number
+
+  shopee: string
+  lazada: string
+  tiktok: string
 }
 
 export interface User {

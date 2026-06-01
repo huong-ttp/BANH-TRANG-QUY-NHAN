@@ -1,9 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, Heart, Minus, Plus, ShoppingCart, Truck } from "lucide-react"
+import { ArrowLeft, Truck } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -20,10 +19,6 @@ interface ProductPageProps {
 
 export default function ProductPage({ params }: ProductPageProps) {
   const product = featuredProducts.find((p) => p.id === params.id)
-  const [quantity, setQuantity] = useState(1)
-  const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useStore()
-  const { toast } = useToast()
-  const [isWishlisted, setIsWishlisted] = useState(isInWishlist(params.id))
 
   if (!product) {
     notFound()
@@ -32,32 +27,6 @@ export default function ProductPage({ params }: ProductPageProps) {
   const relatedProducts = featuredProducts
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4)
-
-  const handleAddToCart = () => {
-    addToCart(product, quantity)
-    toast({
-      title: "Added to cart",
-      description: `${quantity} ${quantity > 1 ? "items" : "item"} added to your cart.`,
-    })
-  }
-
-  const toggleWishlist = () => {
-    if (isWishlisted) {
-      removeFromWishlist(product.id)
-      setIsWishlisted(false)
-      toast({
-        title: "Removed from wishlist",
-        description: `${product.name} has been removed from your wishlist.`,
-      })
-    } else {
-      addToWishlist(product)
-      setIsWishlisted(true)
-      toast({
-        title: "Added to wishlist",
-        description: `${product.name} has been added to your wishlist.`,
-      })
-    }
-  }
 
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
@@ -107,42 +76,45 @@ export default function ProductPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center">
-            <div className="flex items-center border rounded-md dark:border-gray-700">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-none hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition-colors duration-200"
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              >
-                <Minus className="h-4 w-4" />
-              </Button>
-              <span className="w-12 text-center">{quantity}</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-none hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition-colors duration-200"
-                onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-              >
-                <Plus className="h-4 w-4" />
-              </Button>
-            </div>
-            <Button
-              className="ml-4 flex-1 bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
-              onClick={handleAddToCart}
-            >
-              <ShoppingCart className="mr-2 h-4 w-4" />
-              Add to Cart
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className={`ml-2 transition-all duration-300 hover:scale-110 ${isWishlisted ? "text-red-500 border-red-200" : ""}`}
-              onClick={toggleWishlist}
-            >
-              <Heart className={`h-4 w-4 ${isWishlisted ? "fill-red-500" : ""}`} />
-            </Button>
-          </div>
+          <div className="mt-8">
+  <h3 className="font-semibold text-lg mb-4">
+    Mua sản phẩm tại
+  </h3>
+
+  <div className="grid gap-3">
+
+    <a
+      href={product.shopee}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+        🛒 Mua trên Shopee
+      </Button>
+    </a>
+
+    <a
+      href={product.tiktok}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="w-full bg-black hover:bg-gray-800 text-white">
+        🎵 Mua trên TikTok Shop
+      </Button>
+    </a>
+
+    <a
+      href={product.lazada}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+        🛍️ Mua trên Lazada
+      </Button>
+    </a>
+
+  </div>
+</div>
 
           <Tabs defaultValue="description" className="mt-8">
             <TabsList className="bg-emerald-50 dark:bg-emerald-950/50">
