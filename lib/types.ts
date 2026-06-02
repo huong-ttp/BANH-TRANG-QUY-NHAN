@@ -4,11 +4,11 @@ export interface Product {
 
   description: string
 
-  details?: string
-  ingredients?: string
-  usage?: string
-  storage?: string
-  origin?: string
+  details: string
+  ingredients: string
+  usage: string
+  storage: string
+  origin: string
 
   price: number
   originalPrice: number
@@ -22,13 +22,13 @@ export interface Product {
 
   discount: number
 
-  trending?: boolean
-  bestseller?: boolean
+  trending: boolean
+  bestseller: boolean
   new?: boolean
 
-  shopee?: string
-  tiktok?: string
-  lazada?: string
+  shopee: string
+  tiktok: string
+  lazada: string
 }
 
 export interface Category {
@@ -36,4 +36,15 @@ export interface Category {
   name: string
   image: string
   slug: string
+}
+export interface NewsPost {
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  image: string
+  date: string
+  content: string
+  metaDescription?: string
+  keywords?: string[]
 }

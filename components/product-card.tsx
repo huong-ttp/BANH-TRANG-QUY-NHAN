@@ -45,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white transition-all duration-300 hover:border-emerald-600 hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-900 dark:hover:border-emerald-500">      <Link href={`/products/${product.id}`} className="block">
+    <div className="group relative overflow-hidden rounded-lg border bg-white transition-all duration-300 hover:border-emerald-600 hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-900 dark:hover:border-emerald-500">      <Link href={`/products/detail/${product.id}`} className="block">
         <div className="relative aspect-square overflow-hidden">
           <img
             src={product.image || "/placeholder.svg"}

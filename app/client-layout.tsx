@@ -67,13 +67,13 @@ export default function ClientLayout({
                         Sản phẩm
                       </Button>
                     </Link>
-                    <Link href="/schedule">
+                    <Link href="/news">
                       <Button
                         variant="ghost"
                         size="sm"
                         className="hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
                       >
-                        Tin tức
+                        Khám phá Tây Ninh
                       </Button>
                     </Link>
                     <Link href="/about">

@@ -1,7 +1,9 @@
 {
-  "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
-  "/products/[category]/[id]/page": "app/products/[category]/[id]/page.js",
-  "/products/[category]/page": "app/products/[category]/page.js"
+  "/page": "app/page.js",
+  "/products/page": "app/products/page.js",
+  "/news/[slug]/page": "app/news/[slug]/page.js",
+  "/news/page": "app/news/page.js",
+  "/products/[category]/page": "app/products/[category]/page.js",
+  "/about/page": "app/about/page.js"
 }

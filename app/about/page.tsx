@@ -56,7 +56,7 @@ export default function AboutPage() {
               {featuredProducts.slice(0, 4).map((product) => (
                 <Link
                   key={product.id}
-                  href={`/products/${product.id}`}
+                  href={`/products/detail/${product.id}`}
                   className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <div className="w-12 h-12 rounded overflow-hidden">
