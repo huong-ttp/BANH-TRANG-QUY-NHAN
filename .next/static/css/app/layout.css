@@ -900,6 +900,9 @@ video {
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -1876,6 +1879,9 @@ video {
 .leading-none {
   line-height: 1;
 }
+.leading-7 {
+  line-height: 1.75rem;
+}
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -1988,6 +1994,10 @@ video {
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+}
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity, 1));
 }
 .line-through {
   text-decoration-line: line-through;

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Clock, CreditCard, Gift, ShoppingBag, Truck } from "lucide-react"
+import { UtensilsCrossed, Package, Landmark, Mountain, HeartHandshake, ShoppingBag, ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
@@ -63,78 +63,79 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-emerald-800 dark:text-emerald-200">
-                Why Choose FastCart?
+                Khám Phá Tây Ninh Qua Từng Hương Vị
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                We offer a seamless shopping experience with features designed to make your life easier.
+                Không chỉ bán đặc sản, Bánh Tráng Quý Nhân mong muốn lan tỏa
+                văn hóa, con người và những hương vị đặc trưng của quê hương Tây Ninh
+                đến với khách hàng trên khắp cả nước.
               </p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
               <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
-                <Clock className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                <UtensilsCrossed className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
               </div>
               <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Monthly Scheduling
+                Hương Vị Tây Ninh
               </h3>
               <p className="text-center text-gray-500 dark:text-gray-400">
-                Set up recurring deliveries for your essentials and never run out.
+                Những sản phẩm mang đậm hương vị Tây Ninh như bánh tráng, muối tôm và các món ăn vặt nổi tiếng.
               </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
+              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
+                <Package className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                Đặc Sản Quê Nhà 
+              </h3>
+              <p className="text-center text-gray-500 dark:text-gray-400">
+                Tuyển chọn các sản phẩm chất lượng từ những cơ sở sản xuất uy tín tại Tây Ninh.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
+              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
+                <Landmark className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                Văn Hóa Địa Phương 
+              </h3>
+              <p className="text-center text-gray-500 dark:text-gray-400">
+                Giới thiệu nét đẹp văn hóa, con người và truyền thống của vùng đất Tây Ninh.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
+              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
+                <Mountain className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                Núi Bà Đen
+              </h3>
+              <p className="text-center text-gray-500 dark:text-gray-400">
+                Biểu tượng du lịch nổi tiếng của Tây Ninh, thu hút hàng triệu du khách mỗi năm.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
+              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
+                <HeartHandshake className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                Lan Tỏa Quê Hương
+              </h3>
+              <p className="text-center text-gray-500 dark:text-gray-400">
+              Mang những giá trị quê hương đến gần hơn với khách hàng trên khắp cả nước.              </p>
             </div>
             <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
               <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
                 <ShoppingBag className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
               </div>
               <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Smart Recommendations
+                Mua Hàng Thuận Tiện
               </h3>
               <p className="text-center text-gray-500 dark:text-gray-400">
-                Get personalized product suggestions based on your purchase history.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
-              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
-                <CreditCard className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Digital Wallet
-              </h3>
-              <p className="text-center text-gray-500 dark:text-gray-400">
-                Manage your balance, transactions, and payment methods in one place.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
-              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
-                <Gift className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Rewards Program
-              </h3>
-              <p className="text-center text-gray-500 dark:text-gray-400">
-                Earn points with every purchase and redeem them for discounts.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
-              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
-                <Truck className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Fast Delivery
-              </h3>
-              <p className="text-center text-gray-500 dark:text-gray-400">
-                Get your groceries delivered within hours of placing your order.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg hover:border-emerald-600 hover:shadow-lg transition-all duration-300 dark:border-gray-800 dark:hover:border-emerald-500 group">
-              <div className="p-3 rounded-full bg-emerald-100 dark:bg-emerald-900 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-800 transition-colors duration-300">
-                <CreditCard className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <h3 className="text-xl font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
-                Pay Later Options
-              </h3>
-              <p className="text-center text-gray-500 dark:text-gray-400">
-                Flexible payment plans to help you manage your budget better.
+                Dễ dàng tìm mua sản phẩm qua Shopee, TikTok Shop và các kênh chính thức.
               </p>
             </div>
           </div>
@@ -147,42 +148,41 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-emerald-800 dark:text-emerald-200">
-                Shop by Category
+                Khám Phá Tây Ninh
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Browse our wide selection of vegetarian products across various categories.
-              </p>
+              Từ đặc sản nổi tiếng đến những địa danh mang đậm dấu ấn quê hương.              </p>
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
             <CategoryCard
-              name="Fruits & Vegetables"
-              image="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=200&auto=format&fit=crop"
+              name="Núi Bà Đen"
+              image="NuiBaDen.jpg"
               href="/products/fruits-vegetables"
             />
             <CategoryCard
-              name="Dairy & Paneer"
-              image="https://images.unsplash.com/photo-1628088062854-d1870b4553da?q=80&w=200&auto=format&fit=crop"
+              name="Tòa Thánh Tây Ninh"
+              image="ToaThanhTayNinh.jpg"
               href="/products/dairy-paneer"
             />
             <CategoryCard
-              name="Pulses & Grains"
-              image="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?q=80&w=200&auto=format&fit=crop"
+              name="Hồ Dầu Tiếng"
+              image="HoDauTieng.jpg"
               href="/products/pulses-grains"
             />
             <CategoryCard
-              name="Bakery"
-              image="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=200&auto=format&fit=crop"
+              name="Bánh Tráng Tây Ninh"
+              image="BanhTrangTayNinh.jpg"
               href="/products/bakery"
             />
             <CategoryCard
-              name="Beverages"
-              image="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=200&auto=format&fit=crop"
+              name="Muối Tôm Tây Ninh"
+              image="MuoiTomTayNinh.jpg"
               href="/products/beverages"
             />
             <CategoryCard
-              name="Snacks"
-              image="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=200&auto=format&fit=crop"
+              name="Ẩm Thực Tây Ninh"
+              image="AmThucTayNinh.jpg"
               href="/products/snacks"
             />
           </div>
@@ -199,19 +199,19 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center text-white">
             <div className="space-y-2 animate-in fade-in duration-700">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Ready to Simplify Your Grocery Shopping?
+                Khám Phá Hương Vị Tây Ninh Chính Gốc
               </h2>
               <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed opacity-90">
-                Join thousands of satisfied customers who have made FastCart their go-to vegetarian grocery platform.
+                Từ những bịch bánh tráng quen thuộc đến các loại muối chấm đặc trưng, Bánh Tráng Quý Nhân mong muốn lan tỏa hương vị quê hương Tây Ninh đến mọi miền đất nước.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row animate-in fade-in duration-1000">
-              <Link href="/register">
+              <Link href="/products">
                 <Button
                   size="lg"
                   className="bg-white text-emerald-600 hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Sign Up Now
+                  Khám Phá Đặc Sản
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -221,7 +221,7 @@ export default function Home() {
                   variant="outline"
                   className="text-white border-white hover:bg-emerald-700 transition-colors duration-200"
                 >
-                  Learn More
+                  Câu Chuyện Của Quý Nhân
                 </Button>
               </Link>
             </div>

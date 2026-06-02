@@ -61,7 +61,7 @@ export default function ProductsPage() {
             <p className="text-gray-500 mb-4">
             Hiển thị {featuredProducts.length} sản phẩm
             </p>
-            <Suspense fallback={<div>Loading products...</div>}>
+            <Suspense fallback={<div>Đang tải sản phẩm...</div>}>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 {featuredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />

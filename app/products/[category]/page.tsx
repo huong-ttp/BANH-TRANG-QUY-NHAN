@@ -35,12 +35,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to All Products
+            Quay lại tất cả các sản phẩm
           </Link>
           <h1 className="text-3xl font-bold">{category.name}</h1>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <div className="relative w-full sm:w-auto sm:flex-1 max-w-md">
-              <Input placeholder={`Search in ${category.name.toLowerCase()}...`} className="pl-10" />
+              <Input placeholder={`Tìm kiếm trong danh mục ${category.name.toLowerCase()}...`} className="pl-10" />
               <div className="absolute left-3 top-3 text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -61,11 +61,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <div className="flex gap-2 w-full sm:w-auto">
               <Button variant="outline" size="sm" className="sm:hidden">
                 <Filter className="h-4 w-4 mr-2" />
-                Filter
+                Lọc
               </Button>
               <Button variant="outline" size="sm">
                 <SlidersHorizontal className="h-4 w-4 mr-2" />
-                Sort
+                Sắp xếp (sắp cập nhật)
               </Button>
             </div>
           </div>
@@ -84,10 +84,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <h3 className="text-lg font-medium">No products found</h3>
-                <p className="text-gray-500 mt-1">Try adjusting your filters or search terms</p>
+                <h3 className="text-lg font-medium">Không có sản phẩm nào được tìm thấy</h3>
+                <p className="text-gray-500 mt-1">Thử chỉnh lại bộ lọc hoặc cụm từ tìm kiếm của bạn.</p>
                 <Link href="/products">
-                  <Button className="mt-4 bg-green-600 hover:bg-green-700">View All Products</Button>
+                  <Button className="mt-4 bg-green-600 hover:bg-green-700">Xem tất cả sản phẩm</Button>
                 </Link>
               </div>
             )}

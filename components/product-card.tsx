@@ -90,13 +90,6 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
       <div className="p-4 pt-0 flex gap-2">
         <Button
-          className="flex-1 bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
-          onClick={handleAddToCart}
-        >
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Thêm vào giỏ
-        </Button>
-        <Button
           variant="outline"
           size="icon"
           className={`${isWishlisted ? "text-red-500 border-red-200" : ""} transition-all duration-300 hover:scale-110`}

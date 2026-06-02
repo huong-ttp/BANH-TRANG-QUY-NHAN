@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { featuredProducts } from "@/lib/data"
 import { ProductCard } from "@/components/product-card"
-import { useStore } from "@/lib/store"
-import { useToast } from "@/hooks/use-toast"
+
 
 interface ProductPageProps {
   params: {
@@ -35,7 +34,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 mb-6 transition-colors duration-200"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to Products
+        Quay lại sản phẩm
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -47,32 +46,39 @@ export default function ProductPage({ params }: ProductPageProps) {
           />
           {product.discount > 0 && (
             <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded animate-pulse">
-              {product.discount}% OFF
+              Giảm {product.discount}% 
             </div>
           )}
         </div>
 
         <div className="flex flex-col">
           <h1 className="text-3xl font-bold text-emerald-800 dark:text-emerald-200">{product.name}</h1>
+          <p className="text-sm text-gray-500 mt-1">
+          Đặc sản {product.origin}
+        </p>
           <div className="flex items-center gap-2 mt-2">
             <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-              ₹{product.price.toFixed(2)}
+              {product.price.toLocaleString("vi-VN")}đ
             </span>
             {product.originalPrice > product.price && (
-              <span className="text-lg text-gray-500 line-through">₹{product.originalPrice.toFixed(2)}</span>
+              <span className="text-lg text-gray-500 line-through">{product.originalPrice.toLocaleString("vi-VN")}đ</span>
             )}
             <span className="text-sm text-gray-500">/ {product.unit}</span>
           </div>
-
+          <div className="mt-4">
+          <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+            🌾 Đặc sản Tây Ninh
+          </span>
+        </div>
           <p className="mt-4 text-gray-600 dark:text-gray-400">{product.description}</p>
 
           <div className="mt-6 p-4 bg-emerald-50 rounded-lg dark:bg-emerald-950/50 transform transition-transform duration-300 hover:scale-[1.02]">
             <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
               <Truck className="h-4 w-4 mr-2 text-emerald-600 dark:text-emerald-400" />
-              Free delivery on orders over ₹1500
+              Sản phẩm được phân phối bởi Bánh Tráng Quý Nhân
             </div>
             <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              In Stock: {product.stock} {product.unit}s available
+              Còn lại: {product.stock} {product.unit}
             </div>
           </div>
 
@@ -122,50 +128,43 @@ export default function ProductPage({ params }: ProductPageProps) {
                 value="description"
                 className="data-[state=active]:bg-emerald-100 dark:data-[state=active]:bg-emerald-900"
               >
-                Description
+                Mô tả
               </TabsTrigger>
               <TabsTrigger
                 value="nutrition"
                 className="data-[state=active]:bg-emerald-100 dark:data-[state=active]:bg-emerald-900"
               >
-                Nutrition
+                Thông tin sản phẩm
               </TabsTrigger>
               <TabsTrigger
                 value="reviews"
                 className="data-[state=active]:bg-emerald-100 dark:data-[state=active]:bg-emerald-900"
               >
-                Reviews
+                Hướng dẫn sử dụng
               </TabsTrigger>
             </TabsList>
             <TabsContent value="description" className="pt-4">
               <p className="text-gray-600 dark:text-gray-400">
-                {product.description} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
+                {product.details}
               </p>
             </TabsContent>
-            <TabsContent value="nutrition" className="pt-4">
-              <div className="space-y-2">
-                <p className="text-gray-600 dark:text-gray-400">Nutrition information per serving:</p>
-                <ul className="list-disc pl-5 text-gray-600 dark:text-gray-400">
-                  <li>Calories: 120</li>
-                  <li>Total Fat: 0g</li>
-                  <li>Sodium: 0mg</li>
-                  <li>Total Carbohydrate: 29g</li>
-                  <li>Sugars: 15g</li>
-                  <li>Protein: 1g</li>
-                </ul>
-              </div>
-            </TabsContent>
             <TabsContent value="reviews" className="pt-4">
-              <p className="text-gray-600 dark:text-gray-400">No reviews yet. Be the first to review this product!</p>
-            </TabsContent>
+            <div className="space-y-3 text-gray-600 dark:text-gray-400">
+              <p>
+                <strong>Cách sử dụng:</strong> {product.usage}
+              </p>
+
+              <p>
+                <strong>Bảo quản:</strong> {product.storage}
+              </p>
+            </div>
+          </TabsContent>
           </Tabs>
         </div>
       </div>
 
       <div className="mt-16">
-        <h2 className="text-2xl font-bold mb-6 text-emerald-800 dark:text-emerald-200">Related Products</h2>
+        <h2 className="text-2xl font-bold mb-6 text-emerald-800 dark:text-emerald-200">Sản phẩm liên quan</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {relatedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
