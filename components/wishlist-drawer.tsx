@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useStore } from "@/lib/store"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useToast } from "@/hooks/use-toast"
+import { formatPrice } from "@/lib/utils"
 
 export function WishlistDrawer() {
   const { wishlist, isWishlistOpen, toggleWishlist, removeFromWishlist, addToCart } = useStore()
@@ -21,7 +22,7 @@ export function WishlistDrawer() {
         <div className="flex items-center justify-between p-4 border-b dark:border-gray-800">
           <div className="flex items-center">
             <Heart className="h-5 w-5 mr-2 text-red-500" />
-            <h2 className="font-semibold text-lg">Your Wishlist ({wishlist.length})</h2>
+            <h2 className="font-semibold text-lg">Sản phẩm yêu thích ({wishlist.length})</h2>
           </div>
           <Button
             variant="ghost"
@@ -36,13 +37,13 @@ export function WishlistDrawer() {
         {wishlist.length === 0 ? (
           <div className="flex flex-col items-center justify-center flex-1 p-6 text-center">
             <Heart className="h-16 w-16 text-gray-300 mb-4" />
-            <h3 className="font-medium text-lg mb-2">Your wishlist is empty</h3>
-            <p className="text-gray-500 mb-6">Looks like you haven't added any products to your wishlist yet.</p>
+            <h3 className="font-medium text-lg mb-2">Chưa có sản phẩm yêu thích</h3>
+            <p className="text-gray-500 mb-6">Bạn chưa thêm sản phẩm nào vào danh sách yêu thích.</p>
             <Button
               onClick={toggleWishlist}
               className="bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
             >
-              Continue Shopping
+              Tiếp tục mua sắm
             </Button>
           </div>
         ) : (
@@ -67,9 +68,7 @@ export function WishlistDrawer() {
                           {item.product.name}
                         </h4>
                       </Link>
-                      <p className="text-sm text-gray-500">
-                        ₹{item.product.price.toFixed(2)} / {item.product.unit}
-                      </p>
+                      <p className="text-sm text-gray-500">{formatPrice(item.product.price)} / {item.product.unit}</p>
                       <div className="flex items-center gap-2 mt-2">
                         <Button
                           variant="outline"
@@ -78,18 +77,20 @@ export function WishlistDrawer() {
                           onClick={() => {
                             addToCart(item.product)
                             toast({
-                              title: "Added to cart",
-                              description: `${item.product.name} has been added to your cart.`,
+                              title: "Đã thêm vào giỏ hàng",
+                              description: `${item.product.name} đã được thêm vào giỏ hàng.`,
                             })
                           }}
                         >
                           <ShoppingCart className="h-3 w-3 mr-1" />
-                          Add to Cart
+                          Thêm vào giỏ hàng
                         </Button>
                       </div>
                     </div>
                     <div className="flex flex-col items-end justify-between">
-                      <span className="font-medium">₹{item.product.price.toFixed(2)}</span>
+                    <span className="font-medium">
+  {                  formatPrice(item.product.price)}
+                    </span>
                       <Button
                         variant="ghost"
                         size="icon"
@@ -110,7 +111,7 @@ export function WishlistDrawer() {
                   className="w-full hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200"
                   onClick={toggleWishlist}
                 >
-                  Continue Shopping
+                  Tiếp tục mua sắm
                 </Button>
               </div>
             </div>

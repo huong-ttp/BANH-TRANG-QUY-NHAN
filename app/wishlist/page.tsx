@@ -16,8 +16,8 @@ export default function WishlistPage() {
     if (item) {
       addToCart(item.product)
       toast({
-        title: "Added to cart",
-        description: `${item.product.name} has been added to your cart.`,
+        title: "Đã thêm vào giỏ hàng",
+        description: `${item.product.name} đã được thêm vào giỏ hàng`,
       })
     }
   }
@@ -27,8 +27,8 @@ export default function WishlistPage() {
     if (item) {
       removeFromWishlist(productId)
       toast({
-        title: "Removed from wishlist",
-        description: `${item.product.name} has been removed from your wishlist.`,
+        title: "Đã xóa khỏi danh sách yêu thích",
+        description: `${item.product.name} đã được xóa khỏi danh sách yêu thích`,
       })
     }
   }
@@ -37,17 +37,17 @@ export default function WishlistPage() {
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold">My Wishlist</h1>
-          <p className="text-gray-500">Items you've saved for later</p>
+          <h1 className="text-3xl font-bold">Sản phẩm yêu thích</h1>
+          <p className="text-gray-500">Những sản phẩm bạn đã lưu để mua sau</p>
         </div>
 
         {wishlist.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 text-center">
             <Heart className="h-16 w-16 text-gray-300 mb-4" />
-            <h3 className="text-lg font-medium">Your wishlist is empty</h3>
-            <p className="text-gray-500 mt-1 mb-6">Looks like you haven't added any products to your wishlist yet.</p>
+            <h3 className="text-lg font-medium">Chưa có sản phẩm yêu thích</h3>
+            <p className="text-gray-500 mt-1 mb-6">Bạn chưa thêm sản phẩm nào vào danh sách yêu thích.</p>
             <Link href="/products">
-              <Button className="bg-emerald-600 hover:bg-emerald-700">Browse Products</Button>
+              <Button className="bg-emerald-600 hover:bg-emerald-700">Xem sản phẩm</Button>
             </Link>
           </div>
         ) : (
@@ -92,7 +92,7 @@ export default function WishlistPage() {
                     onClick={() => handleAddToCart(item.product.id)}
                   >
                     <ShoppingCart className="mr-2 h-4 w-4" />
-                    Add to Cart
+                    Thêm vào giỏ hàng
                   </Button>
                 </div>
               </div>

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useStore } from "@/lib/store"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
-
+import { formatPrice } from "@/lib/utils"
 export function CartDrawer() {
   const { cart, isCartOpen, toggleCart, removeFromCart, updateCartItemQuantity, getCartTotal, getCartItemsCount } =
     useStore()
@@ -20,7 +20,7 @@ export function CartDrawer() {
         <div className="flex items-center justify-between p-4 border-b dark:border-gray-800">
           <div className="flex items-center">
             <ShoppingCart className="h-5 w-5 mr-2 text-emerald-600 dark:text-emerald-400" />
-            <h2 className="font-semibold text-lg">Your Cart ({getCartItemsCount()})</h2>
+            <h2 className="font-semibold text-lg">Giỏ hàng ({getCartItemsCount()})</h2>
           </div>
           <Button
             variant="ghost"
@@ -35,13 +35,13 @@ export function CartDrawer() {
         {cart.length === 0 ? (
           <div className="flex flex-col items-center justify-center flex-1 p-6 text-center">
             <ShoppingCart className="h-16 w-16 text-gray-300 mb-4" />
-            <h3 className="font-medium text-lg mb-2">Your cart is empty</h3>
-            <p className="text-gray-500 mb-6">Looks like you haven't added any products to your cart yet.</p>
+            <h3 className="font-medium text-lg mb-2">Giỏ hàng đang trống</h3>
+            <p className="text-gray-500 mb-6">Bạn chưa thêm sản phẩm nào vào giỏ.</p>
             <Button
               onClick={toggleCart}
               className="bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
             >
-              Continue Shopping
+              Tiếp tục mua sắm
             </Button>
           </div>
         ) : (
@@ -65,7 +65,7 @@ export function CartDrawer() {
                         {item.product.name}
                       </h4>
                       <p className="text-sm text-gray-500">
-                        ₹{item.product.price.toFixed(2)} / {item.product.unit}
+                       {formatPrice(item.product.price)} / {item.product.unit}
                       </p>
                       <div className="flex items-center mt-2">
                         <Button
@@ -94,7 +94,7 @@ export function CartDrawer() {
                       </div>
                     </div>
                     <div className="flex flex-col items-end justify-between">
-                      <span className="font-medium">₹{(item.product.price * item.quantity).toFixed(2)}</span>
+                      <span className="font-medium">{formatPrice(item.product.price * item.quantity)}</span>
                       <Button
                         variant="ghost"
                         size="icon"
@@ -111,22 +111,22 @@ export function CartDrawer() {
             <div className="p-4 border-t dark:border-gray-800">
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-500">Subtotal</span>
-                  <span className="font-medium">₹{getCartTotal().toFixed(2)}</span>
+                  <span className="text-gray-500">Tạm tính</span>
+                  <span className="font-medium">{formatPrice(getCartTotal())}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-500">Shipping</span>
+                  <span className="text-gray-500">Tiến hành thanh toán</span>
                   <span className="font-medium">Free</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between">
-                  <span className="font-semibold">Total</span>
-                  <span className="font-bold text-lg">₹{getCartTotal().toFixed(2)}</span>
+                  <span className="font-semibold">Tổng cộng</span>
+                  <span className="font-bold text-lg">{formatPrice(getCartTotal())}</span>
                 </div>
                 <div className="pt-2">
                   <Link href="/checkout" onClick={toggleCart}>
                     <Button className="w-full bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1">
-                      Proceed to Checkout
+                      Thanh toán ngay
                     </Button>
                   </Link>
                 </div>

@@ -34,7 +34,7 @@ export function ThemeToggle() {
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">Chuyển đổi sáng/tối</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -43,14 +43,14 @@ export function ThemeToggle() {
           className={theme === "light" ? "bg-emerald-50 text-emerald-600" : ""}
         >
           <Sun className="mr-2 h-4 w-4" />
-          Light
+          Sáng
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
           className={theme === "dark" ? "bg-emerald-950 text-emerald-400" : ""}
         >
           <Moon className="mr-2 h-4 w-4" />
-          Dark
+          Tối
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
@@ -64,7 +64,7 @@ export function ThemeToggle() {
               d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
             />
           </svg>
-          System
+          Màu của hệ thống
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

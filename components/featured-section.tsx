@@ -25,9 +25,9 @@ export function FeaturedSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Products</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Đặc sản nổi bật</h2>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Discover our handpicked selection of top-quality products.
+              Khám phá những sản phẩm đặc sản được nhiều khách hàng yêu thích và lựa chọn.
             </p>
           </div>
           <div className="flex space-x-4 border-b w-full max-w-md justify-center">
@@ -37,7 +37,7 @@ export function FeaturedSection() {
                 activeTab === "trending" ? "border-b-2 border-green-600 font-medium text-green-600" : "text-gray-500"
               }`}
             >
-              Trending
+              Phổ biến
             </button>
             <button
               onClick={() => setActiveTab("bestsellers")}
@@ -45,7 +45,7 @@ export function FeaturedSection() {
                 activeTab === "bestsellers" ? "border-b-2 border-green-600 font-medium text-green-600" : "text-gray-500"
               }`}
             >
-              Best Sellers
+              Bán chạy
             </button>
             <button
               onClick={() => setActiveTab("new")}
@@ -53,7 +53,7 @@ export function FeaturedSection() {
                 activeTab === "new" ? "border-b-2 border-green-600 font-medium text-green-600" : "text-gray-500"
               }`}
             >
-              New Arrivals
+              Mới nhất
             </button>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function FeaturedSection() {
         <div className="flex justify-center mt-12">
           <Link href="/products">
             <Button variant="outline" className="gap-1">
-              View All Products
+              Xem tất cả sản phẩm
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
