@@ -376,7 +376,7 @@ export const newsPosts: NewsPost[] = [
     ],
 
     content: `
-# Núi Bà Đen – Biểu tượng của Tây Ninh giữa miền Đông Nam Bộ
+Núi Bà Đen – Biểu tượng của Tây Ninh giữa miền Đông Nam Bộ
 
 Nhắc đến Tây Ninh, nhiều người sẽ nghĩ ngay đến bánh tráng phơi sương, muối tôm đậm đà hay những cánh đồng trải dài dưới nắng. Nhưng có một hình ảnh đã trở thành biểu tượng của vùng đất này suốt nhiều thế hệ, đó chính là Núi Bà Đen – ngọn núi cao nhất Nam Bộ và cũng là niềm tự hào của người dân Tây Ninh.
 
@@ -397,6 +397,8 @@ Trong số đó, bánh tráng Tây Ninh và muối Tây Ninh luôn là những s
 Có thể nói, Núi Bà Đen và các đặc sản địa phương đã cùng nhau tạo nên hình ảnh đặc trưng của Tây Ninh. Một bên là vẻ đẹp thiên nhiên, văn hóa và lịch sử; một bên là hương vị bình dị nhưng khó quên của vùng đất nắng gió. Sự kết hợp ấy giúp Tây Ninh trở thành điểm đến mang nhiều màu sắc riêng, không lẫn với bất kỳ nơi nào khác.
 
 Ngày nay, khi nhắc đến Tây Ninh, Núi Bà Đen vẫn luôn là điểm đến được yêu thích hàng đầu. Không chỉ là ngọn núi cao nhất Nam Bộ, nơi đây còn là biểu tượng cho sự gắn kết giữa thiên nhiên, văn hóa và con người địa phương. Với những ai muốn tìm hiểu sâu hơn về vùng đất Tây Ninh, hành trình khám phá Núi Bà Đen chính là cách tuyệt vời để cảm nhận vẻ đẹp chân thật và những giá trị đặc sắc đã làm nên sức hút của quê hương này.
+
+Ngoài Núi Bà Đen, du khách còn có thể ghé thăm Tòa Thánh Tây Ninh và thưởng thức bánh tráng phơi sương cùng muối tôm Tây Ninh.
 
     `,
   },
@@ -454,6 +456,8 @@ Trong số đó, bánh tráng Tây Ninh và muối Tây Ninh là những đặc 
 Ngày nay, Tòa Thánh Tây Ninh không chỉ là nơi sinh hoạt tôn giáo của cộng đồng tín đồ Cao Đài mà còn là điểm đến văn hóa nổi bật của tỉnh. Với kiến trúc độc đáo, không gian thanh bình và những giá trị lịch sử lâu đời, công trình này đã trở thành một phần không thể thiếu khi nhắc đến Tây Ninh.
 
 Đối với những ai muốn hiểu rõ hơn về con người, văn hóa và bản sắc của vùng đất nằm ở cửa ngõ Đông Nam Bộ này, Tòa Thánh Tây Ninh là một điểm dừng chân đáng để trải nghiệm. Nơi đây không chỉ kể câu chuyện về một tôn giáo đặc sắc của Việt Nam mà còn góp phần lưu giữ những giá trị văn hóa đã làm nên nét riêng của quê hương Tây Ninh suốt nhiều thế hệ.
+
+Nhiều du khách thường kết hợp tham quan Tòa Thánh Tây Ninh và Núi Bà Đen trong cùng một hành trình khám phá Tây Ninh.
 `,
 },
 
@@ -563,5 +567,173 @@ Ngày nay, khi nhắc đến du lịch Tây Ninh, nhiều người thường ngh
 Giữa rất nhiều đặc sản của Việt Nam, muối tôm Tây Ninh có thể không phải là món ăn cầu kỳ nhất nhưng lại là một trong những hương vị dễ gợi nhớ nhất. Chỉ cần mở nắp hũ muối, mùi thơm đặc trưng đã đủ khiến nhiều người liên tưởng đến những chuyến khám phá Tây Ninh và những món ăn quen thuộc của vùng đất này.
 
 Có lẽ chính sự giản dị ấy đã giúp muối tôm Tây Ninh được yêu mến suốt nhiều năm qua. Không chỉ là một loại gia vị, đây còn là niềm tự hào của người dân địa phương và là một phần không thể thiếu trong bản sắc ẩm thực Tây Ninh.
+`,
+},
+{
+  id: "news5",
+
+  slug: "ho-dau-tieng",
+
+  title:
+    "Hồ Dầu Tiếng – Vẻ đẹp bình yên giữa lòng Tây Ninh",
+
+  image: "/news/HoDauTieng.jpg",
+
+  date: "05/06/2026",
+
+  excerpt:
+    "Khám phá Hồ Dầu Tiếng – một trong những hồ nước nhân tạo lớn nhất Việt Nam với khung cảnh thiên nhiên yên bình và thơ mộng của Tây Ninh.",
+
+  metaDescription:
+    "Hồ Dầu Tiếng là điểm đến nổi bật của Tây Ninh với mặt hồ rộng lớn, cảnh quan thiên nhiên thanh bình và không gian lý tưởng để thư giãn, cắm trại và khám phá.",
+
+  keywords: [
+    "Hồ Dầu Tiếng",
+    "du lịch Tây Ninh",
+    "khám phá Tây Ninh",
+    "địa điểm du lịch Tây Ninh",
+    "hồ Dầu Tiếng Tây Ninh",
+    "cắm trại Hồ Dầu Tiếng",
+    "đặc sản Tây Ninh",
+    "bánh tráng Tây Ninh",
+    "muối tôm Tây Ninh"
+  ],
+
+  content: `
+Hồ Dầu Tiếng – Vẻ đẹp bình yên giữa lòng Tây Ninh
+
+Khi nhắc đến Tây Ninh, nhiều người thường nghĩ ngay đến Núi Bà Đen, Tòa Thánh Cao Đài hay những đặc sản nổi tiếng như bánh tráng phơi sương và muối tôm. Tuy nhiên, bên cạnh những địa danh quen thuộc ấy, Tây Ninh còn sở hữu một công trình vừa mang ý nghĩa kinh tế quan trọng vừa là điểm đến thu hút nhiều du khách yêu thiên nhiên – đó là Hồ Dầu Tiếng.
+
+Nằm trải rộng trên địa phận các tỉnh Tây Ninh, Bình Dương và Bình Phước, Hồ Dầu Tiếng được biết đến là một trong những hồ nước nhân tạo lớn nhất Việt Nam. Với diện tích mặt nước rộng lớn cùng khung cảnh thiên nhiên thoáng đãng, nơi đây đã trở thành điểm đến yêu thích của những người muốn tìm kiếm sự yên bình sau những ngày làm việc bận rộn.
+
+Điều khiến Hồ Dầu Tiếng trở nên đặc biệt không nằm ở những công trình hiện đại hay các hoạt động giải trí sôi động. Sức hút của nơi này đến từ vẻ đẹp giản dị và gần gũi với thiên nhiên. Mặt hồ rộng mênh mông trải dài đến tận chân trời, phản chiếu bầu trời xanh trong những ngày nắng đẹp. Vào buổi sáng sớm, làn sương nhẹ phủ trên mặt nước tạo nên khung cảnh thanh bình hiếm có. Khi chiều xuống, ánh hoàng hôn nhuộm vàng cả một vùng hồ rộng lớn, mang đến cảm giác thư thái và dễ chịu.
+
+Nhiều người ví Hồ Dầu Tiếng như một "biển hồ" giữa vùng Đông Nam Bộ. Đứng từ bờ hồ nhìn ra xa, rất khó để nhận ra điểm kết thúc của mặt nước. Chính không gian rộng lớn ấy đã tạo nên nét riêng mà không phải địa điểm du lịch nào cũng có được.
+
+Ngoài vai trò cung cấp nước cho sản xuất nông nghiệp và đời sống dân sinh, Hồ Dầu Tiếng còn góp phần tạo nên cảnh quan đặc trưng cho Tây Ninh. Những năm gần đây, nơi đây dần trở thành địa điểm được nhiều bạn trẻ yêu thích để cắm trại, chụp ảnh và tận hưởng không khí trong lành vào cuối tuần.
+
+Một trong những điểm hấp dẫn của Hồ Dầu Tiếng là sự thay đổi cảnh sắc theo từng thời điểm trong ngày. Buổi sáng mang vẻ đẹp nhẹ nhàng với làn gió mát và ánh nắng dịu. Đến giữa trưa, mặt hồ trở nên trong xanh dưới ánh mặt trời. Khi chiều buông xuống, không gian lại khoác lên mình những gam màu ấm áp, tạo nên khung cảnh rất thích hợp để thư giãn và tận hưởng thiên nhiên.
+
+Không chỉ có hồ nước rộng lớn, khu vực xung quanh Hồ Dầu Tiếng còn sở hữu nhiều bãi cỏ xanh và những khoảng đất trống thích hợp cho các hoạt động ngoài trời. Vào những ngày cuối tuần, hình ảnh các nhóm bạn trẻ dựng lều, chuẩn bị bữa ăn và cùng nhau ngắm cảnh hồ đã trở nên khá quen thuộc.
+
+Đối với du khách đến từ các tỉnh thành khác, hành trình khám phá Hồ Dầu Tiếng thường được kết hợp cùng những điểm đến nổi tiếng khác của Tây Ninh như Núi Bà Đen hoặc Tòa Thánh Cao Đài. Sau những chuyến tham quan, nhiều người cũng không quên thưởng thức các món đặc sản địa phương để cảm nhận trọn vẹn hơn nét văn hóa của vùng đất này.
+
+Nhắc đến ẩm thực Tây Ninh, bánh tráng và muối tôm luôn là những hương vị quen thuộc được nhiều du khách yêu thích. Những chiếc bánh tráng dẻo thơm kết hợp cùng vị đậm đà của muối tôm đã trở thành món quà mang đậm dấu ấn địa phương.
+
+Có thể nói, Hồ Dầu Tiếng không phải là điểm đến quá ồn ào hay náo nhiệt. Chính sự bình yên và gần gũi với thiên nhiên mới là điều khiến nơi đây để lại ấn tượng trong lòng du khách. Giữa nhịp sống ngày càng hối hả, một không gian rộng lớn với mặt nước trong xanh, gió trời mát lành và những khoảnh khắc hoàng hôn đẹp mắt trở thành trải nghiệm đáng nhớ đối với bất kỳ ai từng ghé thăm.
+
+Đối với Tây Ninh, Hồ Dầu Tiếng không chỉ là một công trình thủy lợi quan trọng mà còn là một phần của cảnh quan địa phương, góp phần tạo nên vẻ đẹp đa dạng của vùng đất này. Nếu có dịp khám phá Tây Ninh, Hồ Dầu Tiếng là một điểm dừng chân đáng để dành thời gian trải nghiệm, cảm nhận và lưu giữ những khoảnh khắc bình yên giữa thiên nhiên rộng lớn.
+`,
+},
+{
+  id: "news6",
+
+  slug: "banh-trang-tay-ninh",
+
+  title:
+    "Bánh tráng Tây Ninh – Hương vị gắn liền với đời sống và văn hóa quê hương",
+
+  image: "/news/BanhTrangTayNinh.jpg",
+
+  date: "06/06/2026",
+
+  excerpt:
+    "Khám phá bánh tráng Tây Ninh – đặc sản nổi tiếng gắn liền với đời sống, văn hóa và niềm tự hào của người dân vùng đất Tây Ninh.",
+
+  metaDescription:
+    "Bánh tráng Tây Ninh là đặc sản nổi tiếng với nhiều hương vị đa dạng, từ bánh tráng phơi sương đến bánh tráng muối, góp phần tạo nên bản sắc ẩm thực của vùng đất Tây Ninh.",
+
+  keywords: [
+    "bánh tráng Tây Ninh",
+    "đặc sản Tây Ninh",
+    "bánh tráng phơi sương",
+    "bánh tráng muối",
+    "bánh tráng sa tế",
+    "ẩm thực Tây Ninh",
+    "du lịch Tây Ninh",
+    "muối tôm Tây Ninh",
+    "khám phá Tây Ninh"
+  ],
+
+  content: `
+Bánh tráng Tây Ninh – Hương vị gắn liền với đời sống và văn hóa quê hương
+
+Nhắc đến Tây Ninh, nhiều người sẽ nghĩ ngay đến Núi Bà Đen, Tòa Thánh Cao Đài hay những cánh đồng trải dài dưới nắng. Thế nhưng, bên cạnh những địa danh nổi tiếng ấy, vùng đất này còn được biết đến như một trong những cái nôi của nghề làm bánh tráng truyền thống tại Việt Nam. Trải qua nhiều thế hệ, bánh tráng Tây Ninh không chỉ là một món ăn quen thuộc mà còn trở thành một phần trong đời sống, văn hóa và niềm tự hào của người dân địa phương.
+
+Điều đặc biệt của bánh tráng Tây Ninh nằm ở sự đa dạng. Từ những chiếc bánh tráng dùng để cuốn món ăn, bánh tráng phơi sương mềm dẻo, đến bánh tráng muối, bánh tráng sa tế hay các loại bánh tráng ăn vặt được giới trẻ yêu thích, mỗi loại đều mang một hương vị riêng nhưng vẫn giữ được nét đặc trưng của vùng đất này.
+
+Nghề làm bánh tráng tại Tây Ninh đã xuất hiện từ rất lâu và gắn liền với cuộc sống của nhiều gia đình. Trước đây, hình ảnh những chiếc bánh được phơi trên các giàn tre dưới ánh nắng mặt trời là khung cảnh quen thuộc ở nhiều làng nghề địa phương. Từ những nguyên liệu đơn giản như gạo, nước và muối, người dân đã tạo nên những chiếc bánh thơm ngon bằng kinh nghiệm được truyền từ thế hệ này sang thế hệ khác.
+
+Một trong những loại bánh nổi tiếng nhất phải kể đến là bánh tráng phơi sương. Đây được xem là đặc sản mang đậm dấu ấn của Tây Ninh. Sau khi được tráng và phơi khô, bánh sẽ được nướng sơ rồi mang ra ngoài trời vào ban đêm để hấp thụ hơi sương tự nhiên. Công đoạn tưởng chừng đơn giản ấy lại tạo nên độ mềm dẻo đặc trưng mà khó nơi nào có thể làm giống hoàn toàn.
+
+Không chỉ nổi tiếng với các loại bánh dùng trong bữa ăn, Tây Ninh còn được biết đến là nơi phát triển nhiều dòng bánh tráng ăn vặt. Những năm gần đây, bánh tráng muối, bánh tráng sa tế, bánh tráng tỏi hay bánh tráng cuộn đã trở thành món ăn quen thuộc với nhiều người trên khắp cả nước.
+
+Sự hấp dẫn của bánh tráng Tây Ninh không chỉ đến từ nguyên liệu hay cách chế biến mà còn nằm ở khả năng kết hợp linh hoạt với nhiều món ăn khác nhau. Một chiếc bánh tráng có thể dùng để cuốn thịt luộc, rau sống, hải sản hoặc các món nướng. Chỉ cần thay đổi nguyên liệu ăn kèm và nước chấm, hương vị món ăn đã trở nên hoàn toàn khác biệt.
+
+Đặc biệt, khi nhắc đến bánh tráng Tây Ninh, không thể bỏ qua sự xuất hiện của muối tôm – một đặc sản nổi tiếng khác của địa phương. Vị mặn, cay và thơm đặc trưng của muối tôm kết hợp với bánh tráng đã tạo nên nhiều món ăn được yêu thích trên khắp cả nước. Có thể nói, bánh tráng và muối tôm là hai hương vị gắn bó mật thiết, góp phần tạo nên bản sắc riêng cho ẩm thực Tây Ninh.
+
+Ngày nay, bánh tráng không còn đơn thuần là món ăn quen thuộc của người dân địa phương mà đã trở thành sản phẩm mang đậm dấu ấn văn hóa vùng miền. Nhiều du khách khi đến Tây Ninh thường lựa chọn bánh tráng làm quà bởi tính tiện lợi, dễ bảo quản và đặc biệt là hương vị khó tìm thấy ở nơi khác.
+
+Bên cạnh giá trị kinh tế, nghề làm bánh tráng còn mang ý nghĩa trong việc gìn giữ nét đẹp truyền thống. Mỗi chiếc bánh là kết quả của sự chăm chút từ khâu chọn nguyên liệu, pha bột, tráng bánh đến phơi và bảo quản. Đó không chỉ là sản phẩm của lao động mà còn là thành quả của kinh nghiệm, sự cần cù và tình yêu nghề được lưu giữ qua nhiều thế hệ.
+
+Trong hành trình khám phá Tây Ninh, có thể mỗi người sẽ lựa chọn những điểm đến khác nhau. Có người thích chinh phục Núi Bà Đen, có người muốn tìm hiểu kiến trúc độc đáo của Tòa Thánh Cao Đài hay ngắm cảnh Hồ Dầu Tiếng. Nhưng để cảm nhận trọn vẹn hương vị của vùng đất này, bánh tráng Tây Ninh chắc chắn là một trải nghiệm không nên bỏ lỡ.
+
+Bởi đôi khi, bản sắc của một vùng đất không chỉ được lưu giữ trong những công trình nổi tiếng hay danh lam thắng cảnh, mà còn nằm trong những món ăn bình dị được tạo nên từ bàn tay của những con người gắn bó với quê hương qua nhiều thế hệ. Và bánh tráng Tây Ninh chính là một trong những hương vị như thế.
+`,
+},
+{
+  id: "news7",
+
+  slug: "am-thuc-tay-ninh",
+
+  title:
+    "Khám phá ẩm thực Tây Ninh – Những hương vị làm nên nét riêng của vùng đất nắng gió",
+
+  image: "/news/AmThucTayNinh.jpg",
+
+  date: "07/06/2026",
+
+  excerpt:
+    "Khám phá ẩm thực Tây Ninh với bánh canh Trảng Bàng, bánh tráng, muối tôm, rau rừng và nhiều đặc sản mang đậm bản sắc địa phương.",
+
+  metaDescription:
+    "Ẩm thực Tây Ninh nổi tiếng với bánh canh Trảng Bàng, bánh tráng phơi sương, muối tôm và nhiều món ăn mang đậm bản sắc của vùng đất nắng gió Đông Nam Bộ.",
+
+  keywords: [
+    "ẩm thực Tây Ninh",
+    "đặc sản Tây Ninh",
+    "món ngon Tây Ninh",
+    "bánh canh Trảng Bàng",
+    "bánh tráng Tây Ninh",
+    "muối tôm Tây Ninh",
+    "rau rừng Tây Ninh",
+    "du lịch Tây Ninh",
+    "khám phá Tây Ninh"
+  ],
+
+  content: `
+Khám phá ẩm thực Tây Ninh – Những hương vị làm nên nét riêng của vùng đất nắng gió
+
+Mỗi vùng đất đều có những món ăn mang đậm dấu ấn riêng, và Tây Ninh cũng không ngoại lệ. Nằm ở cửa ngõ Đông Nam Bộ, nơi giao thoa giữa nhiều nền văn hóa và vùng miền, Tây Ninh sở hữu một nền ẩm thực mộc mạc nhưng đầy bản sắc.
+
+Đối với nhiều du khách, hành trình khám phá Tây Ninh thường bắt đầu từ những địa danh nổi tiếng như Núi Bà Đen, Tòa Thánh Cao Đài hay Hồ Dầu Tiếng. Thế nhưng sau những chuyến tham quan ấy, điều khiến nhiều người nhớ mãi lại chính là những món ăn đặc trưng mà khó tìm thấy ở nơi khác.
+
+Một trong những món ăn nổi tiếng nhất khi nhắc đến Tây Ninh là bánh canh Trảng Bàng. Món ăn này gây ấn tượng bởi sợi bánh canh mềm dai, nước dùng thanh ngọt và cách thưởng thức cùng nhiều loại rau tươi đặc trưng của địa phương.
+
+Bên cạnh bánh canh, rau rừng cũng là một nét đặc sắc trong văn hóa ẩm thực Tây Ninh. Khi ăn kèm với thịt luộc, bánh tráng và nước chấm, các loại rau này tạo nên một trải nghiệm ẩm thực độc đáo mà nhiều du khách muốn thử ít nhất một lần.
+
+Nhắc đến đặc sản Tây Ninh thì không thể bỏ qua bánh tráng – món ăn đã trở thành niềm tự hào của người dân địa phương. Từ bánh tráng phơi sương mềm dẻo đến các loại bánh tráng ăn vặt hiện đại, mỗi loại đều mang một nét hấp dẫn riêng.
+
+Nếu bánh tráng là linh hồn của nhiều món ăn thì muối tôm chính là hương vị tạo nên dấu ấn riêng cho ẩm thực Tây Ninh. Được chế biến từ muối, tôm khô, ớt và nhiều nguyên liệu khác, muối tôm mang vị mặn, cay và thơm đặc trưng.
+
+Điều thú vị là nhiều món ăn nổi tiếng của Tây Ninh đều xuất phát từ những nguyên liệu rất bình dị. Không cần những nguyên liệu đắt đỏ hay cách chế biến quá phức tạp, người dân địa phương đã biết tận dụng những sản vật sẵn có để tạo nên những hương vị mang đậm bản sắc riêng.
+
+Ngày nay, khi nhắc đến Tây Ninh, nhiều người không chỉ nhớ đến các địa điểm du lịch mà còn nhớ đến những món ăn đã từng thưởng thức trong chuyến đi. Một phần bánh tráng phơi sương cuốn rau rừng, một chén bánh canh nóng hổi hay vài miếng trái cây chấm muối tôm đôi khi lại là những ký ức khiến du khách muốn quay trở lại vùng đất này thêm nhiều lần nữa.
+
+Ẩm thực Tây Ninh không đơn thuần là câu chuyện về món ăn. Đó còn là câu chuyện về con người, về những làng nghề truyền thống, về sự sáng tạo trong cách chế biến và gìn giữ hương vị quê hương qua nhiều thế hệ.
+
+Trong hành trình khám phá Tây Ninh, những địa danh nổi tiếng sẽ giúp du khách hiểu hơn về thiên nhiên và văn hóa của vùng đất này. Còn những món ăn đặc sản sẽ là cách để cảm nhận Tây Ninh bằng tất cả các giác quan.
+
+Và có lẽ đó cũng chính là điều làm nên sức hấp dẫn của ẩm thực Tây Ninh – mộc mạc, gần gũi nhưng luôn khiến người ta muốn tìm lại khi có dịp ghé thăm vùng đất đầy nắng gió này.
 `,
 }]

@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950 dark:to-teal-950 relative overflow-hidden">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-orange-50 via-amber-50 to-red-50 dark:from-emerald-950 dark:to-teal-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container px-4 md:px-6 relative">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4 animate-in slide-in-from-left duration-700">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-emerald-800 dark:text-emerald-200">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-red-700 dark:text-emerald-200">
                   Đặc Sản Bánh Tráng Tây Ninh Chính Gốc
                 </h1>
                 <p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
@@ -26,7 +26,7 @@ export default function Home() {
                 <Link href="/products">
                   <Button
                     size="lg"
-                    className="bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 transform hover:-translate-y-1"
+                    className="bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:-translate-y-1"
                   >
                     Mua ngay
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -62,7 +62,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-emerald-800 dark:text-emerald-200">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-red-700 dark:text-emerald-200">
                 Khám Phá Tây Ninh Qua Từng Hương Vị
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-emerald-800 dark:text-emerald-200">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-red-700 dark:text-emerald-200">
                 Khám Phá Tây Ninh
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -158,32 +158,32 @@ export default function Home() {
             <CategoryCard
               name="Núi Bà Đen"
               image="NuiBaDen.jpg"
-              href="/products/fruits-vegetables"
+              href="/news/nui-ba-den"
             />
             <CategoryCard
               name="Tòa Thánh Tây Ninh"
               image="ToaThanhTayNinh.jpg"
-              href="/products/dairy-paneer"
+              href="/news/toa-thanh-cao-dai"
             />
             <CategoryCard
               name="Hồ Dầu Tiếng"
               image="HoDauTieng.jpg"
-              href="/products/pulses-grains"
+              href="/news/ho-dau-tieng"
             />
             <CategoryCard
               name="Bánh Tráng Tây Ninh"
               image="BanhTrangTayNinh.jpg"
-              href="/products/bakery"
+              href="/news/banh-trang-tay-ninh"
             />
             <CategoryCard
               name="Muối Tôm Tây Ninh"
               image="MuoiTomTayNinh.jpg"
-              href="/products/beverages"
+              href="/news/muoi-tom-tay-ninh"
             />
             <CategoryCard
               name="Ẩm Thực Tây Ninh"
               image="AmThucTayNinh.jpg"
-              href="/products/snacks"
+              href="/news/am-thuc-tay-ninh"
             />
           </div>
         </div>

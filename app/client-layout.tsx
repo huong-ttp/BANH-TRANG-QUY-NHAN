@@ -40,11 +40,11 @@ export default function ClientLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <div className="flex min-h-screen flex-col bg-gradient-to-br from-emerald-50 to-white dark:from-gray-950 dark:to-gray-900">
+          <div className="flex min-h-screen flex-col bg-gradient-to-br from-orange-50 via-amber-50 to-white dark:from-gray-950 dark:to-gray-900">
             <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80 dark:border-gray-800">
               <div className="container flex h-16 items-center px-4 md:px-6">
                 <Link href="/" className="mr-6 flex items-center space-x-2">
-                  <span className="text-xl font-bold text-emerald-600 dark:text-emerald-400 transition-all duration-300 hover:scale-105">
+                 <span className="text-xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
                     Bánh Tráng Quý Nhân
                   </span>
                 </Link>
@@ -62,7 +62,7 @@ export default function ClientLayout({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                        className="hover:bg-orange-100 dark:hover:bg-orange-950 transition-colors duration-200"
                       >
                         Sản phẩm
                       </Button>
@@ -71,7 +71,7 @@ export default function ClientLayout({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                        className="hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
                       >
                         Khám phá Tây Ninh
                       </Button>
@@ -80,7 +80,7 @@ export default function ClientLayout({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                        className="hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
                       >
                         Giới thiệu
                       </Button>
@@ -89,7 +89,7 @@ export default function ClientLayout({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                        className="hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
                       >
                         Liên hệ
                       </Button>
@@ -102,7 +102,7 @@ export default function ClientLayout({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="mr-1 hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                    className="mr-1 hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
                   >
                     <User className="h-5 w-5" />
                     <span className="sr-only">Tài khoản</span>
@@ -110,7 +110,7 @@ export default function ClientLayout({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="md:hidden hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+                    className="md:hidden hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
                   >
                     <Menu className="h-5 w-5" />
                     <span className="sr-only">Menu</span>
@@ -128,25 +128,25 @@ export default function ClientLayout({
                     <h3 className="text-lg font-medium">Sản phẩm</h3>
                     <Link
                       href="/products"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Tất cả sản phẩm
                     </Link>
                     <Link
                       href="/products/fruits-vegetables"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Bánh Tráng
                     </Link>
                     <Link
                       href="/products/dairy-paneer"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Muối chấm
                     </Link>
                     <Link
                       href="/products/pulses-grains"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Đồ ăn vặt
                     </Link>
@@ -155,25 +155,25 @@ export default function ClientLayout({
                     <h3 className="text-lg font-medium">Hỗ trợ khách hàng</h3>
                     <Link
                       href="/dashboard"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Hướng dẫn mua hàng
                     </Link>
                     <Link
                       href="/dashboard?tab=orders"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Chính sách giao hàng
                     </Link>
                     <Link
                       href="/dashboard?tab=wallet"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Chính sách đổi trả
                     </Link>
                     <Link
                       href="/dashboard?tab=rewards"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Liên hệ
                     </Link>
@@ -182,25 +182,25 @@ export default function ClientLayout({
                     <h3 className="text-lg font-medium">Về chúng tôi</h3>
                     <Link
                       href="/about"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Giới thiệu
                     </Link>
                     <Link
                       href="/careers"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Tin tức
                     </Link>
                     <Link
                       href="/blog"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Chính sách
                     </Link>
                     <Link
                       href="/contact"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Liên hệ
                     </Link>
@@ -209,25 +209,25 @@ export default function ClientLayout({
                     <h3 className="text-lg font-medium">Các trang liên hệ</h3>
                     <Link
                       href="/terms"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Facebook
                     </Link>
                     <Link
                       href="/privacy"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Tiktok
                     </Link>
                     <Link
                       href="/shipping"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Shopee
                     </Link>
                     <Link
                       href="/refund"
-                      className="text-sm text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Zalo
                     </Link>
@@ -265,7 +265,7 @@ function ClientCart() {
     <Button
       variant="ghost"
       size="icon"
-      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
       onClick={toggleCart}
     >
     </Button>
@@ -280,7 +280,7 @@ function ClientWishlist() {
     <Button
       variant="ghost"
       size="icon"
-      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-emerald-950 transition-colors duration-200"
+      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
       onClick={toggleWishlist}
     >
       <Heart className="h-5 w-5" />

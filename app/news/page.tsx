@@ -8,27 +8,34 @@ export default function NewsPage() {
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
 
-      {/* Banner */}
-      <div className="text-center mb-12">
+      {/* HERO */}
+      <section className="relative overflow-hidden rounded-3xl mb-10">
+        <img
+          src="/banner-about.jpg"
+          alt="Đặc sản Tây Ninh"
+          className="h-[400px] w-full object-cover"
+        />
 
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Khám Phá Tây Ninh
-        </h1>
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white px-6">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              Khám Phá Tây Ninh
+            </h1>
 
-        <p className="text-gray-500 max-w-3xl mx-auto text-lg">
-          Nơi chia sẻ những câu chuyện về văn hóa, du lịch, con người
-          và các đặc sản nổi tiếng của quê hương Tây Ninh.
-        </p>
+            <p className="mt-4 max-w-2xl mx-auto text-lg">
+              Nơi chia sẻ những câu chuyện về văn hóa, du lịch, con người
+              và các đặc sản nổi tiếng của quê hương Tây Ninh.
+            </p>
 
-        <div className="mt-6 text-sm text-gray-500">
-          Hiện có {newsPosts.length} bài viết
+            <div className="mt-6 text-sm text-gray-200">
+              Hiện có {newsPosts.length} bài viết
+            </div>
+          </div>
         </div>
-
-      </div>
+      </section>
 
       {/* Danh sách bài viết */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
         {newsPosts.map((post) => (
           <Link
             key={post.id}
@@ -43,7 +50,6 @@ export default function NewsPage() {
               />
 
               <CardContent className="p-5">
-
                 <p className="text-sm text-gray-500 mb-2">
                   {post.date}
                 </p>
@@ -60,13 +66,11 @@ export default function NewsPage() {
                   Đọc tiếp
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </div>
-
               </CardContent>
 
             </Card>
           </Link>
         ))}
-
       </div>
 
     </div>
