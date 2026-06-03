@@ -83,7 +83,7 @@ export default function AboutPage() {
 <Card>
   <CardHeader>
     <CardTitle className="text-3xl">
-      Câu Chuyện Của Chúng Tôi
+      Câu Chuyện Của Quý Nhân
     </CardTitle>
 
     <CardDescription>

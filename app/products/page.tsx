@@ -1,4 +1,6 @@
-import { Suspense } from "react"
+"use client"
+
+import { useState } from "react"
 import { Filter, SlidersHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -8,6 +10,19 @@ import { ProductsFilter } from "@/components/products-filter"
 import { featuredProducts } from "@/lib/data"
 
 export default function ProductsPage() {
+  const [searchTerm, setSearchTerm] = useState("")
+const [selectedCategory, setSelectedCategory] = useState("all")
+
+const filteredProducts = featuredProducts.filter((product) => {
+  const matchSearch =
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+
+  const matchCategory =
+    selectedCategory === "all" ||
+    product.category === selectedCategory
+
+  return matchSearch && matchCategory
+})
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <div className="flex flex-col gap-8">
@@ -22,7 +37,9 @@ export default function ProductsPage() {
           <h1 className="text-3xl font-bold">Tất Cả Sản Phẩm Bánh Tráng Quý Nhân</h1>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <div className="relative w-full sm:w-auto sm:flex-1 max-w-md">
-              <Input placeholder="Tìm kiếm sản phẩm..." className="pl-10" />
+              <Input placeholder="Tìm kiếm sản phẩm..." className="pl-10"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)} />
               <div className="absolute left-3 top-3 text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,23 +70,46 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
-          <div className="hidden md:block">
-            <ProductsFilter />
-          </div>
-          <div>
-            <p className="text-gray-500 mb-4">
-            Hiển thị {featuredProducts.length} sản phẩm
-            </p>
-            <Suspense fallback={<div>Đang tải sản phẩm...</div>}>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                {featuredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </Suspense>
-          </div>
-        </div>
+       <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
+
+  {/* Sidebar */}
+  <div className="hidden md:block">
+    <ProductsFilter
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory}
+    />
+  </div>
+
+  {/* Products */}
+  <div>
+
+    <p className="text-gray-500 mb-4">
+      Hiển thị {filteredProducts.length} sản phẩm
+    </p>
+
+    {filteredProducts.length > 0 ? (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        {filteredProducts.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
+    ) : (
+      <div className="text-center py-20">
+        <h3 className="text-xl font-semibold">
+          Không tìm thấy sản phẩm
+        </h3>
+
+        <p className="text-gray-500 mt-2">
+          Hãy thử từ khóa khác.
+        </p>
+      </div>
+    )}
+
+  </div>
+</div>
       </div>
     </div>
   )

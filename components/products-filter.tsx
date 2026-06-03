@@ -9,7 +9,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { categories } from "@/lib/data"
 
-export function ProductsFilter() {
+interface ProductsFilterProps {
+  selectedCategory: string
+  setSelectedCategory: (category: string) => void
+}
+export function ProductsFilter({
+  selectedCategory,
+  setSelectedCategory,
+}: ProductsFilterProps) {
   const [priceRange, setPriceRange] = useState([0, 50])
 
   return (
@@ -21,18 +28,47 @@ export function ProductsFilter() {
             <AccordionTrigger>Danh mục</AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 pt-2">
-                {categories.map((category) => (
-                  <div key={category.id} className="flex items-center space-x-2">
-                    <Checkbox id={`category-${category.id}`} />
-                    <Label htmlFor={`category-${category.id}`}>{category.name}</Label>
-                  </div>
-                ))}
+              <div className="space-y-3">
+
+            
+
+            <div className="space-y-3 pt-2">
+
+          <div className="flex items-center space-x-2">
+            <Checkbox
+              checked={selectedCategory === "all"}
+              onCheckedChange={() =>
+                setSelectedCategory("all")
+              }
+            />
+            <Label>Tất cả</Label>
+          </div>
+
+          {categories.map((category) => (
+            <div
+              key={category.id}
+              className="flex items-center space-x-2"
+            >
+              <Checkbox
+                checked={
+                  selectedCategory === category.slug
+                }
+                onCheckedChange={() =>
+                  setSelectedCategory(category.slug)
+                }
+              />
+
+              <Label>{category.name}</Label>
+            </div>
+          ))}
+        </div>
+          </div>
               </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="price">
             <AccordionTrigger>Khoảng giá</AccordionTrigger>
-            <AccordionContent>
+            
               <div className="space-y-4 pt-2">
                <Slider
                 defaultValue={[0, 500000]}
@@ -46,26 +82,7 @@ export function ProductsFilter() {
                   <span>{priceRange[1].toLocaleString("vi-VN")}đ</span>
                 </div>
               </div>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="discount">
-            <AccordionTrigger>Loại sản phẩm</AccordionTrigger>
-            <AccordionContent>
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="discount-10" />
-                  <Label htmlFor="discount-10">Bánh tráng</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="discount-20" />
-                  <Label htmlFor="discount-20">Muối</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="discount-30" />
-                  <Label htmlFor="discount-30">Các đặc sản khác</Label>
-                </div>
-              </div>
-            </AccordionContent>
+            
           </AccordionItem>
         </Accordion>
       </div>

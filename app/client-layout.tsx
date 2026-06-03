@@ -123,9 +123,9 @@ export default function ClientLayout({
             </main>
             <footer className="border-t bg-white dark:bg-gray-950 dark:border-gray-800">
               <div className="container flex flex-col gap-6 py-8 md:px-6 md:py-12">
-                <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-medium">Sản phẩm</h3>
+                    <h3 className="text-lg font-semibold text-red-700 mb-3">Sản phẩm</h3>
                     <Link
                       href="/products"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
@@ -133,53 +133,28 @@ export default function ClientLayout({
                       Tất cả sản phẩm
                     </Link>
                     <Link
-                      href="/products/fruits-vegetables"
+                      href="/products"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Bánh Tráng
                     </Link>
                     <Link
-                      href="/products/dairy-paneer"
+                      href="/products"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Muối chấm
                     </Link>
                     <Link
-                      href="/products/pulses-grains"
+                      href="/products"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Đồ ăn vặt
                     </Link>
                   </div>
+                  
+            
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-medium">Hỗ trợ khách hàng</h3>
-                    <Link
-                      href="/dashboard"
-                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
-                    >
-                      Hướng dẫn mua hàng
-                    </Link>
-                    <Link
-                      href="/dashboard?tab=orders"
-                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
-                    >
-                      Chính sách giao hàng
-                    </Link>
-                    <Link
-                      href="/dashboard?tab=wallet"
-                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
-                    >
-                      Chính sách đổi trả
-                    </Link>
-                    <Link
-                      href="/dashboard?tab=rewards"
-                      className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
-                    >
-                      Liên hệ
-                    </Link>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-medium">Về chúng tôi</h3>
+                    <h3 className="text-lg font-semibold text-red-700 mb-3">Về chúng tôi</h3>
                     <Link
                       href="/about"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
@@ -187,13 +162,13 @@ export default function ClientLayout({
                       Giới thiệu
                     </Link>
                     <Link
-                      href="/careers"
+                      href="/news"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
-                      Tin tức
+                      Khám Phá Tây Ninh
                     </Link>
                     <Link
-                      href="/blog"
+                      href="/contact"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Chính sách
@@ -206,7 +181,7 @@ export default function ClientLayout({
                     </Link>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-medium">Các trang liên hệ</h3>
+                    <h3 className="text-lg font-semibold text-red-700 mb-3">Kết nối với Quý Nhân</h3>
                     <Link
                       href="/terms"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"

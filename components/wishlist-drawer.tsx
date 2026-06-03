@@ -69,23 +69,7 @@ export function WishlistDrawer() {
                         </h4>
                       </Link>
                       <p className="text-sm text-gray-500">{formatPrice(item.product.price)} / {item.product.unit}</p>
-                      <div className="flex items-center gap-2 mt-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="text-xs h-8 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200"
-                          onClick={() => {
-                            addToCart(item.product)
-                            toast({
-                              title: "Đã thêm vào giỏ hàng",
-                              description: `${item.product.name} đã được thêm vào giỏ hàng.`,
-                            })
-                          }}
-                        >
-                          <ShoppingCart className="h-3 w-3 mr-1" />
-                          Thêm vào giỏ hàng
-                        </Button>
-                      </div>
+                      
                     </div>
                     <div className="flex flex-col items-end justify-between">
                     <span className="font-medium">
