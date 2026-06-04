@@ -12,7 +12,11 @@ import {
 
 import { featuredProducts } from "@/lib/data"
 import { formatPrice } from "@/lib/utils"
-
+export const metadata = {
+  title: "Giới thiệu | Bánh Tráng Quý Nhân",
+  description:
+    "Câu chuyện hình thành và phát triển của cơ sở Bánh Tráng Quý Nhân tại Tây Ninh.",
+}
 export default function AboutPage() {
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">

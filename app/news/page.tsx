@@ -3,7 +3,11 @@ import { ArrowRight } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { newsPosts } from "@/lib/data"
-
+export const metadata = {
+  title: "Khám phá Tây Ninh | Bánh Tráng Quý Nhân",
+  description:
+    "Tìm hiểu văn hóa, du lịch, ẩm thực và đặc sản nổi tiếng của Tây Ninh.",
+}
 export default function NewsPage() {
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
@@ -50,9 +54,12 @@ export default function NewsPage() {
               />
 
               <CardContent className="p-5">
-                <p className="text-sm text-gray-500 mb-2">
-                  {post.date}
-                </p>
+                <time
+                dateTime="2025-08-01"
+                className="text-orange-600 font-medium mb-3 block"
+              >
+                {post.date}
+              </time>
 
                 <h2 className="font-bold text-xl mb-3 line-clamp-2">
                   {post.title}

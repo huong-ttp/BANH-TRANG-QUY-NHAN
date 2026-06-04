@@ -4,7 +4,7 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import Link from "next/link"
 import { Heart, Menu, Search, User } from "lucide-react"
-import { Suspense, useEffect } from "react"
+import { Suspense, useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,14 +14,16 @@ import { WishlistDrawer } from "@/components/wishlist-drawer"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 import { useStore } from "@/lib/store"
-
+import { Sheet, SheetContent, SheetTrigger, } from "@/components/ui/sheet"
 const inter = Inter({ subsets: ["latin"] })
 
 export default function ClientLayout({
+  
   children,
 }: {
   children: React.ReactNode
 }) {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   // Force dark mode to be applied immediately on client side
   useEffect(() => {
     // Check if dark mode is stored in localStorage
@@ -43,21 +45,30 @@ export default function ClientLayout({
           <div className="flex min-h-screen flex-col bg-gradient-to-br from-orange-50 via-amber-50 to-white dark:from-gray-950 dark:to-gray-900">
             <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80 dark:border-gray-800">
               <div className="container flex h-16 items-center px-4 md:px-6">
-                <Link href="/" className="mr-6 flex items-center space-x-2">
-                 <span className="text-xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-                    Bánh Tráng Quý Nhân
-                  </span>
-                </Link>
+                <Link
+  href="/"
+  className="flex items-center max-w-[180px] md:max-w-none"
+>
+  <span
+    className="
+      text-base
+      md:text-xl
+      font-bold
+      bg-gradient-to-r
+      from-red-600
+      to-orange-500
+      bg-clip-text
+      text-transparent
+      leading-tight
+    "
+  >
+    Bánh Tráng Quý Nhân
+  </span>
+</Link>
                 <div className="hidden md:flex md:flex-1">
-                  <div className="relative w-full max-w-sm">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      type="search"
-                      placeholder="Tìm bánh tráng, muối tôm..."
-                      className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-full"
-                    />
-                  </div>
+                  
                   <nav className="ml-auto flex items-center space-x-1">
+                    
                     <Link href="/products">
                       <Button
                         variant="ghost"
@@ -96,7 +107,7 @@ export default function ClientLayout({
                     </Link>
                   </nav>
                 </div>
-                <div className="flex items-center md:ml-auto">
+                <div className="flex items-center gap-1 md:ml-auto">
                   <ThemeToggle />
                   <WishlistButton />
                   <Button
@@ -107,14 +118,55 @@ export default function ClientLayout({
                     <User className="h-5 w-5" />
                     <span className="sr-only">Tài khoản</span>
                   </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="md:hidden hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
-                  >
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Menu</span>
-                  </Button>
+                 <Sheet
+  open={mobileMenuOpen}
+  onOpenChange={setMobileMenuOpen}
+>
+  <SheetTrigger asChild>
+    <Button
+      variant="ghost"
+      size="icon"
+      className="md:hidden"
+    >
+      <Menu className="h-5 w-5" />
+      <span className="sr-only">Menu</span>
+    </Button>
+  </SheetTrigger>
+
+  <SheetContent side="right">
+    <div className="flex flex-col gap-5 mt-8">
+
+      <Link
+        href="/products"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Sản phẩm
+      </Link>
+
+      <Link
+        href="/news"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Khám phá Tây Ninh
+      </Link>
+
+      <Link
+        href="/about"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Giới thiệu
+      </Link>
+
+      <Link
+        href="/contact"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Liên hệ
+      </Link>
+
+    </div>
+  </SheetContent>
+</Sheet>
                 </div>
               </div>
             </header>

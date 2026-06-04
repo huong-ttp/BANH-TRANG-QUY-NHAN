@@ -4,7 +4,12 @@ import { UtensilsCrossed, Package, Landmark, Mountain, HeartHandshake, ShoppingB
 import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
 import { FeaturedSection } from "@/components/featured-section"
-
+import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Bánh Tráng Quý Nhân | Đặc sản Tây Ninh chính gốc",
+  description:
+    "Bánh tráng Tây Ninh, muối chấm và đặc sản địa phương chính gốc từ Bánh Tráng Quý Nhân.",
+}
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,7 +27,7 @@ export default function Home() {
                   Bánh tráng, muối tôm và đặc sản Tây Ninh giao tận nơi trên toàn quốc.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <div className="flex flex-row flex-wrap justify-center gap-3">
                 <Link href="/products">
                   <Button
                     size="lg"
@@ -221,7 +226,7 @@ export default function Home() {
                   variant="outline"
                   className="text-red-600 border-white hover:bg-red-700 transition-colors duration-200"
                 >
-                  Câu Chuyện Của Quý Nhân
+                  Về Quý Nhân
                 </Button>
               </Link>
             </div>

@@ -9,24 +9,52 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button"
 import { categories } from "@/lib/data"
 
+
 interface ProductsFilterProps {
   selectedCategory: string
-  setSelectedCategory: (category: string) => void
+  priceRange: number[]
+  setPriceRange: (value: number[]) => void
+  setSelectedCategory: React.Dispatch<
+    React.SetStateAction<string>
+  >
 }
 export function ProductsFilter({
   selectedCategory,
   setSelectedCategory,
+  priceRange,
+  setPriceRange,
 }: ProductsFilterProps) {
-  const [priceRange, setPriceRange] = useState([0, 50])
+  
 
   return (
-    <div className="space-y-6">
+  <div className="
+    space-y-6
+    bg-white
+    dark:bg-gray-900
+    border
+    border-orange-100
+    dark:border-gray-800
+    rounded-2xl
+    p-6
+    shadow-md
+    sticky
+    top-24
+  ">
       <div>
-        <h3 className="font-medium mb-4">Bộ lọc sản phẩm</h3>
-        <Accordion type="multiple" defaultValue={["categories", "price"]}>
+        <h3 className="
+        flex
+        items-center
+        gap-2
+        text-lg
+        font-bold
+        text-orange-600
+        border-b
+        pb-3
+      ">Bộ lọc sản phẩm</h3>
+        <Accordion type="multiple" defaultValue={["categories", "price"]} className="space-y-4">
           <AccordionItem value="categories">
             <AccordionTrigger>Danh mục</AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="bg-orange-200 rounded-xl p-4">
               <div className="space-y-3 pt-2">
               <div className="space-y-3">
 
@@ -41,7 +69,7 @@ export function ProductsFilter({
                 setSelectedCategory("all")
               }
             />
-            <Label>Tất cả</Label>
+            <Label className="text-gray-700 dark:text-black-200">Tất cả</Label>
           </div>
 
           {categories.map((category) => (
@@ -58,7 +86,7 @@ export function ProductsFilter({
                 }
               />
 
-              <Label>{category.name}</Label>
+              <Label className="text-gray-700 dark:text-black-200"> {category.name}</Label>
             </div>
           ))}
         </div>
@@ -86,7 +114,16 @@ export function ProductsFilter({
           </AccordionItem>
         </Accordion>
       </div>
-      <Button className="w-full bg-green-600 hover:bg-green-700">Áp dụng bộ lọc</Button>
-    </div>
+      <Button className="
+      w-full
+      bg-orange-500
+      hover:bg-orange-600
+      text-white
+      font-semibold
+      h-12
+      rounded-xl
+      shadow-md
+    ">Áp dụng bộ lọc</Button>
+      </div>
   )
 }

@@ -1,3 +1,5 @@
+"use client"
+import { useState } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, Filter, SlidersHorizontal } from "lucide-react"
@@ -7,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { ProductCard } from "@/components/product-card"
 import { ProductsFilter } from "@/components/products-filter"
 import { categories, featuredProducts } from "@/lib/data"
-
+import {Select, SelectContent, SelectItem, SelectTrigger,SelectValue,} from "@/components/ui/select"
 interface CategoryPageProps {
   params: {
     category: string
@@ -15,6 +17,7 @@ interface CategoryPageProps {
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
+  
   // Find the category by slug
   const category = categories.find((cat) => cat.slug === params.category)
 
@@ -22,9 +25,28 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   if (!category) {
     notFound()
   }
-
+  const [sortBy, setSortBy] = useState("default")
   // Filter products by category
-  const filteredProducts = featuredProducts.filter((product) => product.category === params.category)
+  const filteredProducts = featuredProducts
+  .filter(
+    (product) =>
+      product.category === params.category
+  )
+  .sort((a, b) => {
+    switch (sortBy) {
+      case "price-low":
+        return a.price - b.price
+
+      case "price-high":
+        return b.price - a.price
+
+      case "name":
+        return a.name.localeCompare(b.name)
+
+      default:
+        return 0
+    }
+  })
 
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
@@ -63,17 +85,39 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <Filter className="h-4 w-4 mr-2" />
                 Lọc
               </Button>
-              <Button variant="outline" size="sm">
-                <SlidersHorizontal className="h-4 w-4 mr-2" />
-                Sắp xếp (sắp cập nhật)
-              </Button>
+              <Select
+  value={sortBy}
+  onValueChange={setSortBy}
+>
+  <SelectTrigger className="w-[200px]">
+    <SelectValue placeholder="Sắp xếp" />
+  </SelectTrigger>
+
+  <SelectContent>
+    <SelectItem value="default">
+      Mặc định
+    </SelectItem>
+
+    <SelectItem value="price-low">
+      Giá thấp → cao
+    </SelectItem>
+
+    <SelectItem value="price-high">
+      Giá cao → thấp
+    </SelectItem>
+
+    <SelectItem value="name">
+      Tên A → Z
+    </SelectItem>
+  </SelectContent>
+</Select>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
-          <div className="hidden md:block">
-            <ProductsFilter />
+          <div className="block md:block">
+          
           </div>
           <div>
             {filteredProducts.length > 0 ? (

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
 import { newsPosts } from "@/lib/data"
+import Image from "next/image"
 
 interface NewsDetailPageProps {
   params: {
@@ -84,9 +85,12 @@ export default function NewsDetailPage({
   {/* Header */}
   <div className="max-w-4xl mx-auto mb-10">
 
-    <p className="text-orange-600 font-medium mb-3">
-      {post.date}
-    </p>
+    <time
+    dateTime="2025-08-01"
+    className="text-orange-600 font-medium mb-3 block"
+  >
+    {post.date}
+  </time>
 
     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
       {post.title}
@@ -139,11 +143,13 @@ export default function NewsDetailPage({
         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-xl transition-all duration-300">
 
           <div className="overflow-hidden">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
-            />
+            <Image
+            src={post.image}
+            alt={post.title}
+            width={1200}
+            height={630}
+            className="w-full h-56 object-cover"
+          />
           </div>
 
           <div className="p-5">
@@ -167,7 +173,22 @@ export default function NewsDetailPage({
     ))}
 
   </div>
-
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      image: [post.image],
+      datePublished: post.date,
+      author: {
+        "@type": "Organization",
+        name: "Bánh Tráng Quý Nhân",
+      },
+    }),
+  }}
+/>
 </div>
 
     </div>
