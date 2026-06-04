@@ -6,31 +6,28 @@ import { newsPosts } from "@/lib/data"
 import Image from "next/image"
 
 interface NewsDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
+  const { slug } = await params
 
   const post = newsPosts.find(
-    (item) => item.slug === params.slug
+    (item) => item.slug === slug
   )
 
-  if (!post) {
-    return {}
-  }
+  if (!post) return {}
 
   return {
     title: post.title,
-
     description: post.metaDescription,
-
     keywords: post.keywords,
-
     openGraph: {
       title: post.title,
       description: post.metaDescription,
@@ -38,12 +35,14 @@ export async function generateMetadata({
     },
   }
 }
-export default function NewsDetailPage({
+
+export default async function NewsDetailPage({
   params,
 }: NewsDetailPageProps) {
+  const { slug } = await params
 
   const post = newsPosts.find(
-    (item) => item.slug === params.slug
+    (item) => item.slug === slug
   )
 
   if (!post) {

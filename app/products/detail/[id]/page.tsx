@@ -10,14 +10,22 @@ import { featuredProducts } from "@/lib/data"
 import { ProductCard } from "@/components/product-card"
 
 
+
+
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = featuredProducts.find((p) => p.id === params.id)
+export default async function ProductPage({
+  params,
+}: ProductPageProps) {
+  const { id } = await params
+
+  const product = featuredProducts.find(
+    (p) => p.id === id
+  )
 
   if (!product) {
     notFound()
