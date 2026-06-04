@@ -736,4 +736,433 @@ Trong hành trình khám phá Tây Ninh, những địa danh nổi tiếng sẽ 
 
 Và có lẽ đó cũng chính là điều làm nên sức hấp dẫn của ẩm thực Tây Ninh – mộc mạc, gần gũi nhưng luôn khiến người ta muốn tìm lại khi có dịp ghé thăm vùng đất đầy nắng gió này.
 `,
+},
+{
+  id: "news8",
+
+  slug: "top-5-loai-banh-trang-tay-ninh-duoc-yeu-thich-nhat",
+
+  title:
+    "Top 5 loại bánh tráng Tây Ninh được yêu thích nhất",
+
+  image: "/news/Top5BanhTrangTayNinh.jpg",
+
+  date: "08/06/2026",
+
+  excerpt:
+    "Khám phá top 5 loại bánh tráng Tây Ninh được yêu thích nhất, từ bánh tráng phơi sương truyền thống đến các món ăn vặt nổi tiếng gắn liền với vùng đất Tây Ninh.",
+
+  metaDescription:
+    "Khám phá top 5 loại bánh tráng Tây Ninh được yêu thích nhất. Tìm hiểu hương vị đặc sản nổi tiếng gắn liền với văn hóa và con người Tây Ninh.",
+
+  keywords: [
+    "bánh tráng Tây Ninh",
+    "đặc sản Tây Ninh",
+    "bánh tráng phơi sương",
+    "bánh tráng muối ớt",
+    "bánh tráng trộn Tây Ninh",
+    "ẩm thực Tây Ninh",
+    "khám phá Tây Ninh",
+    "du lịch Tây Ninh",
+    "bánh tráng dẻo",
+    "bánh tráng cuốn"
+  ],
+
+  content: `
+Top 5 loại bánh tráng Tây Ninh được yêu thích nhất
+
+Nhắc đến Tây Ninh, nhiều người sẽ nghĩ ngay đến Núi Bà Đen hùng vĩ hay những cánh đồng xanh trải dài dưới nắng. Thế nhưng, với những ai yêu thích ẩm thực, vùng đất này còn nổi tiếng bởi một đặc sản đã trở thành niềm tự hào của người dân địa phương – bánh tráng Tây Ninh.
+
+Từ những chiếc bánh tráng làm thủ công ở Trảng Bàng đến các biến tấu sáng tạo phục vụ nhu cầu ăn vặt hiện đại, bánh tráng Tây Ninh đã chinh phục thực khách khắp mọi miền đất nước. Không chỉ đơn thuần là một món ăn, bánh tráng còn chứa đựng câu chuyện về làng nghề truyền thống, sự khéo léo của người dân và nét văn hóa đặc trưng của vùng đất đầy nắng gió này.
+
+Nếu có dịp ghé thăm Tây Ninh hoặc đang tìm kiếm những món đặc sản đậm chất quê hương, dưới đây là 5 loại bánh tráng được yêu thích nhất mà bất kỳ tín đồ ẩm thực nào cũng nên thử.
+
+1. Bánh tráng phơi sương Trảng Bàng – Tinh hoa của làng nghề truyền thống
+
+Đứng đầu danh sách chắc chắn là bánh tráng phơi sương Trảng Bàng, món ăn đã góp phần đưa tên tuổi Tây Ninh đến gần hơn với du khách trong và ngoài nước.
+
+Điểm đặc biệt của loại bánh này nằm ở quy trình chế biến công phu. Sau khi được tráng và phơi khô dưới nắng, bánh sẽ được nướng sơ rồi tiếp tục mang ra phơi trong làn sương đêm. Chính công đoạn tưởng chừng đơn giản ấy lại tạo nên độ dẻo mềm đặc trưng mà khó nơi nào có được.
+
+Bánh tráng phơi sương thường được dùng để cuốn thịt luộc, rau rừng và chấm cùng nước mắm chua ngọt. Khi thưởng thức, thực khách sẽ cảm nhận được hương thơm tự nhiên của gạo hòa quyện cùng vị thanh mát của rau và sự đậm đà của nước chấm.
+
+Đây không chỉ là món ăn đặc sản mà còn là một phần ký ức của nhiều thế hệ người dân Tây Ninh.
+
+2. Bánh tráng muối ớt – Món ăn vặt làm nên thương hiệu
+
+Nếu hỏi đâu là món bánh tráng phổ biến nhất hiện nay, nhiều người sẽ chọn bánh tráng muối ớt.
+
+Không cầu kỳ về cách ăn, loại bánh này chinh phục thực khách bằng vị cay nhẹ của ớt, vị mặn hài hòa của muối cùng hương thơm đặc trưng từ tỏi và hành phi. Từng miếng bánh dẻo dai, đậm đà khiến người ăn khó dừng lại chỉ sau một lần thưởng thức.
+
+Bánh tráng muối ớt thường được xem là món ăn vặt gắn liền với tuổi học trò, những buổi tụ họp bạn bè hay những chuyến đi xa. Chính sự đơn giản nhưng hấp dẫn ấy đã giúp món ăn này trở thành một trong những sản phẩm được tìm mua nhiều nhất khi nhắc đến đặc sản Tây Ninh.
+
+3. Bánh tráng trộn – Hương vị tuổi trẻ khó quên
+
+Từ một món ăn dân dã của địa phương, bánh tráng trộn đã trở thành món ăn vặt quen thuộc trên khắp cả nước.
+
+Nguyên liệu chính là bánh tráng cắt sợi kết hợp với muối tôm Tây Ninh, xoài xanh, rau răm, trứng cút, sa tế và nhiều loại topping khác. Sự hòa quyện giữa vị chua, cay, mặn và ngọt tạo nên sức hút rất riêng.
+
+Dù ngày nay bánh tráng trộn xuất hiện ở nhiều nơi, nhưng với nhiều người, hương vị bánh tráng trộn đúng chuẩn vẫn luôn gắn liền với Tây Ninh – nơi khởi nguồn của món ăn nổi tiếng này.
+
+4. Bánh tráng dẻo – Món quà mang hương vị Tây Ninh
+
+Bánh tráng dẻo là lựa chọn được nhiều du khách tìm mua về làm quà sau mỗi chuyến ghé thăm Tây Ninh.
+
+Khác với bánh tráng phơi sương truyền thống, bánh tráng dẻo được biến tấu với nhiều hương vị hấp dẫn như me, tôm ớt, muối ớt hay sa tế. Nhờ được tẩm ướp sẵn nên có thể ăn trực tiếp mà không cần chế biến thêm.
+
+Điều làm nên sức hút của bánh tráng dẻo chính là sự cân bằng giữa độ mềm, vị đậm đà và cảm giác tiện lợi. Đây cũng là sản phẩm phù hợp với nhiều độ tuổi, từ học sinh, sinh viên đến dân văn phòng.
+
+5. Bánh tráng cuốn – Sự sáng tạo của ẩm thực đường phố
+
+Trong những năm gần đây, bánh tráng cuốn đã trở thành một trong những món ăn được giới trẻ yêu thích.
+
+Từ bánh tráng cuốn muối tôm, bánh tráng cuốn ruốc đến bánh tráng cuốn sốt me, mỗi loại đều mang một nét hấp dẫn riêng. Những nguyên liệu quen thuộc như hành phi, đậu phộng, chà bông hay trứng cút được kết hợp khéo léo để tạo nên hương vị đậm đà và bắt miệng.
+
+Món ăn này thể hiện rõ sự sáng tạo của người dân Tây Ninh khi không ngừng làm mới đặc sản truyền thống nhưng vẫn giữ được bản sắc vốn có.
+
+Bánh tráng Tây Ninh – Hương vị của một vùng đất
+
+Đi qua nhiều năm tháng, bánh tráng Tây Ninh không còn đơn thuần là một món ăn đặc sản. Đó là kết tinh của nghề truyền thống, của sự cần cù và sáng tạo của người dân vùng đất đầy nắng gió.
+
+Mỗi loại bánh tráng mang một hương vị riêng, từ sự mộc mạc của bánh tráng phơi sương đến nét hiện đại của bánh tráng cuốn hay bánh tráng trộn. Dù được thưởng thức theo cách nào, bánh tráng Tây Ninh vẫn luôn giữ được sức hấp dẫn đặc biệt, khiến những ai từng nếm thử đều nhớ mãi hương vị quê hương đậm đà và chân chất ấy.
+`,
+},
+{
+  id: "news9",
+
+  slug: "lich-su-hinh-thanh-tinh-tay-ninh",
+
+  title:
+    "Lịch sử hình thành tỉnh Tây Ninh – Hành trình của vùng đất nơi cửa ngõ Tây Nam Tổ quốc",
+
+  image: "/news/LichSuTayNinh.jpg",
+
+  date: "09/06/2026",
+
+  excerpt:
+    "Tìm hiểu lịch sử hình thành tỉnh Tây Ninh từ những ngày đầu khai phá đến hành trình phát triển thành vùng đất giàu bản sắc văn hóa, lịch sử và du lịch của Đông Nam Bộ.",
+
+  metaDescription:
+    "Khám phá lịch sử hình thành tỉnh Tây Ninh từ vùng đất khai hoang đến trung tâm phát triển năng động của Đông Nam Bộ với nhiều giá trị văn hóa và đặc sản đặc trưng.",
+
+  keywords: [
+    "lịch sử Tây Ninh",
+    "lịch sử hình thành tỉnh Tây Ninh",
+    "khám phá Tây Ninh",
+    "văn hóa Tây Ninh",
+    "du lịch Tây Ninh",
+    "đặc sản Tây Ninh",
+    "bánh tráng Tây Ninh",
+    "muối tôm Tây Ninh",
+    "thành phố Tây Ninh",
+    "địa lý Tây Ninh"
+  ],
+
+  content: `
+Lịch sử hình thành tỉnh Tây Ninh – Hành trình của vùng đất nơi cửa ngõ Tây Nam Tổ quốc
+
+Mỗi vùng đất đều mang trong mình những câu chuyện riêng được bồi đắp qua thời gian. Nếu nhắc đến Tây Ninh ngày nay, nhiều người sẽ nghĩ ngay đến Núi Bà Đen, Tòa Thánh Cao Đài, bánh tráng phơi sương hay muối tôm nổi tiếng. Thế nhưng, phía sau những hình ảnh quen thuộc ấy là một hành trình lịch sử lâu dài đã góp phần tạo nên diện mạo của vùng đất Tây Ninh hiện đại.
+
+Nằm ở vị trí tiếp giáp với Campuchia và thuộc khu vực Đông Nam Bộ, Tây Ninh từ lâu đã giữ vai trò là cửa ngõ giao thương quan trọng giữa Việt Nam và các nước trong khu vực. Chính vị trí địa lý đặc biệt này đã khiến vùng đất trở thành nơi giao thoa của nhiều nền văn hóa, đồng thời giữ vai trò chiến lược trong nhiều giai đoạn lịch sử.
+
+Từ hàng trăm năm trước, khu vực Tây Ninh ngày nay vẫn còn là vùng đất hoang sơ với những cánh rừng rộng lớn, sông ngòi và đồng bằng màu mỡ. Theo dòng chảy lịch sử mở cõi về phương Nam, cư dân từ nhiều vùng miền đã đến đây khai hoang, lập làng và từng bước xây dựng cuộc sống mới. Cùng với người Việt, nhiều cộng đồng dân tộc khác cũng sinh sống trên vùng đất này, tạo nên sự đa dạng về văn hóa và phong tục tập quán.
+
+Trong thời kỳ nhà Nguyễn, vùng đất Tây Ninh dần được tổ chức và quản lý hành chính rõ ràng hơn. Nhờ vị trí thuận lợi trên các tuyến giao thông nối liền Nam Bộ với Campuchia, Tây Ninh trở thành khu vực có vai trò quan trọng trong hoạt động giao thương và phát triển kinh tế của khu vực.
+
+Bước sang giai đoạn cuối thế kỷ XIX và đầu thế kỷ XX, Tây Ninh chứng kiến nhiều biến động lịch sử gắn liền với quá trình đấu tranh bảo vệ đất nước. Trong các cuộc kháng chiến, nơi đây trở thành địa bàn chiến lược quan trọng ở miền Nam. Những cánh rừng, căn cứ cách mạng và vùng biên giới của Tây Ninh đã ghi dấu nhiều sự kiện lịch sử đáng nhớ, góp phần vào hành trình giành độc lập dân tộc.
+
+Sau ngày đất nước thống nhất, Tây Ninh bước vào thời kỳ phát triển mới. Hệ thống giao thông được đầu tư, các khu dân cư được mở rộng và đời sống người dân ngày càng được nâng cao. Từ một vùng đất chủ yếu dựa vào nông nghiệp, Tây Ninh dần phát triển theo hướng đa dạng hơn với công nghiệp, thương mại, dịch vụ và du lịch.
+
+Ngày nay, thành phố Tây Ninh trở thành trung tâm hành chính, kinh tế và văn hóa của tỉnh. Cùng với sự phát triển của hạ tầng và kinh tế, hình ảnh Tây Ninh cũng ngày càng được nhiều du khách biết đến thông qua các điểm đến nổi tiếng như Núi Bà Đen, Tòa Thánh Cao Đài, Hồ Dầu Tiếng hay các cửa khẩu quốc tế kết nối với Campuchia.
+
+Tuy nhiên, điều tạo nên nét riêng của Tây Ninh không chỉ nằm ở lịch sử hay vị trí địa lý. Đó còn là những giá trị văn hóa được gìn giữ qua nhiều thế hệ. Trên mảnh đất này, những làng nghề truyền thống vẫn tiếp tục tồn tại và phát triển, góp phần lưu giữ bản sắc địa phương giữa nhịp sống hiện đại.
+
+Trong số đó, nghề làm bánh tráng là một trong những nét đặc trưng nổi bật nhất. Trải qua nhiều năm phát triển, bánh tráng Tây Ninh đã trở thành đặc sản được biết đến trên khắp cả nước. Từ bánh tráng phơi sương Trảng Bàng đến các loại bánh tráng muối, bánh tráng sa tế hay bánh tráng ăn vặt, mỗi sản phẩm đều mang theo câu chuyện về sự cần cù và khéo léo của người dân địa phương.
+
+Bên cạnh bánh tráng, muối tôm Tây Ninh cũng là một phần không thể thiếu trong văn hóa ẩm thực của vùng đất này. Từ những nguyên liệu quen thuộc, người dân đã tạo nên hương vị đặc trưng góp phần quảng bá hình ảnh quê hương đến với du khách gần xa.
+
+Nhìn lại chặng đường hình thành và phát triển, Tây Ninh không chỉ là vùng đất mang nhiều dấu ấn lịch sử mà còn là nơi hội tụ của thiên nhiên, văn hóa và con người. Từ những ngày đầu khai phá đến một tỉnh năng động của vùng Đông Nam Bộ ngày nay, Tây Ninh vẫn giữ được những giá trị riêng đã làm nên bản sắc của mình.
+
+Có lẽ chính sự kết hợp giữa lịch sử lâu đời, cảnh quan đặc sắc và những đặc sản mang đậm hương vị quê hương đã giúp Tây Ninh để lại nhiều ấn tượng trong lòng du khách. Và khi tìm hiểu về lịch sử hình thành của vùng đất này, mỗi người sẽ hiểu hơn vì sao Tây Ninh luôn được xem là một trong những địa phương mang bản sắc rất riêng của miền Nam Việt Nam.
+`,
+},
+{
+  id: "news10",
+
+  slug: "cac-le-hoi-noi-tieng-o-tay-ninh",
+
+  title:
+    "Các lễ hội nổi tiếng ở Tây Ninh – Nét đẹp văn hóa làm nên bản sắc vùng đất Thánh",
+
+  image: "/news/LeHoiTayNinh.jpg",
+
+  date: "10/06/2026",
+
+  excerpt:
+    "Khám phá những lễ hội nổi tiếng ở Tây Ninh như Lễ Vía Bà Linh Sơn Thánh Mẫu, Hội Yến Diêu Trì Cung và nhiều sự kiện văn hóa đặc sắc góp phần tạo nên bản sắc vùng đất Thánh.",
+
+  metaDescription:
+    "Tìm hiểu các lễ hội nổi tiếng ở Tây Ninh, nơi hội tụ những giá trị văn hóa, tín ngưỡng và truyền thống đặc sắc của vùng đất Thánh Nam Bộ.",
+
+  keywords: [
+    "lễ hội Tây Ninh",
+    "lễ hội Núi Bà Đen",
+    "Vía Bà Linh Sơn Thánh Mẫu",
+    "Hội Yến Diêu Trì Cung",
+    "văn hóa Tây Ninh",
+    "du lịch Tây Ninh",
+    "khám phá Tây Ninh",
+    "lễ hội truyền thống Tây Ninh",
+    "Tòa Thánh Tây Ninh",
+    "vùng đất Thánh"
+  ],
+
+  content: `
+Các lễ hội nổi tiếng ở Tây Ninh – Nét đẹp văn hóa làm nên bản sắc vùng đất Thánh
+
+Nhắc đến Tây Ninh, nhiều người thường nghĩ ngay đến Núi Bà Đen, Tòa Thánh Cao Đài hay những đặc sản nổi tiếng như bánh tráng phơi sương, muối tôm. Thế nhưng, bên cạnh cảnh đẹp và ẩm thực, Tây Ninh còn là vùng đất sở hữu đời sống văn hóa tâm linh đặc sắc với nhiều lễ hội truyền thống được gìn giữ qua nhiều thế hệ.
+
+Nhờ sự giao thoa giữa tín ngưỡng dân gian, Phật giáo và đạo Cao Đài, các lễ hội ở Tây Ninh mang những màu sắc rất riêng. Mỗi dịp lễ hội diễn ra không chỉ thu hút người dân địa phương mà còn đón hàng triệu du khách từ khắp nơi tìm về để tham quan, chiêm bái và khám phá văn hóa vùng đất này.
+
+1. Lễ Vía Bà Linh Sơn Thánh Mẫu – Lễ hội tâm linh lớn nhất Tây Ninh
+
+Khi nhắc đến lễ hội nổi tiếng nhất Tây Ninh, Lễ Vía Bà Linh Sơn Thánh Mẫu tại Núi Bà Đen luôn được nhắc đến đầu tiên.
+
+Lễ hội được tổ chức hằng năm nhằm tưởng nhớ Linh Sơn Thánh Mẫu, vị nữ thần gắn liền với truyền thuyết hình thành Núi Bà Đen. Trong những ngày diễn ra lễ hội, hàng chục nghìn người dân và du khách hành hương về núi để dâng hương, cầu bình an và may mắn cho gia đình.
+
+Không khí linh thiêng hòa cùng khung cảnh núi non hùng vĩ đã tạo nên một trong những sự kiện văn hóa tâm linh đặc sắc nhất Nam Bộ.
+
+2. Hội Xuân Núi Bà Đen – Khởi đầu năm mới đầy sắc màu
+
+Mỗi dịp Tết Nguyên đán, khu du lịch Núi Bà Đen lại trở nên nhộn nhịp với Hội Xuân Núi Bà Đen.
+
+Đây là lễ hội được tổ chức thường niên nhằm phục vụ nhu cầu du xuân, hành hương và tham gia các hoạt động văn hóa đầu năm của người dân. Trong thời gian diễn ra hội xuân, nhiều chương trình nghệ thuật, biểu diễn văn hóa dân gian và hoạt động truyền thống được tổ chức, tạo nên không khí vui tươi kéo dài suốt những ngày đầu năm mới.
+
+Đối với nhiều gia đình ở Tây Ninh, việc lên Núi Bà vào những ngày đầu năm đã trở thành một nét đẹp quen thuộc được duy trì qua nhiều thế hệ.
+
+3. Hội Yến Diêu Trì Cung – Nét văn hóa đặc sắc của đạo Cao Đài
+
+Tây Ninh được biết đến là trung tâm của đạo Cao Đài, vì vậy Hội Yến Diêu Trì Cung luôn là một trong những lễ hội mang ý nghĩa đặc biệt đối với đời sống văn hóa của địa phương.
+
+Lễ hội được tổ chức vào dịp rằm tháng Tám âm lịch tại khuôn viên Tòa Thánh Cao Đài Tây Ninh. Đây là một trong những đại lễ quan trọng nhất của đạo Cao Đài, thu hút đông đảo tín đồ và du khách tham dự mỗi năm.
+
+Điểm đặc sắc của lễ hội nằm ở những nghi thức trang trọng, các đoàn rước đầy màu sắc cùng những công trình kiến trúc độc đáo của Tòa Thánh, tạo nên không gian văn hóa rất riêng mà khó nơi nào có được.
+
+4. Lễ Kỳ Yên – Nét đẹp truyền thống của làng quê Nam Bộ
+
+Lễ Kỳ Yên là một trong những lễ hội dân gian lâu đời vẫn còn được duy trì tại nhiều đình làng trên địa bàn Tây Ninh.
+
+Lễ hội được tổ chức với ý nghĩa cầu cho quốc thái dân an, mùa màng thuận lợi và cuộc sống bình yên cho người dân địa phương. Những nghi thức cúng tế truyền thống kết hợp với các hoạt động văn hóa cộng đồng đã góp phần gìn giữ những giá trị văn hóa Nam Bộ qua nhiều thế hệ.
+
+Đây cũng là dịp để người dân gặp gỡ, giao lưu và thể hiện tinh thần đoàn kết của cộng đồng.
+
+5. Lễ giỗ Quan Lớn Trà Vong
+
+Lễ giỗ Quan Lớn Trà Vong là một lễ hội mang đậm dấu ấn lịch sử của Tây Ninh.
+
+Lễ hội được tổ chức nhằm tưởng nhớ những công lao của các bậc tiền nhân trong quá trình bảo vệ và xây dựng quê hương. Không chỉ mang ý nghĩa tri ân, đây còn là dịp giáo dục truyền thống lịch sử cho thế hệ trẻ và góp phần gìn giữ bản sắc văn hóa địa phương.
+
+6. Lễ hội truyền thống động Kim Quang
+
+Động Kim Quang là một địa điểm gắn liền với lịch sử cách mạng của Tây Ninh. Hằng năm, nơi đây tổ chức nhiều hoạt động tưởng niệm và sinh hoạt văn hóa nhằm tri ân những người đã có công với quê hương.
+
+Lễ hội không chỉ mang ý nghĩa lịch sử mà còn góp phần giúp du khách hiểu hơn về truyền thống đấu tranh kiên cường của vùng đất Tây Ninh.
+
+7. Lễ hội bánh tráng phơi sương Trảng Bàng
+
+Bên cạnh các lễ hội tâm linh và lịch sử, Tây Ninh còn có những lễ hội gắn liền với văn hóa ẩm thực địa phương.
+
+Lễ hội bánh tráng phơi sương Trảng Bàng được tổ chức nhằm tôn vinh nghề làm bánh tráng truyền thống đã tồn tại qua nhiều thế hệ. Đây là dịp để du khách tìm hiểu quy trình làm bánh, thưởng thức các món ăn đặc sản và cảm nhận rõ hơn nét đẹp của làng nghề địa phương.
+
+Không ít du khách sau khi tham gia lễ hội đã mang về những sản phẩm đặc sản như bánh tráng phơi sương, bánh tráng muối hay muối tôm như một phần hương vị đặc trưng của Tây Ninh.
+
+Lễ hội Tây Ninh – Nơi lưu giữ hồn văn hóa vùng đất Thánh
+
+Trải qua nhiều năm phát triển, các lễ hội ở Tây Ninh không chỉ là hoạt động tín ngưỡng hay văn hóa đơn thuần mà còn trở thành cầu nối giữa quá khứ và hiện tại. Mỗi lễ hội đều mang theo những câu chuyện riêng, phản ánh lịch sử, tín ngưỡng và đời sống của người dân địa phương.
+
+Chính sự đa dạng ấy đã góp phần tạo nên bản sắc rất riêng cho Tây Ninh – vùng đất không chỉ nổi tiếng với cảnh đẹp thiên nhiên và đặc sản hấp dẫn mà còn là nơi lưu giữ nhiều giá trị văn hóa đặc sắc của Nam Bộ. Đối với du khách, khám phá các lễ hội Tây Ninh cũng là cách để cảm nhận sâu sắc hơn vẻ đẹp của con người và vùng đất đầy nắng gió này.
+`,
+},
+{
+  id: "news11",
+
+  slug: "nghe-lam-banh-trang-truyen-thong-tay-ninh",
+
+  title:
+    "Nghề làm bánh tráng truyền thống Tây Ninh – Hơi thở của làng nghề qua nhiều thế hệ",
+
+  image: "/news/NgheLamBanhTrangTayNinh.jpg",
+
+  date: "11/06/2026",
+
+  excerpt:
+    "Khám phá nghề làm bánh tráng truyền thống Tây Ninh, hành trình từ những hạt gạo bình dị đến đặc sản nổi tiếng gắn liền với văn hóa và con người vùng đất Trảng Bàng.",
+
+  metaDescription:
+    "Tìm hiểu nghề làm bánh tráng truyền thống Tây Ninh, nét đẹp làng nghề lâu đời góp phần tạo nên đặc sản nổi tiếng và bản sắc văn hóa địa phương.",
+
+  keywords: [
+    "nghề làm bánh tráng Tây Ninh",
+    "làng nghề bánh tráng Trảng Bàng",
+    "bánh tráng Tây Ninh",
+    "bánh tráng phơi sương",
+    "đặc sản Tây Ninh",
+    "văn hóa Tây Ninh",
+    "khám phá Tây Ninh",
+    "làng nghề truyền thống",
+    "ẩm thực Tây Ninh",
+    "bánh tráng Trảng Bàng"
+  ],
+
+  content: `
+Nghề làm bánh tráng truyền thống Tây Ninh – Hơi thở của làng nghề qua nhiều thế hệ
+
+Giữa nhịp sống hiện đại đang thay đổi từng ngày, vẫn có những nghề truyền thống được người dân Tây Ninh gìn giữ như một phần ký ức của quê hương. Trong số đó, nghề làm bánh tráng không chỉ là một hoạt động mưu sinh mà còn là nét văn hóa đặc trưng đã gắn bó với vùng đất này suốt nhiều thế hệ.
+
+Nhắc đến bánh tráng Tây Ninh, nhiều người sẽ nghĩ ngay đến bánh tráng phơi sương Trảng Bàng, bánh tráng muối hay những món ăn vặt nổi tiếng đã xuất hiện ở khắp mọi miền đất nước. Thế nhưng, đằng sau những chiếc bánh quen thuộc ấy là câu chuyện về sự cần cù, khéo léo và tình yêu nghề của biết bao gia đình đã gắn bó với lò bánh từ đời này sang đời khác.
+
+Hành trình từ hạt gạo đến chiếc bánh tráng
+
+Nghề làm bánh tráng ở Tây Ninh hình thành từ rất sớm, tập trung nhiều nhất tại khu vực Trảng Bàng. Nhờ nguồn nguyên liệu dồi dào và kinh nghiệm được truyền lại qua nhiều thế hệ, người dân nơi đây đã tạo nên những chiếc bánh mang hương vị rất riêng mà khó nơi nào có thể sao chép hoàn toàn.
+
+Để làm ra một chiếc bánh tráng đạt chuẩn, người thợ phải trải qua nhiều công đoạn tỉ mỉ. Gạo được lựa chọn kỹ lưỡng, ngâm mềm rồi xay thành bột. Sau đó, bột được pha theo tỷ lệ riêng của từng gia đình trước khi đưa lên khuôn hấp.
+
+Công đoạn tráng bánh đòi hỏi sự khéo léo và kinh nghiệm. Người thợ phải canh độ dày mỏng phù hợp để bánh vừa giữ được độ dai vừa đảm bảo hương vị đặc trưng sau khi hoàn thiện. Sau khi hấp chín, bánh được đem phơi nắng cho đến khi đạt độ khô mong muốn.
+
+Tưởng chừng đơn giản nhưng chỉ cần thay đổi một chút về thời tiết, nhiệt độ hoặc tỷ lệ pha bột, chất lượng bánh có thể khác biệt hoàn toàn. Chính vì vậy, kinh nghiệm của người làm nghề luôn đóng vai trò quan trọng trong việc tạo nên những mẻ bánh ngon.
+
+Nét đặc biệt làm nên thương hiệu bánh tráng Tây Ninh
+
+Điều khiến bánh tráng Tây Ninh nổi tiếng không chỉ nằm ở nguyên liệu mà còn ở phương pháp chế biến độc đáo.
+
+Đối với bánh tráng phơi sương Trảng Bàng, sau khi được phơi nắng và nướng sơ, bánh tiếp tục được mang ra đón sương đêm. Chính công đoạn đặc biệt này tạo nên độ mềm dẻo tự nhiên, giúp bánh có hương vị riêng mà nhiều nơi khác khó có được.
+
+Từ nền tảng của nghề truyền thống, người dân Tây Ninh cũng không ngừng sáng tạo thêm nhiều dòng sản phẩm mới như bánh tráng muối ớt, bánh tráng sa tế, bánh tráng me, bánh tráng dẻo hay bánh tráng cuốn. Những sản phẩm này vừa giữ được hương vị đặc trưng của làng nghề vừa đáp ứng nhu cầu đa dạng của người tiêu dùng hiện đại.
+
+Nhờ sự kết hợp giữa truyền thống và đổi mới, bánh tráng Tây Ninh ngày càng được biết đến rộng rãi và trở thành một trong những đặc sản tiêu biểu của vùng Đông Nam Bộ.
+
+Làng nghề và những con người giữ lửa
+
+Nếu có dịp ghé thăm các làng nghề bánh tráng ở Trảng Bàng, du khách sẽ dễ dàng bắt gặp hình ảnh những giàn bánh phơi nắng trải dài, những lò hấp luôn đỏ lửa từ sáng sớm hay những người thợ miệt mài bên từng công đoạn sản xuất.
+
+Đối với nhiều gia đình, nghề làm bánh tráng không đơn thuần là kế sinh nhai mà còn là nghề của ông bà, cha mẹ để lại. Từng công thức pha bột, cách canh lửa hay bí quyết tạo nên hương vị riêng đều được truyền từ thế hệ này sang thế hệ khác.
+
+Chính sự gắn bó ấy đã giúp nghề làm bánh tráng tồn tại và phát triển suốt nhiều năm, bất chấp những thay đổi của thị trường và cuộc sống hiện đại.
+
+Từ làng nghề truyền thống đến đặc sản nổi tiếng cả nước
+
+Ngày nay, bánh tráng Tây Ninh không chỉ xuất hiện trong bữa ăn của người dân địa phương mà còn có mặt tại nhiều tỉnh thành trên cả nước. Nhiều sản phẩm đã trở thành món quà quen thuộc mà du khách lựa chọn mỗi khi ghé thăm Tây Ninh.
+
+Bên cạnh giá trị kinh tế, nghề làm bánh tráng còn góp phần quảng bá hình ảnh quê hương thông qua ẩm thực. Không ít du khách biết đến Tây Ninh từ những món ăn dân dã trước khi tìm hiểu sâu hơn về văn hóa, lịch sử và con người nơi đây.
+
+Sự phát triển của du lịch cũng mở ra nhiều cơ hội để các làng nghề truyền thống được giới thiệu rộng rãi hơn, giúp nhiều người có cơ hội hiểu về hành trình tạo nên những chiếc bánh tráng mang đậm dấu ấn địa phương.
+
+Gìn giữ một phần hồn quê Tây Ninh
+
+Trong dòng chảy phát triển của xã hội hiện đại, việc bảo tồn các làng nghề truyền thống luôn mang ý nghĩa đặc biệt. Nghề làm bánh tráng Tây Ninh không chỉ tạo ra những sản phẩm đặc sản nổi tiếng mà còn lưu giữ những giá trị văn hóa được vun đắp qua nhiều thế hệ.
+
+Mỗi chiếc bánh tráng được làm ra là kết quả của sự chăm chút, kinh nghiệm và tình yêu nghề của người dân địa phương. Chính điều đó đã giúp bánh tráng Tây Ninh trở thành niềm tự hào của quê hương và là một phần không thể thiếu trong bản sắc văn hóa của vùng đất đầy nắng gió này.
+
+Ngày nay, dù có thêm nhiều phương pháp sản xuất hiện đại, những giá trị cốt lõi của nghề làm bánh tráng truyền thống vẫn được gìn giữ. Và đó cũng chính là lý do khiến bánh tráng Tây Ninh không chỉ là một món ăn mà còn là câu chuyện về con người, văn hóa và lịch sử của vùng đất đã nuôi dưỡng nghề qua bao thế hệ.
+`,
+},
+{
+  id: "news12",
+
+  slug: "cac-dia-diem-check-in-dep-o-tay-ninh",
+
+  title:
+    "Các địa điểm check-in đẹp ở Tây Ninh – Những góc nhìn khiến du khách muốn quay lại nhiều lần",
+
+  image: "/news/CheckInTayNinh.jpg",
+
+  date: "12/06/2026",
+
+  excerpt:
+    "Khám phá những địa điểm check-in đẹp ở Tây Ninh từ Núi Bà Đen, Hồ Dầu Tiếng đến các công trình văn hóa và thiên nhiên đặc sắc thu hút đông đảo du khách.",
+
+  metaDescription:
+    "Tổng hợp các địa điểm check-in đẹp ở Tây Ninh như Núi Bà Đen, Hồ Dầu Tiếng, Tòa Thánh Cao Đài và nhiều điểm đến hấp dẫn dành cho du khách yêu khám phá.",
+
+  keywords: [
+    "địa điểm check-in Tây Ninh",
+    "du lịch Tây Ninh",
+    "Núi Bà Đen",
+    "Hồ Dầu Tiếng",
+    "Tòa Thánh Tây Ninh",
+    "địa điểm đẹp ở Tây Ninh",
+    "khám phá Tây Ninh",
+    "check-in Tây Ninh",
+    "du lịch Tây Ninh tự túc",
+    "địa điểm chụp ảnh Tây Ninh"
+  ],
+
+  content: `
+Các địa điểm check-in đẹp ở Tây Ninh – Những góc nhìn khiến du khách muốn quay lại nhiều lần
+
+Tây Ninh không chỉ nổi tiếng với những món đặc sản như bánh tráng phơi sương, muối tôm hay các lễ hội văn hóa đặc sắc mà còn sở hữu nhiều địa điểm check-in đẹp thu hút du khách gần xa. Từ những ngọn núi hùng vĩ, hồ nước rộng lớn đến các công trình kiến trúc mang đậm dấu ấn lịch sử và tín ngưỡng, mỗi địa điểm đều mang một vẻ đẹp riêng khiến hành trình khám phá Tây Ninh trở nên đáng nhớ hơn.
+
+Không quá ồn ào hay đông đúc như nhiều điểm du lịch nổi tiếng khác, Tây Ninh mang đến cảm giác gần gũi, bình yên và rất riêng. Chính điều đó đã khiến nhiều du khách lựa chọn nơi đây làm điểm dừng chân cho những chuyến đi ngắn ngày.
+
+1. Núi Bà Đen – Biểu tượng du lịch của Tây Ninh
+
+Nhắc đến những địa điểm check-in nổi tiếng ở Tây Ninh, Núi Bà Đen luôn là cái tên được nhắc đến đầu tiên.
+
+Với độ cao gần 1.000 mét, đây được xem là ngọn núi cao nhất Nam Bộ. Từ đỉnh núi, du khách có thể ngắm nhìn toàn cảnh đồng bằng rộng lớn, những cánh đồng xanh trải dài và khung cảnh thiên nhiên đặc trưng của vùng Đông Nam Bộ.
+
+Bên cạnh hệ thống cáp treo hiện đại, nơi đây còn sở hữu nhiều góc chụp ảnh đẹp như quảng trường dưới chân núi, khu vực tượng Phật Bà Tây Bổ Đà Sơn hay các điểm ngắm bình minh và săn mây trên đỉnh núi.
+
+2. Hồ Dầu Tiếng – Biển hồ giữa lòng Đông Nam Bộ
+
+Hồ Dầu Tiếng là một trong những hồ nước nhân tạo lớn nhất Việt Nam và là địa điểm được nhiều bạn trẻ yêu thích trong những năm gần đây.
+
+Mặt hồ rộng lớn kết hợp cùng những bãi cỏ xanh và khung cảnh thiên nhiên thoáng đãng tạo nên những góc ảnh mang cảm giác yên bình hiếm có. Đặc biệt vào lúc bình minh hoặc hoàng hôn, mặt nước phản chiếu ánh nắng tạo nên khung cảnh rất ấn tượng.
+
+Đây cũng là địa điểm phù hợp cho các hoạt động dã ngoại, cắm trại và ngắm cảnh cuối tuần.
+
+3. Tòa Thánh Cao Đài – Công trình kiến trúc độc đáo
+
+Không chỉ là trung tâm của đạo Cao Đài, Tòa Thánh Tây Ninh còn là một trong những công trình kiến trúc nổi bật nhất khu vực Nam Bộ.
+
+Sự kết hợp giữa màu sắc rực rỡ, kiến trúc đối xứng và những họa tiết đặc trưng đã tạo nên một không gian vừa trang nghiêm vừa độc đáo. Đây là địa điểm được nhiều du khách lựa chọn để tìm hiểu văn hóa địa phương và lưu lại những bức ảnh mang đậm dấu ấn Tây Ninh.
+
+4. Ma Thiên Lãnh – Góc thiên nhiên hoang sơ giữa núi rừng
+
+Được ví như "Đà Lạt thu nhỏ" của Tây Ninh, Ma Thiên Lãnh sở hữu khung cảnh thiên nhiên hoang sơ với núi non, hồ nước và những con đường nhỏ uốn quanh giữa rừng cây.
+
+Nơi đây phù hợp với những du khách yêu thích khám phá và muốn tìm kiếm những góc ảnh gần gũi với thiên nhiên. Không khí trong lành cùng cảnh quan xanh mát giúp Ma Thiên Lãnh trở thành điểm đến được nhiều người yêu thích khi ghé thăm Tây Ninh.
+
+5. Cánh đồng điện gió Tây Ninh
+
+Những năm gần đây, cánh đồng điện gió đã trở thành một trong những địa điểm check-in nổi bật tại Tây Ninh.
+
+Các trụ tua-bin khổng lồ nổi bật giữa không gian rộng lớn tạo nên những khung hình hiện đại và ấn tượng. Vào sáng sớm hoặc chiều muộn, ánh nắng kết hợp với khung cảnh thiên nhiên xung quanh mang lại những bức ảnh đầy cảm xúc.
+
+Đây là địa điểm được nhiều bạn trẻ và nhiếp ảnh gia lựa chọn khi muốn khám phá những góc nhìn mới về Tây Ninh.
+
+6. Vườn quốc gia Lò Gò – Xa Mát
+
+Đối với những người yêu thiên nhiên, Vườn quốc gia Lò Gò – Xa Mát là điểm đến không nên bỏ lỡ.
+
+Khu vực này sở hữu hệ sinh thái đa dạng với nhiều loài động thực vật đặc trưng của vùng biên giới Tây Nam. Những con đường xuyên rừng, khu vực ngắm chim và cảnh quan tự nhiên nguyên sơ tạo nên nhiều góc chụp ảnh độc đáo.
+
+Đây cũng là nơi giúp du khách hiểu thêm về giá trị sinh thái và môi trường của Tây Ninh.
+
+7. Chợ Long Hoa
+
+Không chỉ là địa điểm mua sắm quen thuộc của người dân địa phương, chợ Long Hoa còn là nơi phản ánh rõ nét nhịp sống thường ngày của Tây Ninh.
+
+Những gian hàng đặc sản, khu vực ẩm thực truyền thống và kiến trúc chợ lâu đời tạo nên nhiều khung hình mang đậm hơi thở địa phương. Đây cũng là nơi du khách có thể tìm thấy bánh tráng, muối tôm và nhiều món quà đặc sản nổi tiếng của Tây Ninh.
+
+8. Những cung đường quê đầy nắng gió
+
+Một trong những điều khiến nhiều người yêu thích Tây Ninh chính là những cung đường làng yên bình với hàng cây xanh, cánh đồng lúa và khung cảnh đặc trưng của vùng đất Đông Nam Bộ.
+
+Không cần những công trình hoành tráng, chính vẻ đẹp giản dị của cuộc sống thường ngày lại tạo nên sức hút riêng. Nhiều du khách lựa chọn dừng chân bên những cánh đồng, hàng cao su hay các con đường nhỏ để lưu lại những khoảnh khắc bình dị nhưng đầy cảm xúc.
+
+Tây Ninh – Điểm đến của những trải nghiệm đáng nhớ
+
+Mỗi địa điểm ở Tây Ninh đều mang trong mình một câu chuyện riêng, từ vẻ đẹp thiên nhiên, giá trị văn hóa cho đến những dấu ấn lịch sử được lưu giữ qua nhiều thế hệ. Chính sự đa dạng ấy đã tạo nên sức hấp dẫn đặc biệt cho vùng đất này.
+
+Sau những hành trình khám phá và check-in tại các địa điểm nổi tiếng, nhiều du khách thường lựa chọn thưởng thức bánh tráng phơi sương, bánh tráng muối hay các món đặc sản địa phương để cảm nhận trọn vẹn hương vị Tây Ninh. Có lẽ cũng chính vì sự kết hợp giữa cảnh đẹp, văn hóa và ẩm thực mà Tây Ninh luôn để lại những ấn tượng khó quên trong lòng người ghé thăm.
+`,
 }]

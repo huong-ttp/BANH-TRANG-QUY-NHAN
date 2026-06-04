@@ -85,12 +85,9 @@ export default function NewsDetailPage({
   {/* Header */}
   <div className="max-w-4xl mx-auto mb-10">
 
-    <time
-    dateTime="2025-08-01"
-    className="text-orange-600 font-medium mb-3 block"
-  >
-    {post.date}
-  </time>
+    <time dateTime={post.date}>
+  {post.date}
+</time>
 
     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
       {post.title}
@@ -143,14 +140,14 @@ export default function NewsDetailPage({
         <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-xl transition-all duration-300">
 
           <div className="overflow-hidden">
-            <Image
-            src={post.image}
-            alt={post.title}
+          <Image
+            src={item.image}
+            alt={item.title}
             width={1200}
             height={630}
-            className="w-full h-56 object-cover"
+            className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          </div>
+        </div>
 
           <div className="p-5">
 
