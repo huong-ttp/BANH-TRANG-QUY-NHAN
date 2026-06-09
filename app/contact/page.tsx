@@ -1,51 +1,19 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Facebook,
+  MessageCircle,
+  ShoppingBag,
+} from "lucide-react"
 
 export default function ContactPage() {
-  const { toast } = useToast()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Gửi thành công!",
-        description: "Chúng tôi đã nhận được tin nhắn của bạn và sẽ phản hồi sớm nhất.",
-      })
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-      setIsSubmitting(false)
-    }, 1500)
-  }
-
   return (
     <>
+      {/* Banner */}
       <section className="relative h-[350px] overflow-hidden">
         <img
           src="/Banner-BanhTrangTayNinh.jpg"
@@ -62,151 +30,260 @@ export default function ContactPage() {
             </h1>
 
             <p className="max-w-2xl mx-auto text-lg text-gray-100">
-              Chúng tôi luôn sẵn sàng hỗ trợ khách hàng, tư vấn sản phẩm
-              và hợp tác phân phối đặc sản Tây Ninh trên toàn quốc.
+              Chúng tôi luôn sẵn sàng hỗ trợ khách hàng, tư vấn sản phẩm và
+              hợp tác phân phối đặc sản Tây Ninh trên toàn quốc.
             </p>
           </div>
         </div>
       </section>
 
       <div className="container px-4 py-12 md:px-6 md:py-16">
-        <div className="flex flex-col gap-8">
-          
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="md:col-span-1 space-y-6">
-              <div className="bg-emerald-50 dark:bg-emerald-950 p-6 rounded-lg">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-900 rounded-full">
-                    <Phone className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Điện thoại</h3>
-                    <p className="text-gray-500">+91 98765 43210 (nhớ đổi số)</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-900 rounded-full">
-                    <Mail className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-gray-500">support@fastcart.in (nhớ đổi email)</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-900 rounded-full">
-                    <MapPin className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Địa chỉ</h3>
-                    <p className="text-gray-500">123 Connaught Place, New Delhi, Delhi 110001 (Nhớ đổi địa chỉ)</p>
-                  </div>
-                </div>
-              </div>
+        {/* Thông tin nhanh */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
 
-              <div className="bg-emerald-50 dark:bg-emerald-950 p-6 rounded-lg">
-                <h3 className="font-medium mb-3">Giờ làm việc</h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Thứ hai - Thứ sáu:</span>
-                    <span>9:00 AM - 9:00 PM (chỉnh lại)</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Thứ bảy:</span>
-                    <span>9:00 AM - 8:00 PM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-2">
-              <div className="bg-white dark:bg-gray-950 p-6 rounded-lg border">
-                <h2 className="text-xl font-semibold mb-4">Gửi tin nhắn cho Bánh Tráng Quý Nhân</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Họ và tên
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Nguyễn Văn A"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="nguyenvana@gmail.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Chủ đề
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="Nội dung cần hỗ trợ"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Nội dung
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Vui lòng nhập nội dung cần hỗ trợ..."
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>Đang gửi...</>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Gửi
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </div>
-            </div>
+          <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+            <Phone className="mx-auto mb-3 text-emerald-600" />
+            <h3 className="font-semibold text-gray-500">Hotline</h3>
+            <p className="text-sm text-gray-500">
+              0828266468
+            </p>
           </div>
 
-          <div className="mt-8 rounded-lg overflow-hidden h-[400px] border">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.489072417302!2d106.5971811!3d10.850357400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b004234b71f%3A0x39bfbfb497d233fc!2zQsOBTkggVFLDgU5HIFFVw50gTkjDgk4!5e0!3m2!1svi!2s!4v1780307894181!5m2!1svi!2s"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title="Google Maps"
-            ></iframe>
+          <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+            <Mail className="mx-auto mb-3 text-emerald-600" />
+            <h3 className="font-semibold text-gray-500">Email</h3>
+            <p className="text-sm text-gray-500">
+              banhtrangquynhan@gmail.com
+            </p>
           </div>
+
+          <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+            <Clock className="mx-auto mb-3 text-emerald-600" />
+            <h3 className="font-semibold text-gray-500">Giờ làm việc</h3>
+            <p className="text-sm text-gray-500">
+              08:00 - 17:00
+            </p>
+          </div>
+
+          <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+            <ShoppingBag className="mx-auto mb-3 text-emerald-600" />
+            <h3 className="font-semibold text-gray-500">Giao hàng</h3>
+            <p className="text-sm text-gray-500">
+              Toàn quốc
+            </p>
+          </div>
+
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          {/* Thông tin liên hệ */}
+          <div className="space-y-6">
+
+            <div className="bg-emerald-100 dark:bg-emerald-950 p-6 rounded-xl">
+
+              <h2 className="text-xl font-bold mb-6">
+                Thông Tin Liên Hệ
+              </h2>
+
+              <div className="space-y-5">
+
+                <div className="flex gap-4">
+                  <Phone className="text-emerald-600 mt-1" />
+                  <div>
+                    <h3 className="font-medium">
+                      Điện thoại
+                    </h3>
+                    <p className="text-gray-500">
+                      0828266468
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+  <Mail className="text-emerald-600 mt-1 shrink-0" />
+
+  <div className="min-w-0">
+    <h3 className="font-medium">
+      Email
+    </h3>
+
+    <a
+      href="mailto:banhtrangquynhan@gmail.com"
+      className="
+      block
+      text-sm
+      md:text-base
+      text-gray-500
+      dark:text-gray-400
+      break-all
+      hover:text-orange-500
+      "
+    >
+      banhtrangquynhan@gmail.com
+    </a>
+  </div>
+</div>
+
+                <div className="flex gap-4">
+                  <MapPin className="text-emerald-600 mt-1" />
+                  <div>
+                    <h3 className="font-medium">
+                      Địa chỉ
+                    </h3>
+                    <p className="text-gray-500">
+                      48 Ấp Bắc Lân, Bà Điểm, Hồ Chí Minh
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="bg-emerald-100 dark:bg-emerald-950 p-6 rounded-xl">
+
+              <h3 className="font-bold mb-4">
+                Giờ Làm Việc
+              </h3>
+
+              <div className="flex justify-between">
+                <span className="text-gray-500">
+                  Thứ hai - Thứ bảy
+                </span>
+
+                <span>
+                  08:00 - 17:00
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Social & Shop */}
+          <div className="md:col-span-2">
+
+            <div className="bg-white dark:bg-gray-900
+            border dark:border-gray-800
+            rounded-xl p-8">
+
+              <h2 className="text-2xl font-bold mb-3">
+                Kết Nối Với Bánh Tráng Quý Nhân
+              </h2>
+
+              <p className="text-gray-500 mb-8">
+                Theo dõi chúng tôi trên các nền tảng dưới đây để nhận thông tin
+                mới nhất và đặt hàng nhanh chóng.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+
+                <a
+                  href="https://zalo.me/0828266468"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <MessageCircle className="text-blue-600" />
+                    <div>
+                      <h3 className="font-semibold">
+                        Zalo
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Chat trực tiếp với cửa hàng
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/banh.trang.cat.tuong?locale=vi_VN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <Facebook className="text-blue-700" />
+                    <div>
+                      <h3 className="font-semibold">
+                        Facebook
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Theo dõi fanpage
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.tiktok.com/@bnh.trng.qu.nhn?_r=1&_t=ZS-973rDPs5u9l"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <ShoppingBag className="text-black" />
+                    <div>
+                      <h3 className="font-semibold">
+                        TikTok Shop
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Đặt hàng qua TikTok
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://shopee.vn/yourshop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <ShoppingBag className="text-orange-500" />
+                    <div>
+                      <h3 className="font-semibold">
+                        Shopee
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Mua hàng trên Shopee
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
+              <div className="mt-8">
+                <a href="tel:0828266468">
+                  <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition">
+                    📞 Gọi Ngay
+                  </button>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Google Maps */}
+        <div className="mt-12 rounded-xl overflow-hidden h-[450px] border shadow-sm">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.489072417302!2d106.5971811!3d10.850357400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b004234b71f%3A0x39bfbfb497d233fc!2zQsOBTkggVFLDgU5HIFFVw50gTkjDgk4!5e0!3m2!1svi!2s!4v1780989813380!5m2!1svi!2s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            title="Google Maps"
+          />
+        </div>
+
       </div>
     </>
   )

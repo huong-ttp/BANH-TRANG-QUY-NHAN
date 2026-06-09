@@ -18,7 +18,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container px-4 md:px-6 relative">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4 animate-in slide-in-from-left duration-700">
+            <div className="flex flex-col justify-center space-y-4 animate-in slide-in-from-left duration-700 -mt-8 lg:-mt-12">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-red-700 dark:text-red-200">
                   Đặc Sản Bánh Tráng Tây Ninh Chính Gốc
@@ -47,6 +47,88 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+              {/* Sản phẩm bán chạy */}
+<div className="mt-8">
+  <div className="flex items-center gap-2 mb-4">
+    <span className="text-xl">🔥</span>
+    <h3 className="font-bold text-lg text-red-700 dark:text-red-300">
+      Sản phẩm bán chạy
+    </h3>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[700px]">
+
+    {/* SP 1 */}
+    <Link href="/products">
+      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
+        <img
+          src="/sp-bantrangmuoi.jpg"
+          alt="Bánh Tráng Muối"
+          className="w-full h-24 object-cover rounded-lg mb-3"
+        />
+
+        <h4 className="font-semibold text-sm">
+          Bánh Tráng Muối
+        </h4>
+
+        <p className="text-yellow-500 text-sm">
+          ⭐⭐⭐⭐⭐
+        </p>
+
+        <p className="font-bold text-red-600">
+          89.000đ
+        </p>
+      </div>
+    </Link>
+
+    {/* SP 2 */}
+    <Link href="/products">
+      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
+        <img
+          src="/muoitom.jpg"
+          alt="Muối Tôm Tây Ninh"
+          className="w-full h-24 object-cover rounded-lg mb-3"
+        />
+
+        <h4 className="font-semibold text-sm">
+          Muối Tôm Tây Ninh
+        </h4>
+
+        <p className="text-yellow-500 text-sm">
+          ⭐⭐⭐⭐⭐
+        </p>
+
+        <p className="font-bold text-red-600">
+          45.000đ
+        </p>
+      </div>
+    </Link>
+
+    {/* SP 3 */}
+    <Link href="/products">
+      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
+        <img
+          src="/phoisuong.jpg"
+          alt="Bánh Tráng Phơi Sương"
+          className="w-full h-24 object-cover rounded-lg mb-3"
+        />
+
+        <h4 className="font-semibold text-sm">
+          Bánh Tráng Phơi Sương
+        </h4>
+
+        <p className="text-yellow-500 text-sm">
+          ⭐⭐⭐⭐⭐
+        </p>
+
+        <p className="font-bold text-red-600">
+          79.000đ
+        </p>
+      </div>
+    </Link>
+
+  </div>
+</div>
             </div>
             <div className="flex justify-center animate-in slide-in-from-right duration-700">
               <div className="relative w-full max-w-[500px] aspect-square overflow-hidden rounded-xl">

@@ -235,7 +235,7 @@ export default function ClientLayout({
                   <div className="flex flex-col gap-2">
                     <h3 className="text-lg font-semibold text-red-700 mb-3">Kết nối với Quý Nhân</h3>
                     <Link
-                      href="/terms"
+                      href="https://www.facebook.com/banh.trang.cat.tuong?locale=vi_VN"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Facebook
@@ -253,7 +253,7 @@ export default function ClientLayout({
                       Shopee
                     </Link>
                     <Link
-                      href="/refund"
+                      href="https://zalo.me/0828266468"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Zalo

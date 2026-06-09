@@ -12,6 +12,7 @@ import {
 
 import { featuredProducts } from "@/lib/data"
 import { formatPrice } from "@/lib/utils"
+import HistoryTimeline from "@/components/history-timeline"
 export const metadata = {
   title: "Giới thiệu | Bánh Tráng Quý Nhân",
   description:
@@ -82,7 +83,81 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm border p-8 mt-12">
+  <div className="flex flex-col md:flex-row gap-10">
 
+  {/* Cột trái */}
+  <div className="w-full md:w-[320px] text-center flex-shrink-0">
+
+    <img
+      src="/ChuDoanhNghiep.jpg"
+      alt="Chủ doanh nghiệp"
+      className="
+        w-80
+        h-80
+        mx-auto
+        object-cover
+        rounded-[120px]
+        border-4
+        border-orange-200
+      "
+    />
+
+    <h3 className="mt-6 text-3xl font-bold">
+      Lê Yến Nhi
+    </h3>
+
+    <p className="mt-2 text-orange-600 font-medium">
+      Chủ Doanh Nghiệp
+    </p>
+
+    <p className="text-orange-600">
+      Bánh Tráng Quý Nhân
+    </p>
+
+  </div>
+
+
+      <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p>
+          Sinh ra và lớn lên trên vùng đất Tây Ninh, tôi có cơ hội được gắn bó
+          với nghề làm bánh tráng và các sản phẩm đặc sản quê hương từ khi còn nhỏ.
+          Những hình ảnh về các lò bánh tráng truyền thống, những mẻ muối tôm được
+          làm thủ công và sự cần cù của người dân địa phương đã trở thành một phần
+          ký ức không thể quên trong hành trình trưởng thành của tôi.
+        </p>
+
+        <p>
+          Tiền thân của Bánh Tráng Quý Nhân là cơ sở sản xuất bánh tráng truyền thống
+          Như Bình với hơn hai thập kỷ hoạt động tại Tây Ninh. Qua nhiều năm hình thành
+          và phát triển, cơ sở đã không ngừng gìn giữ những giá trị nghề truyền thống,
+          đồng thời mang sản phẩm đặc sản quê hương đến với khách hàng trên khắp cả nước.
+        </p>
+
+        <p>
+          Với mong muốn tiếp tục phát triển những giá trị đã được xây dựng qua nhiều thế hệ,
+          thương hiệu Bánh Tráng Quý Nhân được hình thành như một bước chuyển mình mới,
+          hướng tới sự chuyên nghiệp hơn trong sản xuất, xây dựng thương hiệu và mở rộng
+          thị trường. Chúng tôi luôn đặt chất lượng sản phẩm, sự an toàn và trải nghiệm
+          khách hàng làm nền tảng cho mọi hoạt động.
+        </p>
+
+        <p>
+          Tôi tin rằng mỗi sản phẩm bánh tráng không chỉ đơn thuần là một món ăn,
+          mà còn là câu chuyện về văn hóa, con người và niềm tự hào của quê hương Tây Ninh.
+          Chính vì vậy, Quý Nhân sẽ tiếp tục nỗ lực để giữ gìn tinh hoa truyền thống,
+          đồng thời đổi mới để đáp ứng nhu cầu ngày càng cao của khách hàng trong và ngoài nước.
+        </p>
+
+        <blockquote className="border-l-4 border-orange-500 pl-4 italic font-medium text-orange-700 dark:text-orange-400">
+          "Giữ gìn giá trị truyền thống – Nâng tầm đặc sản Tây Ninh – Lan tỏa hương vị quê hương đến mọi miền đất nước."
+        </blockquote>
+
+      </div>
+    </div>
+
+  </div>
+</div>
         {/* CÂU CHUYỆN THƯƠNG HIỆU */}
 <Card>
   <CardHeader>
@@ -343,7 +418,59 @@ export default function AboutPage() {
             </Link>
           </CardContent>
         </Card>
+        <div className="
+max-w-5xl
+mx-auto
+my-12
+bg-white
+dark:bg-gray-900
+border
+rounded-2xl
+shadow-sm
+p-8
+">
 
+  <div className="text-center">
+
+    <h2 className="text-3xl font-bold mb-4">
+      Nguồn Gốc Thương Hiệu
+    </h2>
+
+    <p className="text-gray-600 dark:text-gray-400">
+      Bánh Tráng Quý Nhân kế thừa nền tảng sản xuất,
+      kinh nghiệm và giá trị truyền thống từ cơ sở
+      Bánh Tráng Như Bình được thành lập từ năm 1990.
+    </p>
+    <div>
+                <img
+                  src="/nhubinh.jpg"
+                  alt="Bánh Tráng Quý Nhân"
+                  className="w-full rounded-xl shadow-lg object-cover"
+                />
+              </div>
+    <a
+      href="https://banhtrangnhubinh.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+      inline-block
+      mt-6
+      bg-emerald-600
+      hover:bg-emerald-700
+      text-white
+      px-6
+      py-3
+      rounded-lg
+      font-semibold
+      "
+    >
+      Truy cập Website Như Bình
+    </a>
+
+  </div>
+
+</div>
+        <HistoryTimeline />
         {/* VÌ SAO CHỌN */}
         <Card>
           <CardHeader>
@@ -372,7 +499,7 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
-
+        
         {/* CTA */}
         <Card>
           <CardContent className="py-12 text-center">
@@ -394,6 +521,6 @@ export default function AboutPage() {
         </Card>
 
       </div>
-    </div>
+    
   )
 }

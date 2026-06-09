@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 
 import ClientLayout from "./client-layout"
 import type { Metadata } from "next"
+import FloatingContact from "@/components/floating-contact"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -70,7 +71,7 @@ export default function RootLayout({
     description:
       "Chuyên sản xuất và phân phối bánh tráng, muối chấm và đặc sản Tây Ninh.",
     url: "https://banhtrangquynhan.vn",
-    telephone: "+84xxxxxxxxx",
+    telephone: "+8428266468",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Tây Ninh",
@@ -95,6 +96,18 @@ export default function RootLayout({
         />
 
         <ClientLayout>{children}</ClientLayout>
+        className="
+        w-16 h-16
+        rounded-full
+        bg-white
+        shadow-lg
+        flex
+        items-center
+        justify-center
+        animate-ring
+        "
+  <FloatingContact />
+  
       </body>
     </html>
   )
