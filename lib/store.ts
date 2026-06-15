@@ -47,11 +47,11 @@ export const useStore = create<StoreState>()(
       // Cart actions
       addToCart: (product, quantity = 1) => {
         const { cart } = get()
-        const existingItem = cart.find((item) => item.product.id === product.id)
+        const existingItem = cart.find((item) => item.product._id === product._id)
 
         if (existingItem) {
           const updatedCart = cart.map((item) =>
-            item.product.id === product.id ? { ...item, quantity: item.quantity + quantity } : item,
+            item.product._id === product._id ? { ...item, quantity: item.quantity + quantity } : item,
           )
           set({ cart: updatedCart })
         } else {
@@ -61,12 +61,12 @@ export const useStore = create<StoreState>()(
 
       removeFromCart: (productId) => {
         const { cart } = get()
-        set({ cart: cart.filter((item) => item.product.id !== productId) })
+        set({ cart: cart.filter((item) => item.product._id !== productId) })
       },
 
       updateCartItemQuantity: (productId, quantity) => {
         const { cart } = get()
-        const updatedCart = cart.map((item) => (item.product.id === productId ? { ...item, quantity } : item))
+        const updatedCart = cart.map((item) => (item.product._id === productId ? { ...item, quantity } : item))
         set({ cart: updatedCart })
       },
 
@@ -87,7 +87,7 @@ export const useStore = create<StoreState>()(
       // Wishlist actions
       addToWishlist: (product) => {
         const { wishlist } = get()
-        const existingItem = wishlist.find((item) => item.product.id === product.id)
+        const existingItem = wishlist.find((item) => item.product._id === product._id)
 
         if (!existingItem) {
           set({ wishlist: [...wishlist, { product }] })
@@ -96,12 +96,12 @@ export const useStore = create<StoreState>()(
 
       removeFromWishlist: (productId) => {
         const { wishlist } = get()
-        set({ wishlist: wishlist.filter((item) => item.product.id !== productId) })
+        set({ wishlist: wishlist.filter((item) => item.product._id !== productId) })
       },
 
       isInWishlist: (productId) => {
         const { wishlist } = get()
-        return wishlist.some((item) => item.product.id === productId)
+        return wishlist.some((item) => item.product._id === productId)
       },
 
       getWishlistItemsCount: () => {

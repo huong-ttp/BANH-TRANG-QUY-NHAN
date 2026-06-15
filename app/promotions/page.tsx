@@ -1,6 +1,8 @@
 
 import Link from "next/link"
-import { featuredProducts } from "@/lib/data"
+import { client } from "@/sanity/lib/client"
+import { PROMOTION_PRODUCTS_QUERY } from "@/sanity/lib/queries"
+
 
 export const metadata = {
   title: "Khuyến mãi đặc sản Tây Ninh",
@@ -8,10 +10,8 @@ export const metadata = {
     "Các sản phẩm bánh tráng, muối tôm và đặc sản Tây Ninh đang được giảm giá tại Bánh Tráng Quý Nhân.",
 }
 
-export default function PromotionsPage() {
-  const promotionProducts = featuredProducts.filter(
-    (product) => product.discount > 0
-  )
+export default async function PromotionsPage() {
+  const promotionProducts = await client.fetch(PROMOTION_PRODUCTS_QUERY)
 
   return (
     <div>
@@ -44,7 +44,7 @@ export default function PromotionsPage() {
 
       <div className="mt-6">
         <span className="bg-white text-red-600 px-6 py-3 rounded-xl font-bold">
-          {promotionProducts.length} sản phẩm đang giảm giá
+          {promotionProducts?.length || 0} sản phẩm đang giảm giá
         </span>
       </div>
 
@@ -71,10 +71,10 @@ export default function PromotionsPage() {
 
 
             <div className="grid md:grid-cols-3 gap-6">
-        {promotionProducts.map((product) => (
+        {promotionProducts.map((product: any) => (
           <Link
-            key={product.id}
-            href={`/products/detail/${product.id}`}
+            key={product._id}
+            href={`/products/detail/${product.slug}`}
           >
             <div
             className="
@@ -113,7 +113,7 @@ export default function PromotionsPage() {
                 <div className="mt-2">
 
                   <span className="text-red-600 font-bold text-xl">
-                    {product.price.toLocaleString()}đ
+                    {product.price?.toLocaleString()}đ
                   </span>
 
                   <span className="ml-3 text-gray-400 line-through">

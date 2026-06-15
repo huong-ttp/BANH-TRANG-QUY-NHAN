@@ -1,10 +1,15 @@
 import type React from "react"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
+import "./globals.css"
+
 import ClientLayout from "./client-layout"
-import type { Metadata } from "next"
 import FloatingContact from "@/components/floating-contact"
-const inter = Inter({ subsets: ["latin"] })
+
+const inter = Inter({
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -80,14 +85,14 @@ export default function RootLayout({
     },
     image: "https://banhtrangquynhan.vn/og-image.jpg",
     sameAs: [
-    "https://www.facebook.com/banhtrangnguyenkhang",
-    "https://www.tiktok.com/...",
-    ]
+      "https://www.facebook.com/banhtrangnguyenkhang",
+      "https://www.tiktok.com/...",
+    ],
   }
 
   return (
-    <html lang="vi">
-      <body>
+    <html lang="vi" suppressHydrationWarning>
+      <body className={inter.className}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -95,23 +100,12 @@ export default function RootLayout({
           }}
         />
 
-        <ClientLayout>{children}</ClientLayout>
-        className="
-        w-16 h-16
-        rounded-full
-        bg-white
-        shadow-lg
-        flex
-        items-center
-        justify-center
-        animate-ring
-        "
-  <FloatingContact />
-  
+        <ClientLayout>
+          {children}
+        </ClientLayout>
+
+        <FloatingContact />
       </body>
     </html>
   )
 }
-
-
-import './globals.css'

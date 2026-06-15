@@ -89,5 +89,54 @@ export const productType = defineType({
       title: "Link Lazada",
       type: "url",
     }),
+    defineField({
+  name: "unit",
+  title: "Đơn vị tính",
+  type: "string",
+}),
+defineField({
+  name: "trending",
+  title: "Sản phẩm nổi bật",
+  type: "boolean",
+  initialValue: false,
+}),
+
+defineField({
+  name: "origin",
+  title: "Xuất xứ",
+  type: "string",
+}),
+
+defineField({
+  name: "ingredients",
+  title: "Thành phần",
+  type: "text",
+}),
+
+defineField({
+  name: "usage",
+  title: "Hướng dẫn sử dụng",
+  type: "text",
+}),
+
+defineField({
+  name: "storage",
+  title: "Bảo quản",
+  type: "text",
+}),
+
+defineField({
+  name: "bestseller",
+  title: "Bán chạy",
+  type: "boolean",
+  initialValue: false,
+}),
+
+defineField({
+  name: "isNew",
+  title: "Sản phẩm mới",
+  type: "boolean",
+  initialValue: false,
+}),
   ],
 })

@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-import { Inter } from "next/font/google"
+
 import Link from "next/link"
 import { Heart, Menu, Search, User } from "lucide-react"
 import { Suspense, useEffect, useState } from "react"
-
+import { client } from "@/sanity/lib/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -15,7 +15,7 @@ import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 import { useStore } from "@/lib/store"
 import { Sheet, SheetContent, SheetTrigger, } from "@/components/ui/sheet"
-const inter = Inter({ subsets: ["latin"] })
+
 
 export default function ClientLayout({
   
@@ -25,22 +25,14 @@ export default function ClientLayout({
 }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   // Force dark mode to be applied immediately on client side
-  useEffect(() => {
-    // Check if dark mode is stored in localStorage
-    const isDarkMode =
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
-
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [])
+  
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+  <ThemeProvider
+    attribute="class"
+    defaultTheme="light"
+    enableSystem
+  >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex min-h-screen flex-col bg-gradient-to-br from-orange-50 via-amber-50 to-white dark:from-gray-950 dark:to-gray-900">
             <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-md dark:bg-gray-950/80 dark:border-gray-800">
@@ -288,9 +280,11 @@ export default function ClientLayout({
           <WishlistDrawer />
           <Toaster />
         </ThemeProvider>
-      </body>
-    </html>
-  )
+          <WishlistDrawer />
+    <Toaster />
+  </ThemeProvider>
+)
+  
 }
 
 
@@ -316,6 +310,15 @@ function ClientCart() {
 
 function ClientWishlist() {
   const { toggleWishlist, getWishlistItemsCount } = useStore()
+
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   const itemCount = getWishlistItemsCount()
 
   return (

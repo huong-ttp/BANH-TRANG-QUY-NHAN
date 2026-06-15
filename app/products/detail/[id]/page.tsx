@@ -1,14 +1,13 @@
-"use client"
+
 
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, Truck } from "lucide-react"
-
+import { urlFor } from "@/sanity/lib/image"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { featuredProducts } from "@/lib/data"
 import { ProductCard } from "@/components/product-card"
-
+import { client } from "@/sanity/lib/client"
 
 
 
@@ -23,18 +22,27 @@ export default async function ProductPage({
 }: ProductPageProps) {
   const { id } = await params
 
-  const product = featuredProducts.find(
-    (p) => p.id === id
-  )
-
+  const product = await client.fetch(
+  `*[_type == "product" && slug.current == $slug][0]`,
+  { slug: id }
+)
+console.log("slug =", id)
+console.log("product =", product)
   if (!product) {
     notFound()
   }
 
-  const relatedProducts = featuredProducts
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4)
-
+  const relatedProducts = await client.fetch(
+  `*[
+    _type == "product" &&
+    category == $category &&
+    _id != $id
+  ][0...4]`,
+  {
+    category: product.category,
+    id: product._id,
+  }
+)
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <Link
@@ -48,10 +56,13 @@ export default async function ProductPage({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 group">
           <img
-            src={product.image || "/placeholder.svg"}
-            alt={product.name}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-          />
+          src={
+            product.image
+              ? urlFor(product.image).width(800).url()
+              : "/placeholder.svg"
+          }
+          alt={product.name}
+        />
           {product.discount > 0 && (
             <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded animate-pulse">
               Giảm {product.discount}% 
@@ -162,15 +173,16 @@ export default async function ProductPage({
           </Tabs>
         </div>
       </div>
-
+      {/*
       <div className="mt-16">
         <h2 className="text-2xl font-bold mb-6 text-emerald-800 dark:text-emerald-200">Sản phẩm liên quan</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {relatedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
+            //ProductCard key={product._id} product={product} />
+         ))}
+       </div>
+     </div>
+      */}
     </div>
   )
 }

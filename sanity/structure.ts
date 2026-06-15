@@ -1,6 +1,9 @@
 export const structure = (S: any) =>
   S.list()
     .title("Nội dung")
-    .items([
-      S.documentTypeListItem("product").title("Sản phẩm"),
-    ])
+    .items(
+      S.documentTypeListItems().filter(
+        (item: any) =>
+          !["blockContent"].includes(item.getId())
+      )
+    )
