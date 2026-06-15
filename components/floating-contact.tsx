@@ -19,7 +19,7 @@ export default function FloatingContact() {
 
       {/* Facebook Messenger */}
       <a
-        href="https://www.facebook.com/banh.trang.cat.tuong?locale=vi_VN"
+        href="https://www.facebook.com/banhtrangnguyenkhang"
         target="_blank"
         rel="noopener noreferrer"
         className="group"

@@ -117,15 +117,7 @@ export default async function ProductPage({
       </Button>
     </a>
 
-    <a
-      href={product.lazada}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-        🛍️ Mua trên Lazada
-      </Button>
-    </a>
+    
 
   </div>
 </div>

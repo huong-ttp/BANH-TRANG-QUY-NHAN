@@ -80,7 +80,7 @@ export default function RootLayout({
     },
     image: "https://banhtrangquynhan.vn/og-image.jpg",
     sameAs: [
-    "https://facebook.com/...",
+    "https://www.facebook.com/banhtrangnguyenkhang",
     "https://www.tiktok.com/...",
     ]
   }

@@ -78,6 +78,15 @@ export default function ClientLayout({
                         Sản phẩm
                       </Button>
                     </Link>
+                    <Link href="/promotions">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="hover:bg-red-50 dark:hover:bg-red-950 transition-colors duration-200"
+                    >
+                      Khuyến mãi
+                    </Button>
+                  </Link>
                     <Link href="/news">
                       <Button
                         variant="ghost"
@@ -87,6 +96,7 @@ export default function ClientLayout({
                         Khám phá Tây Ninh
                       </Button>
                     </Link>
+                    
                     <Link href="/about">
                       <Button
                         variant="ghost"
@@ -142,14 +152,19 @@ export default function ClientLayout({
       >
         Sản phẩm
       </Link>
-
+      <Link
+        href="/promotions"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Khuyến mãi
+      </Link>
       <Link
         href="/news"
         onClick={() => setMobileMenuOpen(false)}
       >
         Khám phá Tây Ninh
       </Link>
-
+      
       <Link
         href="/about"
         onClick={() => setMobileMenuOpen(false)}
@@ -235,7 +250,7 @@ export default function ClientLayout({
                   <div className="flex flex-col gap-2">
                     <h3 className="text-lg font-semibold text-red-700 mb-3">Kết nối với Quý Nhân</h3>
                     <Link
-                      href="https://www.facebook.com/banh.trang.cat.tuong?locale=vi_VN"
+                      href="https://www.facebook.com/banhtrangnguyenkhang"
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Facebook

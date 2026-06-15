@@ -199,7 +199,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/banh.trang.cat.tuong?locale=vi_VN"
+                  href="https://www.facebook.com/banhtrangnguyenkhang"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
