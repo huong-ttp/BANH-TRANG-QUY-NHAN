@@ -10,6 +10,20 @@ export const postType = defineType({
   
   fields: [
     defineField({
+    name: 'isFeatured',
+    title: 'Bài nổi bật',
+    type: 'boolean',
+    initialValue: false,
+  }),
+
+  defineField({
+    name: 'showOnHome',
+    title: 'Hiển thị ở Khám Phá Tây Ninh',
+    type: 'boolean',
+    initialValue: false,
+  }),
+
+    defineField({
       name: 'title',
       title: 'Tiêu đề',
       type: 'string',
@@ -58,12 +72,7 @@ export const postType = defineType({
       type: 'datetime',
     }),
 
-    defineField({
-      name: 'isFeatured',
-      title: 'Bài nổi bật',
-      type: 'boolean',
-      initialValue: false,
-    }),
+    
   ],
 
   preview: {

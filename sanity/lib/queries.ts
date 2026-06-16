@@ -48,19 +48,19 @@ export const FEATURED_POST_QUERY = `
   _id,
   title,
   "slug": slug.current,
-  "image": image.asset->url,
+  "image": mainImage.asset->url,
   excerpt,
-  date
+  publishedAt
 }
 `
 export const POSTS_QUERY = `
-*[_type == "post" && isFeatured != true] | order(date desc){
+*[_type == "post" && isFeatured != true] | order(publishedAt desc){
   _id,
   title,
   "slug": slug.current,
-  "image": image.asset->url,
+  "image": mainImage.asset->url,
   excerpt,
-  date
+  publishedAt
 }
 `
 export const POST_DETAIL_QUERY = `
@@ -74,5 +74,74 @@ export const POST_DETAIL_QUERY = `
   content,
   publishedAt,
   isFeatured
+}
+`
+export const BESTSELLER_PRODUCTS_QUERY = `
+*[_type == "product" && bestseller == true]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  price
+}
+`
+export const FEATURED_PRODUCTS_QUERY = `
+*[_type == "product" && featured == true]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  price
+}
+`
+export const HOMEPAGE_POSTS_QUERY = `
+*[_type == "post"][0...6]{
+  title,
+  "slug": slug.current,
+  "image": mainImage.asset->url
+}
+`
+export const TRENDING_PRODUCTS_QUERY = `
+*[_type == "product" && trending == true]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  price
+}
+`
+export const HOME_POSTS_QUERY = `
+*[_type == "post"] | order(publishedAt desc)[0...3]{
+  _id,
+  title,
+  "slug": slug.current,
+  "image": mainImage.asset->url,
+  excerpt
+}
+`
+export const HOME_EXPLORE_QUERY = `
+*[_type == "post" && showOnHome == true] | order(publishedAt desc){
+
+  _id,
+
+  title,
+
+  "slug": slug.current,
+
+  "image": mainImage.asset->url
+
+}
+`
+
+
+export const NEW_PRODUCTS_QUERY = `
+*[_type == "product" && isNew == true]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  price,
+  originalPrice,
+  discount
 }
 `

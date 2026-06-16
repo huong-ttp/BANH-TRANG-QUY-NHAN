@@ -85,7 +85,7 @@ export default async function NewsPage() {
 
               <CardContent className="p-5">
                 <time className="text-orange-600 font-medium mb-3 block">
-                  {new Date(post.date).toLocaleDateString("vi-VN")}
+                  new Date(post.publishedAt).toLocaleDateString("vi-VN")
                 </time>
 
                 <h2 className="font-bold text-xl mb-3 line-clamp-2">

@@ -1,16 +1,48 @@
 import Link from "next/link"
 import { UtensilsCrossed, Package, Landmark, Mountain, HeartHandshake, ShoppingBag, ArrowRight } from "lucide-react"
+import { client } from "@/sanity/lib/client"
 
 import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
 import { FeaturedSection } from "@/components/featured-section"
 import type { Metadata } from "next"
+
+
 export const metadata: Metadata = {
   title: "Bánh Tráng Quý Nhân | Đặc sản Tây Ninh chính gốc",
   description:
     "Bánh tráng Tây Ninh, muối chấm và đặc sản địa phương chính gốc từ Bánh Tráng Quý Nhân.",
 }
-export default function Home() {
+
+
+import {
+  BESTSELLER_PRODUCTS_QUERY,
+  TRENDING_PRODUCTS_QUERY,
+  FEATURED_POST_QUERY,
+  HOME_EXPLORE_QUERY,
+  NEW_PRODUCTS_QUERY,
+} from "@/sanity/lib/queries"
+
+export default async function Home() {
+
+
+const bestsellerProducts =
+  await client.fetch(BESTSELLER_PRODUCTS_QUERY)
+
+const newProducts =
+  await client.fetch(NEW_PRODUCTS_QUERY)
+
+  const explorePosts =
+  await client.fetch(HOME_EXPLORE_QUERY)
+
+  const featuredPost =
+    await client.fetch(FEATURED_POST_QUERY)
+
+  
+
+  const trendingProducts =
+    await client.fetch(TRENDING_PRODUCTS_QUERY)
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -47,88 +79,48 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
-              {/* Sản phẩm bán chạy */}
+
+  {/* Sản phẩm bán chạy */}
 <div className="mt-8">
   <div className="flex items-center gap-2 mb-4">
     <span className="text-xl">🔥</span>
-    <h3 className="font-bold text-lg text-red-700 dark:text-red-300">
+
+    <h3 className="font-bold text-lg text-red-700">
       Sản phẩm bán chạy
     </h3>
   </div>
 
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[700px]">
 
-    {/* SP 1 */}
-    <Link href="/products">
-      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
-        <img
-          src="/sp-bantrangmuoi.jpg"
-          alt="Bánh Tráng Muối"
-          className="w-full h-24 object-cover rounded-lg mb-3"
-        />
+    {bestsellerProducts.map((product:any) => (
+      <Link
+        key={product._id}
+        href={`/products/${product.slug}`}
+      >
+        <div className="bg-white/80 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
 
-        <h4 className="font-semibold text-sm">
-          Bánh Tráng Muối
-        </h4>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-24 object-cover rounded-lg mb-3"
+          />
 
-        <p className="text-yellow-500 text-sm">
-          ⭐⭐⭐⭐⭐
-        </p>
+          <h4 className="font-semibold text-sm">
+            {product.name}
+          </h4>
 
-        <p className="font-bold text-red-600">
-          89.000đ
-        </p>
-      </div>
-    </Link>
+          <p className="font-bold text-red-600">
+            {product.price.toLocaleString()}đ
+          </p>
 
-    {/* SP 2 */}
-    <Link href="/products">
-      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
-        <img
-          src="/muoitom.jpg"
-          alt="Muối Tôm Tây Ninh"
-          className="w-full h-24 object-cover rounded-lg mb-3"
-        />
-
-        <h4 className="font-semibold text-sm">
-          Muối Tôm Tây Ninh
-        </h4>
-
-        <p className="text-yellow-500 text-sm">
-          ⭐⭐⭐⭐⭐
-        </p>
-
-        <p className="font-bold text-red-600">
-          45.000đ
-        </p>
-      </div>
-    </Link>
-
-    {/* SP 3 */}
-    <Link href="/products">
-      <div className="bg-white/80 dark:bg-gray-900 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
-        <img
-          src="/phoisuong.jpg"
-          alt="Bánh Tráng Phơi Sương"
-          className="w-full h-24 object-cover rounded-lg mb-3"
-        />
-
-        <h4 className="font-semibold text-sm">
-          Bánh Tráng Phơi Sương
-        </h4>
-
-        <p className="text-yellow-500 text-sm">
-          ⭐⭐⭐⭐⭐
-        </p>
-
-        <p className="font-bold text-red-600">
-          79.000đ
-        </p>
-      </div>
-    </Link>
+        </div>
+      </Link>
+    ))}
 
   </div>
 </div>
+  
+
             </div>
             <div className="flex justify-center animate-in slide-in-from-right duration-700">
               <div className="relative w-full max-w-[500px] aspect-square overflow-hidden rounded-xl">
@@ -145,7 +137,9 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
+      
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
+        
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -228,7 +222,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* Categories Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-orange-50 to-white dark:from-red-950 dark:to-gray-900">
         <div className="container px-4 md:px-6">
@@ -242,42 +236,28 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
-            <CategoryCard
-              name="Núi Bà Đen"
-              image="NuiBaDen.jpg"
-              href="/news/nui-ba-den"
-            />
-            <CategoryCard
-              name="Tòa Thánh Tây Ninh"
-              image="ToaThanhTayNinh.jpg"
-              href="/news/toa-thanh-cao-dai"
-            />
-            <CategoryCard
-              name="Hồ Dầu Tiếng"
-              image="HoDauTieng.jpg"
-              href="/news/ho-dau-tieng"
-            />
-            <CategoryCard
-              name="Bánh Tráng Tây Ninh"
-              image="BanhTrangTayNinh.jpg"
-              href="/news/banh-trang-tay-ninh"
-            />
-            <CategoryCard
-              name="Muối Tôm Tây Ninh"
-              image="MuoiTomTayNinh.jpg"
-              href="/news/muoi-tom-tay-ninh"
-            />
-            <CategoryCard
-              name="Ẩm Thực Tây Ninh"
-              image="AmThucTayNinh.jpg"
-              href="/news/am-thuc-tay-ninh"
-            />
+            {explorePosts.map((post:any) => (
+
+  <CategoryCard
+    key={post._id}
+    name={post.title}
+    image={post.image}
+    href={`/news/${post.slug}`}
+  />
+
+))}
+            
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <FeaturedSection />
+      <FeaturedSection
+  trendingProducts={trendingProducts}
+  bestsellerProducts={bestsellerProducts}
+  newProducts={newProducts}
+/>
+      
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 dark:from-red-800 dark:to-orange-800 relative overflow-hidden">
