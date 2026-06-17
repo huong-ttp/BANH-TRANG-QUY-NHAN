@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
 import { FeaturedSection } from "@/components/featured-section"
 import type { Metadata } from "next"
-
+import { HOME_BANNER_QUERY } from "@/sanity/lib/queries"
 
 export const metadata: Metadata = {
   title: "Bánh Tráng Quý Nhân | Đặc sản Tây Ninh chính gốc",
@@ -24,7 +24,8 @@ import {
 } from "@/sanity/lib/queries"
 
 export default async function Home() {
-
+  const banner =
+  await client.fetch(HOME_BANNER_QUERY)
 
 const bestsellerProducts =
   await client.fetch(BESTSELLER_PRODUCTS_QUERY)
@@ -53,19 +54,19 @@ const newProducts =
             <div className="flex flex-col justify-center space-y-4 animate-in slide-in-from-left duration-700 -mt-8 lg:-mt-12">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-red-700 dark:text-red-200">
-                  Đặc Sản Bánh Tráng Tây Ninh Chính Gốc
+                  {banner?.title}
                 </h1>
                 <p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
-                  Bánh tráng, muối tôm và đặc sản Tây Ninh giao tận nơi trên toàn quốc.
+                  {banner?.subtitle}
                 </p>
               </div>
               <div className="flex flex-row flex-wrap justify-center gap-3">
-                <Link href="/products">
+                <Link href={banner?.buttonLink || "/products"}>
                   <Button
                     size="lg"
                      className="bg-gradient-to-r from-red-600 to-orange-500 hover:opacity-90"
                   >
-                    Mua ngay
+                    {banner?.buttonText}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -75,7 +76,7 @@ const newProducts =
                     variant="outline"
                     className="hover:bg-red-50 dark:hover:bg-red-950 transition-colors duration-200"
                   >
-                    Xem Sản Phẩm
+                    {banner?.button2Text}
                   </Button>
                 </Link>
               </div>
@@ -95,7 +96,7 @@ const newProducts =
     {bestsellerProducts.map((product:any) => (
       <Link
         key={product._id}
-        href={`/products/${product.slug}`}
+        href={`/products/detail/${product.slug}`}
       >
         <div className="bg-white/80 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
 
@@ -126,8 +127,8 @@ const newProducts =
               <div className="relative w-full max-w-[500px] aspect-square overflow-hidden rounded-xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-400 to-orange-500 opacity-20 rounded-xl"></div>
                 <img
-                  src="Banner-BanhTrangTayNinh.jpg"
-                  alt="Bánh tráng Tây Ninh"
+                  src={banner?.image}
+                  alt={banner?.title}
                   className="object-cover w-full h-full rounded-xl shadow-lg transform transition-transform duration-500 hover:scale-105"
                 />
               </div>

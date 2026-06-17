@@ -3,13 +3,19 @@
 import Image from "next/image"
 import { Phone } from "lucide-react"
 
-export default function FloatingContact() {
+interface Props {
+  settings: any
+}
+
+export default function FloatingContact({
+  settings,
+}: Props) {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
 
       {/* Gọi điện */}
       <a
-        href="tel:0828266468"
+        href={`tel:${settings?.phone}`}
         className="group"
       >
         <div className="w-16 h-16 rounded-full bg-green-600 text-white shadow-xl flex items-center justify-center animate-ring hover:scale-110 transition-all duration-300">
@@ -19,7 +25,7 @@ export default function FloatingContact() {
 
       {/* Facebook Messenger */}
       <a
-        href="https://www.facebook.com/banhtrangnguyenkhang"
+        href={settings?.facebook}
         target="_blank"
         rel="noopener noreferrer"
         className="group"
@@ -37,7 +43,7 @@ export default function FloatingContact() {
 
       {/* Zalo */}
       <a
-        href="https://zalo.me/0828266468"
+        href={`https://zalo.me/${settings?.zalo}`}
         target="_blank"
         rel="noopener noreferrer"
         className="group"

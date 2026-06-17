@@ -4,7 +4,10 @@ export const PRODUCTS_QUERY = `*[_type == "product"]{
   "slug": slug.current,
 
   "image": image.asset->url,
-
+category->{
+    title,
+    "slug": slug.current
+  },
   price,
   originalPrice,
   discount,
@@ -143,5 +146,105 @@ export const NEW_PRODUCTS_QUERY = `
   price,
   originalPrice,
   discount
+}
+`
+export const HOME_BANNER_QUERY = `
+*[_type == "homeBanner"][0]{
+  title,
+  subtitle,
+
+  "image": image.asset->url,
+
+  buttonText,
+  buttonLink,
+
+  button2Text,
+  button2Link
+}
+`
+export const SITE_SETTINGS_QUERY = `
+*[_type == "siteSettings"][0]{
+  companyName,
+  phone,
+  email,
+  address,
+  facebook,
+  tiktok,
+  shopee,
+  zalo,
+  messenger,
+  hotline1,
+  hotline2,
+  hotline3,
+  officeAddress,
+  warehouseAddress,
+  warehouseAddress2
+}
+`
+export const ABOUT_PAGE_QUERY = `
+*[_type == "aboutPage"][0]{
+  heroTitle,
+  heroDescription,
+
+  "heroImage": heroImage.asset->url,
+
+  aboutTitle,
+  "aboutImage": aboutImage.asset->url,
+  aboutContent,
+
+  ownerName,
+  ownerPosition,
+  ownerStory,
+  ownerQuote,
+  "ownerImage": ownerImage.asset->url,
+
+  stats,
+
+  brandOriginTitle,
+  brandOriginContent,
+  brandOriginButtonText,
+  brandOriginButtonLink,
+  "brandOriginImage": brandOriginImage.asset->url,
+
+  featuredProducts[]->{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  price
+}
+}
+`
+export const CATEGORY_QUERY = `
+*[_type == "category" && slug.current == $slug][0]{
+  _id,
+  title,
+  "slug": slug.current,
+  description
+}
+`
+export const PRODUCTS_BY_CATEGORY_QUERY = `
+*[
+  _type == "product" &&
+  category->slug.current == $slug
+]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+
+  price,
+
+  "category": category->{
+    title,
+    "slug": slug.current
+  }
+}
+`
+export const CATEGORIES_QUERY = `
+*[_type == "category"] | order(title asc){
+  _id,
+  title,
+  "slug": slug.current
 }
 `

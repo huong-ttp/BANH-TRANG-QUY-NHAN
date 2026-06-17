@@ -6,7 +6,10 @@ import "./globals.css"
 
 import ClientLayout from "./client-layout"
 import FloatingContact from "@/components/floating-contact"
-
+import { client } from "@/sanity/lib/client"
+import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries"
+import FloatingContactWrapper
+from "@/components/floating-contact-wrapper"
 const inter = Inter({
   subsets: ["latin"],
 })
@@ -104,7 +107,7 @@ export default function RootLayout({
           {children}
         </ClientLayout>
 
-        <FloatingContact />
+        <FloatingContactWrapper />
       </body>
     </html>
   )

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-
+import { urlFor } from "@/sanity/lib/image"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,32 +13,48 @@ import {
 import { featuredProducts } from "@/lib/data"
 import { formatPrice } from "@/lib/utils"
 import HistoryTimeline from "@/components/history-timeline"
+import { client } from "@/sanity/lib/client"
+import { ABOUT_PAGE_QUERY,  FEATURED_PRODUCTS_QUERY } from "@/sanity/lib/queries"
 export const metadata = {
   title: "Giới thiệu | Bánh Tráng Quý Nhân",
   description:
     "Câu chuyện hình thành và phát triển của cơ sở Bánh Tráng Quý Nhân tại Tây Ninh.",
 }
-export default function AboutPage() {
+export default async function AboutPage() {
+ 
+  
+  
+const about = await client.fetch(
+  ABOUT_PAGE_QUERY,
+  {},
+  { cache: "no-store" }
+)
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <div className="flex flex-col gap-10">
 
         {/* HERO */}
-        <section className="relative overflow-hidden rounded-3xl">
+      <section className="relative overflow-hidden rounded-3xl h-[500px]">
   <img
-    src="/banner-about.jpg"
-    alt="Đặc sản Tây Ninh"
-    className="h-[400px] w-full object-cover"
+    src={
+      about?.heroImage
+        ? urlFor(about.heroImage).url()
+        : "/banner-about.jpg"
+    }
+    alt={about?.heroTitle}
+    className="absolute inset-0 w-full h-full object-cover"
   />
 
-  <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+  <div className="absolute inset-0 bg-black/50" />
+
+  <div className="relative z-10 flex h-full items-center justify-center">
     <div className="text-center text-white px-6">
       <h1 className="text-4xl md:text-6xl font-bold">
-        Bánh Tráng Quý Nhân
+        {about?.heroTitle}
       </h1>
 
       <p className="mt-4 max-w-2xl mx-auto text-lg">
-        Mang hương vị đặc sản Tây Ninh đến mọi miền đất nước
+        {about?.heroDescription}
       </p>
     </div>
   </div>
@@ -51,33 +67,31 @@ export default function AboutPage() {
 
               <div>
                 <img
-                  src="/about.jpg"
-                  alt="Bánh Tráng Quý Nhân"
-                  className="w-full rounded-xl shadow-lg object-cover"
-                />
+                src={
+                  about?.aboutImage
+                    ? urlFor(about.aboutImage).url()
+                    : "/about.jpg"
+                }
+                alt="Giới thiệu"
+                className="w-full rounded-xl object-cover"
+              />
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4">
-                  Về Bánh Tráng Quý Nhân
+                  {about?.aboutTitle}
                 </h2>
 
-                <p className="text-muted-foreground leading-7">
-                  Bánh Tráng Quý Nhân chuyên cung cấp các loại bánh tráng,
-                  muối tôm và đặc sản Tây Ninh được tuyển chọn từ những cơ sở
-                  sản xuất uy tín.
-                </p>
-
-                <p className="text-muted-foreground leading-7 mt-4">
-                  Chúng tôi mong muốn đưa những hương vị quen thuộc của vùng đất
-                  Tây Ninh đến gần hơn với khách hàng trên khắp cả nước, đồng thời
-                  góp phần quảng bá văn hóa ẩm thực địa phương thông qua từng sản phẩm.
-                </p>
-
-                <p className="text-muted-foreground leading-7 mt-4">
-                  Mỗi sản phẩm đều được lựa chọn kỹ lưỡng nhằm đảm bảo chất lượng,
-                  an toàn và giữ được hương vị truyền thống vốn có.
-                </p>
+                {about?.aboutContent?.map(
+                (item: string, index: number) => (
+                  <p
+                    key={index}
+                    className="text-muted-foreground leading-7 mt-4"
+                  >
+                    {item}
+                  </p>
+                )
+              )}
               </div>
 
             </div>
@@ -90,25 +104,29 @@ export default function AboutPage() {
   <div className="w-full md:w-[320px] text-center flex-shrink-0">
 
     <img
-      src="/ChuDoanhNghiep.jpg"
-      alt="Chủ doanh nghiệp"
-      className="
-        w-80
-        h-80
-        mx-auto
-        object-cover
-        rounded-[120px]
-        border-4
-        border-orange-200
-      "
-    />
+  src={
+    about?.ownerImage
+      ? urlFor(about.ownerImage).url()
+      : "/ChuDoanhNghiep.jpg"
+  }
+  alt="Chủ doanh nghiệp"
+  className="
+    w-80
+    h-80
+    mx-auto
+    object-cover
+    rounded-[120px]
+    border-4
+    border-orange-200
+  "
+/>
 
     <h3 className="mt-6 text-3xl font-bold">
-      Lê Yến Nhi
+      {about?.ownerName}
     </h3>
 
     <p className="mt-2 text-orange-600 font-medium">
-      Chủ Doanh Nghiệp
+      {about?.ownerPosition}
     </p>
 
     <p className="text-orange-600">
@@ -119,39 +137,14 @@ export default function AboutPage() {
 
 
       <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-        <p>
-          Sinh ra và lớn lên trên vùng đất Tây Ninh, tôi có cơ hội được gắn bó
-          với nghề làm bánh tráng và các sản phẩm đặc sản quê hương từ khi còn nhỏ.
-          Những hình ảnh về các lò bánh tráng truyền thống, những mẻ muối tôm được
-          làm thủ công và sự cần cù của người dân địa phương đã trở thành một phần
-          ký ức không thể quên trong hành trình trưởng thành của tôi.
-        </p>
-
-        <p>
-          Tiền thân của Bánh Tráng Quý Nhân là cơ sở sản xuất bánh tráng truyền thống
-          Như Bình với hơn hai thập kỷ hoạt động tại Tây Ninh. Qua nhiều năm hình thành
-          và phát triển, cơ sở đã không ngừng gìn giữ những giá trị nghề truyền thống,
-          đồng thời mang sản phẩm đặc sản quê hương đến với khách hàng trên khắp cả nước.
-        </p>
-
-        <p>
-          Với mong muốn tiếp tục phát triển những giá trị đã được xây dựng qua nhiều thế hệ,
-          thương hiệu Bánh Tráng Quý Nhân được hình thành như một bước chuyển mình mới,
-          hướng tới sự chuyên nghiệp hơn trong sản xuất, xây dựng thương hiệu và mở rộng
-          thị trường. Chúng tôi luôn đặt chất lượng sản phẩm, sự an toàn và trải nghiệm
-          khách hàng làm nền tảng cho mọi hoạt động.
-        </p>
-
-        <p>
-          Tôi tin rằng mỗi sản phẩm bánh tráng không chỉ đơn thuần là một món ăn,
-          mà còn là câu chuyện về văn hóa, con người và niềm tự hào của quê hương Tây Ninh.
-          Chính vì vậy, Quý Nhân sẽ tiếp tục nỗ lực để giữ gìn tinh hoa truyền thống,
-          đồng thời đổi mới để đáp ứng nhu cầu ngày càng cao của khách hàng trong và ngoài nước.
-        </p>
-
-        <blockquote className="border-l-4 border-orange-500 pl-4 italic font-medium text-orange-700 dark:text-orange-400">
-          "Giữ gìn giá trị truyền thống – Nâng tầm đặc sản Tây Ninh – Lan tỏa hương vị quê hương đến mọi miền đất nước."
-        </blockquote>
+        {about?.ownerStory?.map(
+  (item: string, index: number) => (
+    <p key={index}>
+      {item}
+    </p>
+  )
+)}
+        {about?.ownerQuote}
 
       </div>
     </div>
@@ -332,92 +325,93 @@ export default function AboutPage() {
 
         {/* THỐNG KÊ */}
         <section>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            <Card>
-              <CardContent className="p-6 text-center">
-                <p className="text-3xl font-bold text-emerald-600">20+</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Sản phẩm đặc sản
-                </p>
-              </CardContent>
-            </Card>
+    {about?.stats?.map(
+      (item: any, index: number) => (
+        <Card key={index}>
+          <CardContent className="p-6 text-center">
+            <p className="text-3xl font-bold text-emerald-600">
+              {item.value}
+            </p>
 
-            <Card>
-              <CardContent className="p-6 text-center">
-                <p className="text-3xl font-bold text-emerald-600">1000+</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Khách hàng
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <p className="text-3xl font-bold text-emerald-600">63</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Tỉnh thành
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 text-center">
-                <p className="text-3xl font-bold text-emerald-600">100%</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Nguồn gốc rõ ràng
-                </p>
-              </CardContent>
-            </Card>
-
-          </div>
-        </section>
-
-        {/* SẢN PHẨM NỔI BẬT */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Sản phẩm nổi bật</CardTitle>
-
-            <CardDescription>
-              Những sản phẩm được khách hàng yêu thích nhất
-            </CardDescription>
-          </CardHeader>
-
-          <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {featuredProducts.slice(0, 4).map((product) => (
-              <Link
-                key={product.id}
-                href={`/products/detail/${product.id}`}
-                className="flex items-center gap-3 p-3 rounded-lg border hover:bg-muted transition"
-              >
-                <div className="w-14 h-14 overflow-hidden rounded-lg">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div>
-                  <h4 className="font-medium">
-                    {product.name}
-                  </h4>
-
-                  <p className="text-sm text-muted-foreground">
-                    {formatPrice(product.price)}
-                  </p>
-                </div>
-              </Link>
-            ))}
-
-            <Link href="/products" className="col-span-full">
-              <Button variant="outline" className="w-full">
-                Xem tất cả sản phẩm
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <p className="text-sm text-muted-foreground mt-2">
+              {item.label}
+            </p>
           </CardContent>
         </Card>
+      )
+    )}
+
+  </div>
+</section>
+
+        {/* SẢN PHẨM NỔI BẬT */}
+       <section className="mt-16">
+  <h2 className="text-3xl font-bold mb-2">
+    Sản phẩm nổi bật
+  </h2>
+
+  <p className="text-muted-foreground mb-6">
+    Những sản phẩm được khách hàng yêu thích nhất
+  </p>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {about?.featuredProducts?.map((product: any) => (
+  <Link
+    key={product._id}
+    href={`/products/detail/${product.slug}`}
+  >
+    <div
+      className="
+      bg-white dark:bg-gray-900
+      rounded-xl
+      overflow-hidden
+      border
+      hover:shadow-xl
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      "
+    >
+      <img
+        src={product.image}
+        alt={product.name}
+        className="
+          w-full
+          aspect-square
+          object-cover
+        "
+      />
+
+      <div className="p-4">
+        <h3
+          className="
+          font-semibold
+          line-clamp-2
+          min-h-[48px]
+          "
+        >
+          {product.name}
+        </h3>
+
+        <p
+          className="
+          text-red-600
+          font-bold
+          text-lg
+          mt-2
+          "
+        >
+          {product.price.toLocaleString("vi-VN")}đ
+        </p>
+      </div>
+    </div>
+  </Link>
+))}
+
+  </div>
+</section>
         <div className="
 max-w-5xl
 mx-auto
@@ -433,23 +427,21 @@ p-8
   <div className="text-center">
 
     <h2 className="text-3xl font-bold mb-4">
-      Nguồn Gốc Thương Hiệu
+      {about?.brandOriginTitle}
     </h2>
 
     <p className="text-gray-600 dark:text-gray-400">
-      Bánh Tráng Quý Nhân kế thừa nền tảng sản xuất,
-      kinh nghiệm và giá trị truyền thống từ cơ sở
-      Bánh Tráng Như Bình được thành lập từ năm 1990.
+      {about?.brandOriginContent}
     </p>
-    <div>
-                <img
-                  src="/nhubinh.jpg"
-                  alt="Bánh Tráng Quý Nhân"
-                  className="w-full rounded-xl shadow-lg object-cover"
-                />
-              </div>
+    <div className="mt-9 flex justify-center">
+  <img
+    src="/nhubinh.jpg"
+    alt="Bánh Tráng Quý Nhân"
+    className="w-80 rounded-xl shadow-lg"
+  />
+</div>
     <a
-      href="https://banhtrangnhubinh.com"
+      href={about?.brandOriginButtonLink}
       target="_blank"
       rel="noopener noreferrer"
       className="
@@ -464,7 +456,7 @@ p-8
       font-semibold
       "
     >
-      Truy cập Website Như Bình
+      {about?.brandOriginButtonText}
     </a>
 
   </div>

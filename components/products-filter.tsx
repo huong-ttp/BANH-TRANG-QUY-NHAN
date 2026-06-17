@@ -7,18 +7,27 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { categories } from "@/lib/data"
+
 
 
 interface ProductsFilterProps {
+  categories: {
+    _id: string
+    title: string
+    slug: string
+  }[]
+
   selectedCategory: string
   priceRange: number[]
   setPriceRange: (value: number[]) => void
+
   setSelectedCategory: React.Dispatch<
     React.SetStateAction<string>
   >
+
 }
 export function ProductsFilter({
+  categories,
   selectedCategory,
   setSelectedCategory,
   priceRange,
@@ -73,10 +82,10 @@ export function ProductsFilter({
           </div>
 
           {categories.map((category) => (
-            <div
-              key={category.id}
-              className="flex items-center space-x-2"
-            >
+  <div
+    key={category._id}
+    className="flex items-center space-x-2"
+  >
               <Checkbox
                 checked={
                   selectedCategory === category.slug
@@ -86,7 +95,7 @@ export function ProductsFilter({
                 }
               />
 
-              <Label className="text-gray-700 dark:text-black-200"> {category.name}</Label>
+              <Label className="text-gray-700 dark:text-black-200"> {category.title}</Label>
             </div>
           ))}
         </div>

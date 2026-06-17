@@ -1,5 +1,6 @@
-"use client"
 
+import { client } from "@/sanity/lib/client"
+import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries"
 import {
   Phone,
   Mail,
@@ -10,7 +11,10 @@ import {
   ShoppingBag,
 } from "lucide-react"
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings =
+    await client.fetch(SITE_SETTINGS_QUERY)
+
   return (
     <>
       {/* Banner */}
@@ -46,7 +50,7 @@ export default function ContactPage() {
             <Phone className="mx-auto mb-3 text-emerald-600" />
             <h3 className="font-semibold text-gray-500">Hotline</h3>
             <p className="text-sm text-gray-500">
-              0828266468
+            {settings?.phone }
             </p>
           </div>
 
@@ -54,8 +58,8 @@ export default function ContactPage() {
             <Mail className="mx-auto mb-3 text-emerald-600" />
             <h3 className="font-semibold text-gray-500">Email</h3>
             <p className="text-sm text-gray-500">
-              banhtrangquynhan@gmail.com
-            </p>
+            {settings?.email}
+             </p>
           </div>
 
           <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
@@ -96,7 +100,7 @@ export default function ContactPage() {
                       Điện thoại
                     </h3>
                     <p className="text-gray-500">
-                      0828266468
+                      {settings?.phone || "Đang cập nhật"}
                     </p>
                   </div>
                 </div>
@@ -110,8 +114,8 @@ export default function ContactPage() {
     </h3>
 
     <a
-      href="mailto:banhtrangquynhan@gmail.com"
-      className="
+    href={`mailto:${settings?.email}`}
+    className="
       block
       text-sm
       md:text-base
@@ -119,10 +123,10 @@ export default function ContactPage() {
       dark:text-gray-400
       break-all
       hover:text-orange-500
-      "
-    >
-      banhtrangquynhan@gmail.com
-    </a>
+    "
+  >
+    {settings?.email || "Đang cập nhật"}
+  </a>
   </div>
 </div>
 
@@ -133,7 +137,7 @@ export default function ContactPage() {
                       Địa chỉ
                     </h3>
                     <p className="text-gray-500">
-                      48 Ấp Bắc Lân, Bà Điểm, Hồ Chí Minh
+                      {settings?.address || "Đang cập nhật"}
                     </p>
                   </div>
                 </div>
@@ -180,7 +184,7 @@ export default function ContactPage() {
               <div className="grid sm:grid-cols-2 gap-5">
 
                 <a
-                  href="https://zalo.me/0828266468"
+                  href={`https://zalo.me/${settings?.zalo}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
@@ -199,7 +203,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/banhtrangnguyenkhang"
+                  href={settings?.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
@@ -218,7 +222,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://www.tiktok.com/@bnh.trng.qu.nhn?_r=1&_t=ZS-973rDPs5u9l"
+                  href={settings?.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
@@ -237,7 +241,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://shopee.vn/yourshop"
+                  href={settings?.shopee}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border rounded-xl p-5 hover:shadow-lg hover:-translate-y-1 transition-all"
@@ -258,11 +262,12 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8">
-                <a href="tel:0828266468">
-                  <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition">
-                    📞 Gọi Ngay
-                  </button>
-                </a>
+                <a href={`tel:${settings?.phone}`}>
+                <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold transition">
+                  📞 Gọi Ngay
+                </button>
+              </a>
+                
               </div>
 
             </div>

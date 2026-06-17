@@ -159,6 +159,44 @@ console.log("product =", product)
                 {product.details}
               </p>
             </TabsContent>
+            <TabsContent
+  value="nutrition"
+  className="pt-4"
+>
+  <div className="space-y-4 text-gray-600 dark:text-gray-400">
+
+    {product.origin && (
+      <div>
+        <strong>Xuất xứ:</strong>
+        <p>{product.origin}</p>
+      </div>
+    )}
+
+    {product.ingredients && (
+      <div>
+        <strong>Thành phần:</strong>
+        <p>{product.ingredients}</p>
+      </div>
+    )}
+
+    {product.unit && (
+      <div>
+        <strong>Đơn vị tính:</strong>
+        <p>{product.unit}</p>
+      </div>
+    )}
+
+    {product.stock && (
+      <div>
+        <strong>Tồn kho:</strong>
+        <p>
+          {product.stock} {product.unit}
+        </p>
+      </div>
+    )}
+
+  </div>
+</TabsContent>
             <TabsContent value="reviews" className="pt-4">
             <div className="space-y-3 text-gray-600 dark:text-gray-400">
               <p>

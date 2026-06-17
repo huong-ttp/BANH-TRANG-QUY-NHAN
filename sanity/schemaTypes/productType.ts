@@ -67,10 +67,11 @@ export const productType = defineType({
     }),
 
     defineField({
-      name: "category",
-      title: "Danh mục",
-      type: "string",
-    }),
+  name: "category",
+  title: "Danh mục",
+  type: "reference",
+  to: [{ type: "category" }],
+}),
 
     defineField({
       name: "shopee",
@@ -84,11 +85,7 @@ export const productType = defineType({
       type: "url",
     }),
 
-    defineField({
-      name: "lazada",
-      title: "Link Lazada",
-      type: "url",
-    }),
+
     defineField({
   name: "unit",
   title: "Đơn vị tính",
@@ -138,5 +135,6 @@ defineField({
   type: "boolean",
   initialValue: false,
 }),
+
   ],
 })

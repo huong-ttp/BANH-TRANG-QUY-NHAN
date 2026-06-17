@@ -15,18 +15,28 @@ interface Product {
   slug: string
   name: string
   image: string
+
   price: number
   originalPrice: number
   discount: number
+
   stock: number
   description: string
-  category: string
+
+  category?: {
+    title: string
+    slug: string
+  }
+
   trending?: boolean
 }
+
 export default function ProductsClient({
   products,
+  categories,
 }: {
   products: Product[]
+  categories: Category[]
 }) {
   const [sortBy, setSortBy] = useState("default")
   const [openFilter, setOpenFilter] = useState(false)
@@ -38,14 +48,20 @@ export default function ProductsClient({
 
   const filteredProducts = products
   .filter((product) => {
+    
     const matchSearch =
       product.name
         .toLowerCase()
         .includes(searchTerm.toLowerCase())
-
+    console.log(
+  products.map((p) => ({
+    name: p.name,
+    category: p.category,
+  }))
+)
     const matchCategory =
-      selectedCategory === "all" ||
-      product.category === selectedCategory
+  selectedCategory === "all" ||
+  product.category?.slug === selectedCategory
 
     const matchPrice =
       product.price >= priceRange[0] &&
@@ -172,11 +188,12 @@ export default function ProductsClient({
 
     <div className="mt-6">
       <ProductsFilter
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        priceRange={priceRange}
-        setPriceRange={setPriceRange}
-      />
+  categories={categories}
+  selectedCategory={selectedCategory}
+  setSelectedCategory={setSelectedCategory}
+  priceRange={priceRange}
+  setPriceRange={setPriceRange}
+/>
     </div>
   </SheetContent>
 </Sheet>
@@ -185,11 +202,12 @@ export default function ProductsClient({
   {/* Sidebar */}
   <div className="hidden md:block">
     <ProductsFilter
-      selectedCategory={selectedCategory}
-      setSelectedCategory={setSelectedCategory}
-      priceRange={priceRange}
-      setPriceRange={setPriceRange}
-    />
+  categories={categories}
+  selectedCategory={selectedCategory}
+  setSelectedCategory={setSelectedCategory}
+  priceRange={priceRange}
+  setPriceRange={setPriceRange}
+/>
   </div>
 
   {/* Products */}

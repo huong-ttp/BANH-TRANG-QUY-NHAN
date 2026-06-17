@@ -15,7 +15,7 @@ import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 import { useStore } from "@/lib/store"
 import { Sheet, SheetContent, SheetTrigger, } from "@/components/ui/sheet"
-
+import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries"
 
 export default function ClientLayout({
   
@@ -23,9 +23,20 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode
 }) {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   // Force dark mode to be applied immediately on client side
-  
+  const [settings, setSettings] = useState<any>(null)
+  useEffect(() => {
+  const fetchSettings = async () => {
+    const data = await client.fetch(
+      SITE_SETTINGS_QUERY
+    )
+
+    setSettings(data)
+  }
+
+  fetchSettings()
+}, [])
 
   return (
   <ThemeProvider
@@ -42,20 +53,21 @@ export default function ClientLayout({
   className="flex items-center max-w-[180px] md:max-w-none"
 >
   <span
-    className="
-      text-base
-      md:text-xl
-      font-bold
-      bg-gradient-to-r
-      from-red-600
-      to-orange-500
-      bg-clip-text
-      text-transparent
-      leading-tight
-    "
-  >
-    Bánh Tráng Quý Nhân
-  </span>
+  className="
+    text-base
+    md:text-xl
+    font-bold
+    bg-gradient-to-r
+    from-red-600
+    to-orange-500
+    bg-clip-text
+    text-transparent
+    leading-tight
+  "
+>
+  {settings?.companyName ||
+    "Bánh Tráng Quý Nhân"}
+</span>
 </Link>
                 <div className="hidden md:flex md:flex-1">
                   
@@ -182,7 +194,7 @@ export default function ClientLayout({
             </main>
             <footer className="border-t bg-white dark:bg-gray-950 dark:border-gray-800">
               <div className="container flex flex-col gap-6 py-8 md:px-6 md:py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-lg font-semibold text-red-700 mb-3">Sản phẩm</h3>
                     <Link
@@ -242,35 +254,85 @@ export default function ClientLayout({
                   <div className="flex flex-col gap-2">
                     <h3 className="text-lg font-semibold text-red-700 mb-3">Kết nối với Quý Nhân</h3>
                     <Link
-                      href="https://www.facebook.com/banhtrangnguyenkhang"
+                      href={settings?.facebook || "#"}
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Facebook
                     </Link>
                     <Link
-                      href="/privacy"
+                      href={settings?.tiktok || "#"}
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Tiktok
                     </Link>
                     <Link
-                      href="/shipping"
+                      href={settings?.shopee || "#"}
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Shopee
                     </Link>
                     <Link
-                      href="https://zalo.me/0828266468"
+                      href={`https://zalo.me/${settings?.zalo || ""}`}
                       className="text-sm text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
                     >
                       Zalo
                     </Link>
+                    
                   </div>
+                  <div className="flex flex-col gap-2">
+                  <h3 className="text-lg font-semibold text-red-700 mb-3">
+                    Thông tin liên hệ
+                  </h3>
+
+                  <a
+                    href={`tel:${settings?.hotline1}`}
+                    className="text-sm text-gray-500 hover:text-red-600"
+                  >
+                    ☎ {settings?.hotline1}
+                  - Nghi
+                  </a>
+                  <a
+                    href={`tel:${settings?.hotline2}`}
+                    className="text-sm text-gray-500 hover:text-red-600"
+                  >
+
+                    ☎ {settings?.hotline2}
+                     - Thư
+                  </a>
+                  <a
+                    href={`tel:${settings?.hotline3}`}
+                    className="text-sm text-gray-500 hover:text-red-600"
+                  >
+                    ☎ {settings?.hotline3}
+                    - Uyên
+                  </a>
+                  
+
+                  
+                </div>
                 </div>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-sm text-gray-500">
-                    © 2025 Bánh Tráng Quý Nhân - Đặc sản Tây Ninh.
-                  </p>
+                 <div className="border-t pt-4 mt-4">
+  <p className="text-sm text-gray-500">
+    © {new Date().getFullYear()} {settings?.companyName}
+  </p>
+
+  <p className="text-sm text-gray-500 mt-1">
+    Văn phòng: 
+    {settings?.officeAddress}
+  </p>
+
+  <p className="text-sm text-gray-500 break-words">
+  📦 Kho 1: {settings?.warehouseAddress}
+</p>
+
+{settings?.warehouseAddress2 && (
+  <p className="text-sm text-gray-500 break-words">
+    📦 Kho 2: {settings?.warehouseAddress2}
+  </p>
+)}
+</div>
+                  
                   <div className="flex gap-4">
                   </div>
                 </div>
