@@ -98,6 +98,13 @@ defineField({
   initialValue: false,
 }),
 
+{
+  name: "bestseller",
+  title: "Sản phẩm bán chạy",
+  type: "boolean",
+  initialValue: false,
+},
+
 defineField({
   name: "origin",
   title: "Xuất xứ",
@@ -122,12 +129,6 @@ defineField({
   type: "text",
 }),
 
-defineField({
-  name: "bestseller",
-  title: "Bán chạy",
-  type: "boolean",
-  initialValue: false,
-}),
 
 defineField({
   name: "isNew",

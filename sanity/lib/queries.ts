@@ -23,7 +23,7 @@ category->{
   storage,
   origin,
 
-  category,
+  
 
   shopee,
   tiktok,
@@ -79,15 +79,6 @@ export const POST_DETAIL_QUERY = `
   isFeatured
 }
 `
-export const BESTSELLER_PRODUCTS_QUERY = `
-*[_type == "product" && bestseller == true]{
-  _id,
-  name,
-  "slug": slug.current,
-  "image": image.asset->url,
-  price
-}
-`
 export const FEATURED_PRODUCTS_QUERY = `
 *[_type == "product" && featured == true]{
   _id,
@@ -97,6 +88,24 @@ export const FEATURED_PRODUCTS_QUERY = `
   price
 }
 `
+export const TRENDING_PRODUCTS_QUERY = `
+*[_type == "product" && trending == true]{
+  _id,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+
+  price,
+  originalPrice,
+  discount,
+
+  stock,
+  description,
+
+  trending,
+  isNew
+}
+`
 export const HOMEPAGE_POSTS_QUERY = `
 *[_type == "post"][0...6]{
   title,
@@ -104,8 +113,8 @@ export const HOMEPAGE_POSTS_QUERY = `
   "image": mainImage.asset->url
 }
 `
-export const TRENDING_PRODUCTS_QUERY = `
-*[_type == "product" && trending == true]{
+export const BESTSELLER_PRODUCTS_QUERY = `
+*[_type == "product" && bestseller == true][0...3]{
   _id,
   name,
   "slug": slug.current,
@@ -113,6 +122,7 @@ export const TRENDING_PRODUCTS_QUERY = `
   price
 }
 `
+
 export const HOME_POSTS_QUERY = `
 *[_type == "post"] | order(publishedAt desc)[0...3]{
   _id,

@@ -26,7 +26,7 @@ export interface Product {
 
   trending: boolean
   bestseller: boolean
-  new?: boolean
+  isNew?: boolean
 
   shopee: string
   tiktok: string

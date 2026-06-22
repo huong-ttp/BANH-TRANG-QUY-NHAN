@@ -92,33 +92,57 @@ const newProducts =
   </div>
 
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[700px]">
-
-    {bestsellerProducts.map((product:any) => (
-      <Link
-        key={product._id}
-        href={`/products/detail/${product.slug}`}
+  {bestsellerProducts.map((product: any) => (
+    <Link
+      key={product._id}
+      href={`/products/detail/${product.slug}`}
+    >
+      <div
+        className="
+          bg-white/80
+          border
+          rounded-xl
+          p-4
+          h-[260px]
+          flex
+          flex-col
+          hover:shadow-lg
+          transition-all
+          hover:-translate-y-1
+        "
       >
-        <div className="bg-white/80 border rounded-xl p-4 hover:shadow-lg transition-all hover:-translate-y-1">
+        <img
+          src={product.image || "/placeholder.jpg"}
+          alt={product.name}
+          className="
+            w-full
+            h-32
+            object-cover
+            rounded-lg
+            mb-3
+          "
+        />
 
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-24 object-cover rounded-lg mb-3"
-          />
+        <h4
+          className="
+            font-semibold
+            text-sm
+            line-clamp-2
+            min-h-[48px]
+          "
+        >
+          {product.name}
+        </h4>
 
-          <h4 className="font-semibold text-sm">
-            {product.name}
-          </h4>
-
+        <div className="mt-auto">
           <p className="font-bold text-red-600">
-            {product.price.toLocaleString()}đ
+            {product.price.toLocaleString("vi-VN")}đ
           </p>
-
         </div>
-      </Link>
-    ))}
-
-  </div>
+      </div>
+    </Link>
+  ))}
+</div>
 </div>
   
 
