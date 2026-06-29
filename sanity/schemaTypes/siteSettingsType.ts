@@ -86,11 +86,6 @@ defineField({
   type: "string",
 }),
 
-defineField({
-  name: "hotline3",
-  title: "Hotline 3",
-  type: "string",
-}),
 
 defineField({
   name: "officeAddress",

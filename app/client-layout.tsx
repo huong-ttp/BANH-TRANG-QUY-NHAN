@@ -289,7 +289,6 @@ export default function ClientLayout({
                     className="text-sm text-gray-500 hover:text-red-600"
                   >
                     ☎ {settings?.hotline1}
-                  - Nghi
                   </a>
                   <a
                     href={`tel:${settings?.hotline2}`}
@@ -297,15 +296,8 @@ export default function ClientLayout({
                   >
 
                     ☎ {settings?.hotline2}
-                     - Thư
                   </a>
-                  <a
-                    href={`tel:${settings?.hotline3}`}
-                    className="text-sm text-gray-500 hover:text-red-600"
-                  >
-                    ☎ {settings?.hotline3}
-                    - Uyên
-                  </a>
+                  
                   
 
                   
