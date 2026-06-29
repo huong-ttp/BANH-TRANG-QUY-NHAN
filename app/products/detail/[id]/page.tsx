@@ -145,7 +145,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
               {product.price?.toLocaleString("vi-VN")}đ
             </span>
-            {product.originalPrice > product.price && (
+            {(product.originalPrice || 0) > (product.price || 0) && (
               <span className="text-lg text-gray-500 line-through">
                 {product.originalPrice?.toLocaleString("vi-VN")}đ
               </span>
