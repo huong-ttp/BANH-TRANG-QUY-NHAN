@@ -1,26 +1,34 @@
 import { MetadataRoute } from "next"
+import { client } from "@/sanity/lib/client"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = "https://banh-trang-quy-nhan.vercel.app"
+
+  const categories = await client.fetch(
+    `*[_type == "category"]{ "slug": slug.current }`
+  )
+
+  const products = await client.fetch(
+    `*[_type == "product"]{ "slug": slug.current }`
+  )
+
   return [
     {
-      url: "https://banhtrangquynhan.vn",
+      url: baseUrl,
       lastModified: new Date(),
+      priority: 1,
     },
-    {
-      url: "https://banhtrangquynhan.vn/products",
+
+    ...categories.map((c: any) => ({
+      url: `${baseUrl}/products/${c.slug}`,
       lastModified: new Date(),
-    },
-    {
-      url: "https://banhtrangquynhan.vn/about",
+      priority: 0.8,
+    })),
+
+    ...products.map((p: any) => ({
+      url: `${baseUrl}/products/detail/${p.slug}`,
       lastModified: new Date(),
-    },
-    {
-      url: "https://banhtrangquynhan.vn/news",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://banhtrangquynhan.vn/contact",
-      lastModified: new Date(),
-    },
+      priority: 0.7,
+    })),
   ]
 }

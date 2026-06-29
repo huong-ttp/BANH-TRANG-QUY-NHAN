@@ -45,5 +45,23 @@ export const categoryType = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+  name: "seoTitle",
+  title: "SEO Title",
+  type: "string",
+}),
+
+defineField({
+  name: "seoDescription",
+  title: "SEO Description",
+  type: "text",
+}),
+
+defineField({
+  name: "seoKeywords",
+  title: "SEO Keywords",
+  type: "array",
+  of: [{ type: "string" }],
+}),
   ],
 })

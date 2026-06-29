@@ -1,12 +1,11 @@
-import { MetadataRoute } from "next"
-
-export default function robots(): MetadataRoute.Robots {
+export default function robots() {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap:
-      "https://banhtrangquynhan.vn/sitemap.xml",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+    sitemap: "https://banh-trang-quy-nhan.vercel.app/sitemap.xml",
   }
 }

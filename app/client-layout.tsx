@@ -31,7 +31,7 @@ export default function ClientLayout({
     const data = await client.fetch(
       SITE_SETTINGS_QUERY
     )
-    console.log(data)
+
     setSettings(data)
   }
 
@@ -289,6 +289,7 @@ export default function ClientLayout({
                     className="text-sm text-gray-500 hover:text-red-600"
                   >
                     ☎ {settings?.hotline1}
+                  
                   </a>
                   <a
                     href={`tel:${settings?.hotline2}`}
