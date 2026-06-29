@@ -31,7 +31,7 @@ export default function ClientLayout({
     const data = await client.fetch(
       SITE_SETTINGS_QUERY
     )
-
+    console.log(data)
     setSettings(data)
   }
 
