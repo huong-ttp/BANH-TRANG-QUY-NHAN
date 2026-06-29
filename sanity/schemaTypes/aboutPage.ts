@@ -160,6 +160,115 @@ defineField({
     },
   ],
 }),
+    defineField({
+  name: "storyTitle",
+  title: "Tiêu đề câu chuyện",
+  type: "string",
+}),
 
+defineField({
+  name: "storySubtitle",
+  title: "Mô tả ngắn",
+  type: "string",
+}),
+
+defineField({
+  name: "storySections",
+  title: "Các mục nội dung",
+  type: "array",
+  of: [
+    {
+      type: "object",
+      fields: [
+        defineField({
+          name: "heading",
+          title: "Tiêu đề",
+          type: "string",
+        }),
+        defineField({
+          name: "content",
+          title: "Nội dung",
+          type: "array",
+          of: [{ type: "block" }],
+        }),
+      ],
+    },
+  ],
+}),
+    defineField({
+  name: "coreValues",
+  title: "Giá trị cốt lõi",
+  type: "array",
+  of: [
+    {
+      type: "object",
+      fields: [
+        defineField({
+          name: "icon",
+          title: "Icon",
+          type: "string",
+          options: {
+            list: [
+              { title: "⭐ Star", value: "star" },
+              { title: "❤️ Heart", value: "heart" },
+              { title: "🌍 Globe", value: "globe" },
+              { title: "🏆 Award", value: "award" },
+              { title: "🌿 Leaf", value: "leaf" },
+            ],
+          },
+        }),
+
+        defineField({
+          name: "title",
+          title: "Tiêu đề",
+          type: "string",
+        }),
+
+        defineField({
+          name: "description",
+          title: "Mô tả",
+          type: "text",
+        }),
+      ],
+    },
+  ],
+}),
+  defineField({
+  name: "visionSection",
+  title: "Tầm nhìn - Cam kết - Kết",
+  type: "object",
+  fields: [
+    {
+      name: "visionTitle",
+      title: "Tiêu đề Tầm nhìn",
+      type: "string",
+    },
+    {
+      name: "visionParagraphs",
+      title: "Nội dung Tầm nhìn",
+      type: "array",
+      of: [{ type: "text" }],
+    },
+
+    {
+      name: "commitmentTitle",
+      title: "Tiêu đề Cam kết",
+      type: "string",
+    },
+
+    {
+      name: "commitments",
+      title: "Danh sách cam kết",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+
+    {
+      name: "closingText",
+      title: "Đoạn kết",
+      type: "text",
+    },
+  ],
+})
   ],
 })

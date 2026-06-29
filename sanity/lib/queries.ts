@@ -222,7 +222,27 @@ export const ABOUT_PAGE_QUERY = `
   "slug": slug.current,
   "image": image.asset->url,
   price
-}
+},
+  storyTitle,
+storySubtitle,
+
+storySections[]{
+  heading,
+  content
+},
+
+coreValues[]{
+  icon,
+  title,
+  description
+},
+visionSection{
+  visionTitle,
+  visionParagraphs,
+  commitmentTitle,
+  commitments,
+  closingText
+},
 }
 `
 export const CATEGORY_QUERY = `

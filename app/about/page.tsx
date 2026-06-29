@@ -15,6 +15,8 @@ import { formatPrice } from "@/lib/utils"
 import HistoryTimeline from "@/components/history-timeline"
 import { client } from "@/sanity/lib/client"
 import { ABOUT_PAGE_QUERY,  FEATURED_PRODUCTS_QUERY } from "@/sanity/lib/queries"
+import { Star, Heart, Globe, Award, Leaf } from "lucide-react";
+import { PortableText } from "@portabletext/react"
 export const metadata = {
   title: "Giới thiệu | Bánh Tráng Quý Nhân",
   description:
@@ -22,6 +24,13 @@ export const metadata = {
 }
 export default async function AboutPage() {
  
+const iconMap: Record<string, any> = {
+  star: Star,
+  heart: Heart,
+  globe: Globe,
+  award: Award,
+  leaf: Leaf,
+};
   
   
 const about = await client.fetch(
@@ -152,171 +161,144 @@ const about = await client.fetch(
   </div>
 </div>
         {/* CÂU CHUYỆN THƯƠNG HIỆU */}
-<Card>
-  <CardHeader>
-    <CardTitle className="text-3xl">
-      Câu Chuyện Của Quý Nhân
-    </CardTitle>
+<section className="my-20">
 
-    <CardDescription>
-      Mang hương vị đặc sản Tây Ninh đến gần hơn với mọi người
-    </CardDescription>
-  </CardHeader>
+  <div className="text-center mb-16">
 
-  <CardContent className="space-y-10">
+    <h2 className="text-4xl font-bold">
+      {about.storyTitle}
+    </h2>
 
-    {/* Giới thiệu */}
-    <div className="space-y-4">
-      <h3 className="text-2xl font-bold text-emerald-600">
-        Bánh Tráng Quý Nhân – Mang Hương Vị Tây Ninh Đến Gần Hơn Với Mọi Người
-      </h3>
+    <p className="text-gray-500 mt-3 text-lg">
+      {about.storySubtitle}
+    </p>
 
-      <p className="text-muted-foreground leading-8">
-        Tây Ninh không chỉ nổi tiếng với Núi Bà Đen, Tòa Thánh Cao Đài hay
-        những cánh đồng trải dài dưới nắng. Nơi đây còn được biết đến là quê
-        hương của những món đặc sản đã trở thành niềm tự hào của người dân địa
-        phương, trong đó có bánh tráng và muối Tây Ninh.
-      </p>
+  </div>
 
-      <p className="text-muted-foreground leading-8">
-        Bánh Tráng Quý Nhân được hình thành từ tình yêu dành cho những hương vị
-        quen thuộc của quê hương. Từ những chiếc bánh tráng giản dị gắn liền
-        với bữa ăn gia đình đến những món ăn vặt được yêu thích trên khắp cả
-        nước, mỗi sản phẩm đều mang theo câu chuyện về sự cần cù, sáng tạo và
-        tinh thần gìn giữ giá trị truyền thống của người dân Tây Ninh.
-      </p>
+  <div className="space-y-20">
 
-      <p className="text-muted-foreground leading-8">
-        Chúng tôi tin rằng đặc sản không chỉ đơn thuần là một món ăn. Đó còn là
-        cách để giới thiệu văn hóa, con người và những nét đẹp của vùng đất nơi
-        sản phẩm được sinh ra. Chính vì vậy, Bánh Tráng Quý Nhân luôn nỗ lực
-        lựa chọn nguyên liệu chất lượng, hoàn thiện quy trình sản xuất và không
-        ngừng cải tiến sản phẩm để mang đến những hương vị đặc trưng nhất của
-        Tây Ninh.
-      </p>
-    </div>
+    {about.storySections?.map((section: any, index: number) => (
 
-    {/* Sứ mệnh */}
-    <div className="space-y-4">
-      <h3 className="text-2xl font-bold">
-        Sứ Mệnh Của Bánh Tráng Quý Nhân
-      </h3>
+      <div
+        key={index}
+        className="
+        bg-white
+        dark:bg-gray-900
+        rounded-2xl
+        border
+        shadow-sm
+        p-8
+        "
+      >
 
-      <p className="text-muted-foreground leading-8">
-        Bánh Tráng Quý Nhân ra đời với mong muốn góp phần lan tỏa giá trị của
-        đặc sản Tây Ninh đến nhiều khách hàng hơn trên khắp cả nước.
-      </p>
+        <h3
+          className="
+          text-3xl
+          font-bold
+          border-l-4
+          border-orange-500
+          pl-4
+          mb-8
+          "
+        >
+          {section.heading}
+        </h3>
 
-      <p className="text-muted-foreground leading-8">
-        Mỗi sản phẩm được tạo ra không chỉ nhằm đáp ứng nhu cầu thưởng thức mà
-        còn là cầu nối đưa hình ảnh quê hương Tây Ninh đến gần hơn với cộng
-        đồng. Từ bánh tráng phơi sương truyền thống, bánh tráng ăn vặt đến các
-        dòng muối đặc sản, tất cả đều được phát triển với mục tiêu giữ gìn
-        hương vị đặc trưng vốn có của địa phương.
-      </p>
-    </div>
-
-    {/* Giá trị cốt lõi */}
-    <div className="space-y-6">
-      <h3 className="text-2xl font-bold">
-        Giá Trị Mà Chúng Tôi Theo Đuổi
-      </h3>
-
-      <div className="grid gap-4 md:grid-cols-3">
-
-        <div className="rounded-xl border p-6">
-          <div className="text-3xl mb-3">🥢</div>
-
-          <h4 className="font-semibold text-lg mb-2">
-            Giữ Gìn Hương Vị Truyền Thống
-          </h4>
-
-          <p className="text-sm text-muted-foreground leading-7">
-            Tôn trọng những giá trị đã được gìn giữ qua nhiều thế hệ, đồng thời
-            chọn lọc và cải tiến để phù hợp hơn với nhu cầu hiện đại.
-          </p>
-        </div>
-
-        <div className="rounded-xl border p-6">
-          <div className="text-3xl mb-3">⭐</div>
-
-          <h4 className="font-semibold text-lg mb-2">
-            Chất Lượng Là Ưu Tiên Hàng Đầu
-          </h4>
-
-          <p className="text-sm text-muted-foreground leading-7">
-            Từ nguyên liệu đầu vào đến quy trình đóng gói, mọi công đoạn đều
-            được chú trọng nhằm đảm bảo sản phẩm đến tay khách hàng với chất
-            lượng tốt nhất.
-          </p>
-        </div>
-
-        <div className="rounded-xl border p-6">
-          <div className="text-3xl mb-3">🌎</div>
-
-          <h4 className="font-semibold text-lg mb-2">
-            Lan Tỏa Đặc Sản Tây Ninh
-          </h4>
-
-          <p className="text-sm text-muted-foreground leading-7">
-            Không chỉ bán sản phẩm, Bánh Tráng Quý Nhân mong muốn trở thành nơi
-            giúp nhiều người hiểu hơn về văn hóa, ẩm thực và những giá trị đặc
-            sắc của vùng đất Tây Ninh.
-          </p>
+        <div
+          className="
+          prose
+          prose-lg
+          dark:prose-invert
+          max-w-none
+          "
+        >
+          <PortableText value={section.content} />
         </div>
 
       </div>
-    </div>
+
+    ))}
+
+  </div>
+
+</section>
+<section className="my-20">
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold">Giá trị cốt lõi</h2>
+    <p className="text-gray-500 mt-3">
+      Những giá trị mà Bánh Tráng Quý Nhân luôn theo đuổi
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {about?.coreValues?.map((item: any, index: number) => {
+      const Icon = iconMap[item.icon];
+
+      return (
+        <Card key={index}>
+          <CardContent className="p-6 text-center">
+
+            <div className="text-4xl mb-3 text-emerald-600">
+              {Icon ? <Icon size={36} /> : "✨"}
+            </div>
+
+            <h3 className="font-bold text-lg">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-muted-foreground mt-2">
+              {item.description}
+            </p>
+
+          </CardContent>
+        </Card>
+      );
+    })}
+  </div>
+</section>
+{/* TẦM NHÌN - CAM KẾT - KẾT */}
+<Card>
+  <CardContent className="p-8 space-y-10">
 
     {/* Tầm nhìn */}
     <div className="space-y-4">
       <h3 className="text-2xl font-bold">
-        Tầm Nhìn
+        {about?.visionSection?.visionTitle}
       </h3>
 
-      <p className="text-muted-foreground leading-8">
-        Bánh Tráng Quý Nhân hướng đến việc trở thành thương hiệu đặc sản Tây
-        Ninh được khách hàng tin tưởng lựa chọn khi tìm kiếm các sản phẩm bánh
-        tráng, muối và đặc sản địa phương.
-      </p>
-
-      <p className="text-muted-foreground leading-8">
-        Chúng tôi không ngừng hoàn thiện chất lượng sản phẩm, nâng cao trải
-        nghiệm khách hàng và mở rộng hệ thống phân phối để nhiều người hơn có
-        cơ hội thưởng thức hương vị đặc trưng của Tây Ninh.
-      </p>
+      {about?.visionSection?.visionParagraphs?.map(
+        (text: string, index: number) => (
+          <p
+            key={index}
+            className="text-muted-foreground leading-8"
+          >
+            {text}
+          </p>
+        )
+      )}
     </div>
 
     {/* Cam kết */}
     <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
       <h3 className="text-2xl font-bold text-black mb-6">
-        Cam Kết Của Chúng Tôi
+        {about?.visionSection?.commitmentTitle}
       </h3>
 
       <div className="grid md:grid-cols-2 gap-4 text-black">
-
-        <div>✓ Nguồn nguyên liệu được lựa chọn kỹ lưỡng</div>
-
-        <div>✓ Sản phẩm đảm bảo chất lượng và an toàn thực phẩm</div>
-
-        <div>✓ Hương vị đặc trưng của đặc sản Tây Ninh</div>
-
-        <div>✓ Đóng gói cẩn thận, thuận tiện vận chuyển</div>
-
-        <div className="md:col-span-2">
-          ✓ Luôn lắng nghe và đồng hành cùng khách hàng
-        </div>
-
+        {about?.visionSection?.commitments?.map(
+          (item: string, index: number) => (
+            <div key={index}>
+              ✓ {item}
+            </div>
+          )
+        )}
       </div>
     </div>
 
     {/* Kết */}
     <div className="border-l-4 border-emerald-500 pl-6 py-2">
       <p className="italic text-muted-foreground leading-8">
-        Bánh Tráng Quý Nhân tin rằng những giá trị bền vững luôn bắt đầu từ sự
-        chân thành. Mỗi sản phẩm được gửi đi không chỉ mang theo hương vị của
-        bánh tráng hay muối Tây Ninh, mà còn mang theo niềm tự hào về một vùng
-        đất giàu bản sắc và nghĩa tình.
+        {about?.visionSection?.closingText}
       </p>
     </div>
 
