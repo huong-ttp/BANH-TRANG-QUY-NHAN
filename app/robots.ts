@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://banh-trang-quy-nhan.vercel.app/sitemap.xml",
+    sitemap: "https://banhtrangtayninh.com/",
   }
 }

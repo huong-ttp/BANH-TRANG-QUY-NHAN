@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { ProgressBar } from "@/components/ProgressBar"
 import Link from "next/link"
 import { Menu, Search, User } from "lucide-react"
 import { Suspense, useEffect, useState } from "react"
@@ -50,6 +50,7 @@ export default function ClientLayout({
   href="/"
   className="flex items-center max-w-[180px] md:max-w-none"
 >
+  <ProgressBar />
   <span
   className="
     text-base

@@ -257,14 +257,12 @@ export const PRODUCTS_BY_CATEGORY_QUERY = `
 *[
   _type == "product" &&
   category->slug.current == $slug
-]{
+] | order(_createdAt desc) [$start...$end]{
   _id,
   name,
   "slug": slug.current,
   "image": image.asset->url,
-
   price,
-
   "category": category->{
     title,
     "slug": slug.current

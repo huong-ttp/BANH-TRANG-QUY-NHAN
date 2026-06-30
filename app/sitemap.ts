@@ -2,7 +2,7 @@ import { MetadataRoute } from "next"
 import { client } from "@/sanity/lib/client"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://banh-trang-quy-nhan.vercel.app"
+  const baseUrl = "https://banhtrangtayninh.com/"
 
   const categories = await client.fetch(
     `*[_type == "category"]{ "slug": slug.current }`
