@@ -3,17 +3,15 @@
 import type React from "react"
 
 import Link from "next/link"
-import { Heart, Menu, Search, User } from "lucide-react"
+import { Menu, Search, User } from "lucide-react"
 import { Suspense, useEffect, useState } from "react"
 import { client } from "@/sanity/lib/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { WishlistDrawer } from "@/components/wishlist-drawer"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
-import { useStore } from "@/lib/store"
 import { Sheet, SheetContent, SheetTrigger, } from "@/components/ui/sheet"
 import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries"
 
@@ -123,7 +121,7 @@ export default function ClientLayout({
                 </div>
                 <div className="flex items-center gap-1 md:ml-auto">
                   <ThemeToggle />
-                  <WishlistButton />
+                  
                   <Button
                     variant="ghost"
                     size="icon"
@@ -332,10 +330,10 @@ export default function ClientLayout({
               </div>
             </footer>
           </div>
-          <WishlistDrawer />
+          
           <Toaster />
         </ThemeProvider>
-          <WishlistDrawer />
+          
     <Toaster />
   </ThemeProvider>
 )
@@ -344,52 +342,5 @@ export default function ClientLayout({
 
 
 
-function WishlistButton() {
-  return <ClientWishlist />
-}
 
-function ClientCart() {
-  const { toggleCart, getCartItemsCount } = useStore()
-  const itemCount = getCartItemsCount()
 
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
-      onClick={toggleCart}
-    >
-    </Button>
-  )
-}
-
-function ClientWishlist() {
-  const { toggleWishlist, getWishlistItemsCount } = useStore()
-
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
-  const itemCount = getWishlistItemsCount()
-
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      className="mr-1 relative hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
-      onClick={toggleWishlist}
-    >
-      <Heart className="h-5 w-5" />
-      {itemCount > 0 && (
-        <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
-          {itemCount}
-        </span>
-      )}
-      <span className="sr-only">Danh sách yêu thích</span>
-    </Button>
-  )
-}

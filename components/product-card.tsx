@@ -113,16 +113,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </p>
         </div>
       </Link>
-      <div className="p-4 pt-0 flex gap-2">
-        <Button
-          variant="outline"
-          size="icon"
-          className={`${isWishlisted ? "text-red-500 border-red-200" : ""} transition-all duration-300 hover:scale-110`}
-          onClick={toggleWishlist}
-        >
-          <Heart className={`h-4 w-4 ${isWishlisted ? "fill-red-500" : ""}`} />
-        </Button>
-      </div>
+      
     </div>
   )
 }
