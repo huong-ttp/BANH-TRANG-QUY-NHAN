@@ -9,15 +9,12 @@ interface CartItem {
   quantity: number
 }
 
-interface WishlistItem {
-  product: Product
-}
 
 interface StoreState {
   cart: CartItem[]
-  wishlist: WishlistItem[]
+  
   isCartOpen: boolean
-  isWishlistOpen: boolean
+ 
 
   // Cart actions
   addToCart: (product: Product, quantity?: number) => void
@@ -28,21 +25,15 @@ interface StoreState {
   getCartItemsCount: () => number
   toggleCart: () => void
 
-  // Wishlist actions
-  addToWishlist: (product: Product) => void
-  removeFromWishlist: (productId: string) => void
-  isInWishlist: (productId: string) => boolean
-  getWishlistItemsCount: () => number
-  toggleWishlist: () => void
+  
 }
 
 export const useStore = create<StoreState>()(
   persist(
     (set, get) => ({
       cart: [],
-      wishlist: [],
       isCartOpen: false,
-      isWishlistOpen: false,
+      
 
       // Cart actions
       addToCart: (product, quantity = 1) => {
@@ -82,37 +73,12 @@ export const useStore = create<StoreState>()(
         return cart.reduce((count, item) => count + item.quantity, 0)
       },
 
-      toggleCart: () => set((state) => ({ isCartOpen: !state.isCartOpen, isWishlistOpen: false })),
+      toggleCart: () => set((state) => ({ isCartOpen: !state.isCartOpen })),
 
-      // Wishlist actions
-      addToWishlist: (product) => {
-        const { wishlist } = get()
-        const existingItem = wishlist.find((item) => item.product._id === product._id)
-
-        if (!existingItem) {
-          set({ wishlist: [...wishlist, { product }] })
-        }
-      },
-
-      removeFromWishlist: (productId) => {
-        const { wishlist } = get()
-        set({ wishlist: wishlist.filter((item) => item.product._id !== productId) })
-      },
-
-      isInWishlist: (productId) => {
-        const { wishlist } = get()
-        return wishlist.some((item) => item.product._id === productId)
-      },
-
-      getWishlistItemsCount: () => {
-        const { wishlist } = get()
-        return wishlist.length
-      },
-
-      toggleWishlist: () => set((state) => ({ isWishlistOpen: !state.isWishlistOpen, isCartOpen: false })),
+      
     }),
     {
-      name: "fastcart-storage",
+      name: "banhtrang-storage",
     },
   ),
 )

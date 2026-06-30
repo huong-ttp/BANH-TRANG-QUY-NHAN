@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { Heart, ShoppingCart } from "lucide-react"
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
@@ -14,9 +13,9 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useStore()
+  const { addToCart } = useStore()
   const { toast } = useToast()
-  const [isWishlisted, setIsWishlisted] = useState(isInWishlist(product._id))
+  
 
   const handleAddToCart = () => {
     addToCart(product)
@@ -26,23 +25,7 @@ export function ProductCard({ product }: ProductCardProps) {
     })
   }
 
-  const toggleWishlist = () => {
-    if (isWishlisted) {
-      removeFromWishlist(product._id)
-      setIsWishlisted(false)
-      toast({
-        title: "Đã xóa khỏi yêu thích",
-        description: `${product.name} đã được xóa khỏi danh sách yêu thích.`,
-      })
-    } else {
-      addToWishlist(product)
-      setIsWishlisted(true)
-      toast({
-        title: "Đã thêm vào yêu thích",
-        description: `${product.name} đã được thêm vào danh sách yêu thích.`,
-      })
-    }
-  }
+  
 
   return (
     <div className="group relative flex flex-col h-full overflow-hidden rounded-lg border bg-white transition-all duration-300 hover:border-emerald-600 hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-900 dark:hover:border-emerald-500">      <Link href={`/products/detail/${product.slug}`} className="flex flex-col flex-1">
