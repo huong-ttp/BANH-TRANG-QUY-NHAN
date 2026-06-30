@@ -6,44 +6,52 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { client } from "@/sanity/lib/client"
 import { Metadata } from "next"
 export const revalidate = 60
-// 1. CHUẨN HOÁ PARAMS (Theo chuẩn Next.js 14)
+
+// 1. CHUẨN HOÁ PARAMS (Bắt buộc dùng Promise cho Next.js 15+)
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-// 2. TẠO HÀM FETCH DÙNG CHUNG (Tối ưu Next.js Deduplication)
-// Cập nhật GROQ Query lấy đầy đủ các trường SEO
-async function getProduct(slug: string) {
-  const query = `*[_type == "product" && slug.current == $slug][0]{
-    _id,
-    name,
-    "slug": slug.current,
-    "image": image.asset->url,
-    price,
-    originalPrice,
-    discount,
-    stock,
-    unit,
-    description,
-    details,
-    ingredients,
-    usage,
-    storage,
-    origin,
-    shopee,
-    tiktok,
-    seoTitle,
-    seoDescription,
-    seoKeywords
-  }`
-  return await client.fetch(query, { slug })
+// 2. TẠO HÀM FETCH DÙNG CHUNG
+async function getProduct(id: string) {
+  const query = `
+    *[_type == "product" && slug.current == $slug][0]{
+      _id,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      price,
+      originalPrice,
+      discount,
+      stock,
+      unit,
+      description,
+      details,
+      ingredients,
+      usage,
+      storage,
+      origin,
+      shopee,
+      tiktok,
+      seoTitle,
+      seoDescription,
+      seoKeywords
+    }
+  `
+
+  return await client.fetch(query, {
+    slug: id,
+  })
 }
 
 // 3. TẠO METADATA CHUẨN SEO ĐỘNG
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const product = await getProduct(params.id)
+  // BẮT BUỘC AWAIT PARAMS Ở NEXT.JS MỚI
+  const { id } = await params
+  
+  const product = await getProduct(id)
 
   if (!product) {
     return { title: "Không tìm thấy sản phẩm" }
@@ -53,40 +61,41 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     title: product.seoTitle || product.name,
     description: product.seoDescription || product.description,
     
-    
     // 🔥 3.1 KEYWORDS FALLBACK
-  keywords:
-    product.seoKeywords?.join(", ") ||
-    `${product.name}, bánh tráng tây ninh, đặc sản`,
+    keywords:
+      product.seoKeywords?.join(", ") ||
+      `${product.name}, bánh tráng tây ninh, đặc sản`,
 
-  // 🔥 3.2 ROBOTS META
-  robots: {
-    index: true,
-    follow: true,
-  },
+    // 🔥 3.2 ROBOTS META
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
-      canonical: `https://banhtrangtayninh.com/products/detail/${params.id}`, // Canonical URL để Google không tính là trùng lặp nội dung
+      canonical: `https://banhtrangtayninh.com/products/detail/${id}`,
     },
     openGraph: {
       title: product.seoTitle || product.name,
       description: product.seoDescription || product.description,
-      // Ảnh từ query đã là String URL, truyền thẳng vào mảng không cần bọc urlFor
       images: product.image
-  ? [
-      {
-        url: product.image,
-        width: 800,
-        height: 800,
-      },
-    ]
-  : [], 
+        ? [
+            {
+              url: product.image,
+              width: 800,
+              height: 800,
+            },
+          ]
+        : [], 
     },
   }
 }
 
 // 4. COMPONENT GIAO DIỆN CHÍNH
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id)
+  // BẮT BUỘC AWAIT PARAMS Ở NEXT.JS MỚI
+  const { id } = await params
+  
+  const product = await getProduct(id)
 
   if (!product) {
     notFound()
@@ -95,25 +104,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: product.name,
-      description: product.description,
-      image: product.image,
-      offers: {
-        "@type": "Offer",
-        price: product.price,
-        priceCurrency: "VND",
-        availability: product.stock > 0
-          ? "https://schema.org/InStock"
-      : "https://schema.org/OutOfStock",
-      },
-    }),
-  }}
-/>
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.description,
+            image: product.image,
+            offers: {
+              "@type": "Offer",
+              price: product.price,
+              priceCurrency: "VND",
+              availability: product.stock > 0
+                ? "https://schema.org/InStock"
+                : "https://schema.org/OutOfStock",
+            },
+          }),
+        }}
+      />
       <Link
         href="/products"
         className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 mb-6 transition-colors duration-200"
@@ -124,7 +133,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 group">
-          {/* Fix ảnh: Dùng trực tiếp product.image vì query đã xuất ra URL string */}
           <img
             src={product.image || "/placeholder.svg"} 
             alt={product.name}
@@ -145,7 +153,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
               {product.price?.toLocaleString("vi-VN")}đ
             </span>
-            {(product.originalPrice || 0) > (product.price || 0) && (
+            {product.originalPrice > product.price && (
               <span className="text-lg text-gray-500 line-through">
                 {product.originalPrice?.toLocaleString("vi-VN")}đ
               </span>
