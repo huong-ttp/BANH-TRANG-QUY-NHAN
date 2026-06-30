@@ -278,3 +278,21 @@ export const CATEGORIES_QUERY = `
   "slug": slug.current
 }
 `
+// Lấy sản phẩm có giới hạn (start...end) cho từng trang
+export const PAGINATED_PRODUCTS_QUERY = `
+  *[_type == "product" && category->slug.current == $slug] | order(_createdAt desc) [$start...$end]{
+    _id, name, "slug": slug.current, "image": image.asset->url, price, discount
+  }
+`;
+
+// Đếm tổng số sản phẩm để tính toán số trang
+export const PRODUCTS_COUNT_QUERY = `
+  count(*[_type == "product" && category->slug.current == $slug])
+`;
+export const PAGINATED_ALL_PRODUCTS_QUERY = `
+  *[_type == "product"] | order(_createdAt desc) [$start...$end]{
+    _id, name, "slug": slug.current, "image": image.asset->url, price, originalPrice, discount, stock, unit
+  }
+`;
+
+export const ALL_PRODUCTS_COUNT_QUERY = `count(*[_type == "product"])`;
