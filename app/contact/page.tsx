@@ -137,7 +137,7 @@ export default async function ContactPage() {
                       Địa chỉ
                     </h3>
                     <p className="text-gray-500">
-                      {settings?.address || "Đang cập nhật"}
+                      {settings?.officeAddress || "Đang cập nhật"}
                     </p>
                   </div>
                 </div>
