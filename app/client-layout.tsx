@@ -122,14 +122,6 @@ export default function ClientLayout({
                 <div className="flex items-center gap-1 md:ml-auto">
                   <ThemeToggle />
                   
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="mr-1 hover:bg-emerald-50 dark:hover:bg-orange-950 transition-colors duration-200"
-                  >
-                    <User className="h-5 w-5" />
-                    <span className="sr-only">Tài khoản</span>
-                  </Button>
                  <Sheet
   open={mobileMenuOpen}
   onOpenChange={setMobileMenuOpen}
