@@ -47,7 +47,7 @@ const nextConfig = {
       permanent: true,
     }));
 
-    // 4. Các sản phẩm CÒN BÁN -> trỏ thẳng về chi tiết sản phẩm mới (Theo đúng điểm 7)
+    // 4. Các sản phẩm CÒN BÁN -> trỏ thẳng về chi tiết sản phẩm mới
     const specificRedirects = [
       {
         source: "/banh-trang-toi",
@@ -66,12 +66,48 @@ const nextConfig = {
       }
     ];
 
+    // 5. KHẮC PHỤC LỖI TỪ CÔNG CỤ TÌM KIẾM (Google/Yahoo)
+    const searchEngineRedirects = [
+      {
+        source: '/shop', 
+        destination: '/products', // Chuyển /shop cũ về trang tổng /products mới
+        permanent: true,
+      },
+      {
+        source: '/blog', 
+        destination: '/', // Tạm thời đưa blog về trang chủ để không bị 404
+        permanent: true,
+      },
+      {
+        source: '/lien-he', 
+        destination: '/', // Tạm thời đưa liên hệ về trang chủ
+        permanent: true,
+      },
+      // Các link sản phẩm có đuôi "nhu-binh" trên hình tìm kiếm
+      {
+        source: '/hanh-la-say-nhu-binh',
+        destination: '/products/do-an-vat',
+        permanent: true,
+      },
+      {
+        source: '/bo-trang-nhu-binh',
+        destination: '/products/do-an-vat',
+        permanent: true,
+      },
+      {
+        source: '/banh-trang-me-tom-nhu-binh',
+        destination: '/products/banh-trang',
+        permanent: true,
+      }
+    ];
+
     // Gom tất cả các chiến lược lại và trả về cho Next.js xử lý
     return [
       ...anVatRedirects, 
       ...muoiRedirects, 
       ...banhTrangRedirects, 
-      ...specificRedirects
+      ...specificRedirects,
+      ...searchEngineRedirects
     ];
   },
 };
