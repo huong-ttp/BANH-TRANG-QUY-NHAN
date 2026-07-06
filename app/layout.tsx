@@ -5,19 +5,14 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 
 import ClientLayout from "./client-layout"
-import FloatingContact from "@/components/floating-contact"
-import { client } from "@/sanity/lib/client"
-import { SITE_SETTINGS_QUERY } from "@/sanity/lib/queries"
-import FloatingContactWrapper
-from "@/components/floating-contact-wrapper"
+import FloatingContactWrapper from "@/components/floating-contact-wrapper"
+
 const inter = Inter({
   subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://banhtrangquynhan.vn"
-  ),
+  metadataBase: new URL("https://banhtrangquynhan.vn"),
 
   title: {
     default: "Bánh Tráng Quý Nhân",
@@ -33,6 +28,11 @@ export const metadata: Metadata = {
     "muối tôm tây ninh",
     "bánh tráng quý nhân",
   ],
+
+  // THÊM XÁC MINH GOOGLE 
+  verification: {
+    google: "JKUZcm1taCzw1oKkvqxJyFmV3fCm60Nr1v9uyQXZuaE",
+  },
 
   openGraph: {
     title: "Bánh Tráng Quý Nhân",
