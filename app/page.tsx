@@ -22,7 +22,7 @@ import {
   HOME_EXPLORE_QUERY,
   NEW_PRODUCTS_QUERY,
 } from "@/sanity/lib/queries"
-
+export const revalidate = 60
 export default async function Home() {
   const banner =
   await client.fetch(HOME_BANNER_QUERY)
