@@ -63,6 +63,14 @@ export const productType = defineType({
     }),
 
     defineField({
+      name: 'isPromo',
+      title: '🌟 Đưa vào trang Khuyến Mãi',
+      type: 'boolean',
+      description: 'Bật nút này nếu bạn muốn sản phẩm xuất hiện ở trang Khuyến Mãi',
+      initialValue: false,
+    }),
+
+    defineField({
       name: "stock",
       title: "Tồn kho",
       type: "number",

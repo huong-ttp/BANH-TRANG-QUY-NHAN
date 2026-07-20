@@ -336,3 +336,19 @@ export const PAGINATED_ALL_PRODUCTS_QUERY = `
 `;
 
 export const ALL_PRODUCTS_COUNT_QUERY = `count(*[_type == "product"])`;
+
+export const PROMO_PRODUCTS_QUERY = `
+  *[_type == "product" && isPromo == true] | order(_createdAt desc) {
+    _id,
+    name,
+    "slug": slug.current,
+    "image": image.asset->url,
+    price,
+    originalPrice,
+    discount,
+    stock,
+    description,
+    trending,
+    isNew
+  }
+`;
