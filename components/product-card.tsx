@@ -57,8 +57,8 @@ export function ProductCard({ product }: ProductCardProps) {
           <h3
   className="
     font-medium
-    line-clamp-2
-    min-h-[56px]
+    line-clamp-5
+    min-h-[50px]
     group-hover:text-emerald-600
     dark:group-hover:text-emerald-400
     transition-colors
@@ -85,7 +85,7 @@ export function ProductCard({ product }: ProductCardProps) {
     text-sm
     text-gray-500
     mt-1
-    line-clamp-2
+    line-clamp-3
     min-h-[40px]
   "
 >
