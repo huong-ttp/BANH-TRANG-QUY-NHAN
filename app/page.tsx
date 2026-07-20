@@ -98,19 +98,25 @@ const newProducts =
       href={`/products/detail/${product.slug}`}
     >
       <div
-        className="
-          bg-white/80
-          border
-          rounded-xl
-          p-4
-          h-[260px]
-          flex
-          flex-col
-          hover:shadow-lg
-          transition-all
-          hover:-translate-y-1
-        "
-      >
+  className="
+    group
+    bg-white
+    dark:bg-gray-900
+    border
+    border-gray-200
+    dark:border-gray-700
+    rounded-xl
+    p-4
+    h-[260px]
+    flex
+    flex-col
+    hover:shadow-xl
+    hover:border-orange-400
+    transition-all
+    duration-300
+    hover:-translate-y-1
+  "
+>
         <img
           src={product.image || "/placeholder.jpg"}
           alt={product.name}
@@ -124,13 +130,18 @@ const newProducts =
         />
 
         <h4
-          className="
-            font-semibold
-            text-sm
-            line-clamp-2
-            min-h-[48px]
-          "
-        >
+        className="
+          font-semibold
+          text-sm
+          line-clamp-2
+          min-h-[48px]
+          text-gray-800
+          dark:text-gray-100
+          hover:text-orange-600
+          dark:hover:text-orange-400
+          transition-colors
+        "
+      >
           {product.name}
         </h4>
 
