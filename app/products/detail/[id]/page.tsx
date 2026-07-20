@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { client } from "@/sanity/lib/client"
 import { Metadata } from "next"
+import ProductGallery from "@/components/ProductGallery"
 export const revalidate = 60
 
 // 1. CHUẨN HOÁ PARAMS (Bắt buộc dùng Promise cho Next.js 15+)
@@ -105,7 +106,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) {
     notFound()
   }
-
+  const galleryImages =
+  product.images?.length > 0
+    ? product.images
+    : [
+        {
+          asset: {
+            url: product.image
+          }
+        }
+      ]
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12">
       <script
@@ -140,23 +150,32 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div>
+
+  {/* Cột hình ảnh */}
   <div className="relative">
 
-  <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-
-    <img
-      src={
-        product.images?.[0]?.asset?.url ||
-        product.image ||
-        "/placeholder.svg"
-      }
-      alt={product.name}
-      className="object-cover w-full h-full"
+    <ProductGallery
+      images={galleryImages}
+      name={product.name}
     />
 
+
     {product.discount > 0 && (
-      <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded animate-pulse">
+      <div
+        className="
+          absolute
+          top-4
+          right-4
+          bg-red-500
+          text-white
+          text-sm
+          font-bold
+          px-2
+          py-1
+          rounded
+          animate-pulse
+        "
+      >
         Giảm {product.discount}%
       </div>
     )}
@@ -164,39 +183,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   </div>
 
 
-  <div className="flex gap-3 mt-4">
-
-    {
-      (
-        product.images?.length > 0
-          ? product.images
-          : [{ asset: { url: product.image }}]
-      )
-      .map((img,index)=>(
-        <img
-          key={index}
-          src={img.asset.url}
-          alt={`${product.name}-${index}`}
-          className="
-            w-20
-            h-20
-            object-cover
-            rounded-md
-            border
-            cursor-pointer
-            hover:scale-105
-            transition
-          "
-        />
-      ))
-    }
-
-  </div>
-
-</div>
-        </div>
-
-        <div className="flex flex-col">
+  {/* Cột thông tin */}
+  <div className="flex flex-col">
           <h1 className="text-3xl font-bold text-emerald-800 dark:text-emerald-200">{product.name}</h1>
           <p className="text-sm text-gray-500 mt-1">Đặc sản {product.origin}</p>
           
