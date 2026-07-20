@@ -112,14 +112,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
             name: product.name,
             description: product.description,
             image: product.image,
-            offers: {
-              "@type": "Offer",
-              price: product.price,
-              priceCurrency: "VND",
-              availability: product.stock > 0
-                ? "https://schema.org/InStock"
-                : "https://schema.org/OutOfStock",
-            },
+            offers: product.price
+  ? {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: "VND",
+      availability:
+        product.stock > 0
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
+    }
+  : undefined,
           }),
         }}
       />
@@ -149,17 +152,36 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h1 className="text-3xl font-bold text-emerald-800 dark:text-emerald-200">{product.name}</h1>
           <p className="text-sm text-gray-500 mt-1">Đặc sản {product.origin}</p>
           
-          <div className="flex items-center gap-2 mt-2">
-            <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-              {product.price?.toLocaleString("vi-VN")}đ
-            </span>
-            {product.originalPrice > product.price && (
-              <span className="text-lg text-gray-500 line-through">
-                {product.originalPrice?.toLocaleString("vi-VN")}đ
-              </span>
-            )}
-            <span className="text-sm text-gray-500">/ {product.unit}</span>
-          </div>
+          <div className="mt-2">
+  {product.price ? (
+    <div className="flex items-center gap-2">
+      <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+        {product.price.toLocaleString("vi-VN")}đ
+      </span>
+
+      {product.originalPrice &&
+        product.originalPrice > product.price && (
+          <span className="text-lg text-gray-500 line-through">
+            {product.originalPrice.toLocaleString("vi-VN")}đ
+          </span>
+        )}
+
+      <span className="text-sm text-gray-500">
+        / {product.unit}
+      </span>
+      </div>
+    ) : (
+      <div className="rounded-lg border border-orange-300 bg-orange-50 dark:bg-orange-900/20 dark:border-orange-700 px-4 py-3">
+        <p className="font-semibold text-orange-600 dark:text-orange-400">
+          📢 Giá sẽ được cập nhật trong thời gian sớm nhất
+        </p>
+
+        <p className="text-sm text-gray-500 mt-1">
+          Vui lòng liên hệ để được tư vấn và báo giá.
+        </p>
+      </div>
+    )}
+  </div>
 
           <div className="mt-4">
             <span className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">

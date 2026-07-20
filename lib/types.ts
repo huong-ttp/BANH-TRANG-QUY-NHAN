@@ -12,7 +12,7 @@ export interface Product {
   storage: string
   origin: string
 
-  price: number
+  price?: number
   originalPrice: number
 
   image: string

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 import { useStore } from "@/lib/store"
 import type { Product } from "@/lib/types"
-
+import { formatPrice } from "@/lib/utils"
 interface ProductCardProps {
   product: Product
 }
@@ -17,13 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast()
   
 
-  const handleAddToCart = () => {
-    addToCart(product)
-    toast({
-      title: "Đã thêm vào giỏ hàng",
-      description: `${product.name} đã được thêm vào giỏ hàng.`,
-    })
-  }
+  
 
   
 
@@ -74,11 +68,18 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h3>
           <div className="flex items-center gap-2 mt-1">
-            <span className="font-bold text-emerald-600 dark:text-emerald-400">{product.price.toLocaleString("vi-VN")}đ</span>
-            {product.originalPrice > product.price && (
-              <span className="text-sm text-gray-500 line-through">{product.originalPrice.toLocaleString("vi-VN")}đ</span>
-            )}
-          </div>
+  <span className="font-bold text-emerald-600 dark:text-emerald-400">
+    {formatPrice(product.price)}
+  </span>
+
+  {product.originalPrice &&
+    product.price &&
+    product.originalPrice > product.price && (
+      <span className="text-sm text-gray-500 line-through">
+        {product.originalPrice.toLocaleString("vi-VN")}đ
+      </span>
+    )}
+</div>
           <p
   className="
     text-sm
