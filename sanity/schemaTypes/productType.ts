@@ -31,6 +31,20 @@ export const productType = defineType({
     }),
 
     defineField({
+  name: "images",
+  title: "Album hình ảnh sản phẩm",
+  type: "array",
+  of: [
+    {
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+  ],
+}),
+
+    defineField({
       name: "price",
       title: "Giá bán",
       type: "number",

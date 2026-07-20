@@ -33,6 +33,48 @@ category->{
   bestseller,
   isNew
 }`
+export const PRODUCT_DETAIL_QUERY = `
+*[_type == "product" && slug.current == $slug][0]{
+  _id,
+  name,
+  "slug": slug.current,
+
+  "image": image.asset->url,
+
+  "images": images[]{
+    asset->{
+      url
+    }
+  },
+
+  price,
+  originalPrice,
+  discount,
+
+  stock,
+  unit,
+
+  description,
+  details,
+
+  ingredients,
+  usage,
+  storage,
+  origin,
+
+  category->{
+    title,
+    "slug": slug.current
+  },
+
+  shopee,
+  tiktok,
+
+  trending,
+  bestseller,
+  isNew
+}
+`
 export const PROMOTION_PRODUCTS_QUERY = `
 *[_type == "product" && discount > 0]{
   _id,

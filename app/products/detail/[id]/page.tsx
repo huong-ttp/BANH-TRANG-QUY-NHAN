@@ -22,6 +22,11 @@ async function getProduct(id: string) {
       name,
       "slug": slug.current,
       "image": image.asset->url,
+      "images": images[]{
+        asset->{
+          url
+        }
+      },
       price,
       originalPrice,
       discount,
@@ -135,17 +140,60 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 group">
-          <img
-            src={product.image || "/placeholder.svg"} 
-            alt={product.name}
-            className="object-cover w-full h-full"
-          />
-          {product.discount > 0 && (
-            <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded animate-pulse">
-              Giảm {product.discount}% 
-            </div>
-          )}
+        <div>
+  <div className="relative">
+
+  <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+
+    <img
+      src={
+        product.images?.[0]?.asset?.url ||
+        product.image ||
+        "/placeholder.svg"
+      }
+      alt={product.name}
+      className="object-cover w-full h-full"
+    />
+
+    {product.discount > 0 && (
+      <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded animate-pulse">
+        Giảm {product.discount}%
+      </div>
+    )}
+
+  </div>
+
+
+  <div className="flex gap-3 mt-4">
+
+    {
+      (
+        product.images?.length > 0
+          ? product.images
+          : [{ asset: { url: product.image }}]
+      )
+      .map((img,index)=>(
+        <img
+          key={index}
+          src={img.asset.url}
+          alt={`${product.name}-${index}`}
+          className="
+            w-20
+            h-20
+            object-cover
+            rounded-md
+            border
+            cursor-pointer
+            hover:scale-105
+            transition
+          "
+        />
+      ))
+    }
+
+  </div>
+
+</div>
         </div>
 
         <div className="flex flex-col">
