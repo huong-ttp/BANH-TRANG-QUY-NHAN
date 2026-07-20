@@ -377,16 +377,11 @@ const about = await client.fetch(
           {product.name}
         </h3>
 
-        <p
-          className="
-          text-red-600
-          font-bold
-          text-lg
-          mt-2
-          "
-        >
-          {product.price.toLocaleString("vi-VN")}đ
-        </p>
+        <p className="font-bold text-red-600">
+  {product.price
+    ? `${product.price.toLocaleString("vi-VN")}đ`
+    : "Giá sẽ được cập nhật"}
+</p>
       </div>
     </div>
   </Link>
